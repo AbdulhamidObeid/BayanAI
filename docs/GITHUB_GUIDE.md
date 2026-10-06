@@ -1,4 +1,37 @@
-# GitHub publishing · نشر المشروع
+# نشر المشروع على GitHub
+
+## العربية
+
+المشروع منشور على [BayanAI](https://github.com/AbdulhamidObeid/BayanAI)، والفرع الرئيسي هو `main`. يحتوي الجذر على `README.md` بالعربية أولاً ثم الإنجليزية. [الموقع المباشر](https://bayanai.onrender.com/).
+
+### رفع نسخة جديدة
+
+استخدم مجلد الإصدار النظيف `release/BayanAI/` في مشروع العمل. لا يتضمن ملفات `.env` أو قواعد البيانات الخاصة أو الكتب المحمّلة أو المسودات القديمة.
+
+في مستودع فارغ فقط:
+
+```bash
+cd BayanAI
+git init -b main
+git add .
+git commit -m "Publish Bayan AI application and submission materials"
+git remote add origin https://github.com/AbdulhamidObeid/BayanAI.git
+git push -u origin main
+```
+
+إذا كان المجلد مرتبطاً بالمستودع بالفعل، تجاوز إنشاء المستودع وإضافة `origin`، ثم سجّل تغييراتك وارفعها. سجّل الدخول عبر `gh auth login` أو مدير بيانات اعتماد Git. لا تضع رمز الدخول في رابط المستودع، ولا تستخدم الرفع القسري فوق تاريخ موجود.
+
+### بيانات المستودع
+
+الوصف: منصة معرفة إسلامية موثقة، بشرح يناسب مستوى السائل، وتوطين ثقافي وإجابات متعددة اللغات.
+
+الوسوم: `islamic-ai`, `gemini`, `fastapi`, `arabic`, `multilingual`, `rag`, `localization`.
+
+أبقِ المستودع عاماً **Public**، وأضف رابط الموقع في **About → Website**. راجع ظهور README والتراخيص وملف `.env.example` ومتطلبات التشغيل. افتح روابط العرض والفيديو والأدلة. تأكد من عدم وجود أي مفتاح API أو بيانات مستفيدين أو سجل خاص.
+
+---
+
+## English
 
 Use this clean release folder, not the original working directory. It excludes `.env`, caches, private questions, downloaded books and old drafts.
 
@@ -30,7 +63,3 @@ Keep the repository **Public**. Add the live website only after deployment verif
 - No `.env`, API key, signing key, database or private log is present.
 - Deck, demo and test evidence links open.
 - A fresh clone installs and serves the actual dashboard.
-
-## العربية
-
-استخدم مجلد الإصدار النظيف، وليس مجلد العمل القديم. نفّذ الأوامر أعلاه للنشر على `main`، ثم أضف الوصف والوسوم من إعدادات About. أبقِ المستودع عاماً. لا ترفع مفاتيح API أو قواعد البيانات الخاصة. بعد التأكد من الاستضافة، أضف رابط الموقع إلى المستودع وبوابة المسابقة.

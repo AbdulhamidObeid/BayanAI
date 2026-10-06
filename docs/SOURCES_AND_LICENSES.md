@@ -1,4 +1,37 @@
-# Sources, tools and licenses · المصادر والتراخيص
+# المصادر والأدوات والتراخيص
+
+## العربية
+
+### سياسة المصادر
+
+سياسة الاسترجاع الحالية في `configs/trust_policy.json`، وسجل المصادر في `configs/sources_registry.json`، وقواعد المصطلحات في `configs/sharia_lexicon.json`. يحافظ الإصدار على فحوص النشر المعمول بها.
+
+| المصدر | الاستخدام |
+|---|---|
+| [موسوعة القرآن QuranEnc](https://quranenc.com/) | نصوص القرآن وترجماته وشروح الناشر المنشورة |
+| [موسوعة الأحاديث HadeethEnc](https://hadeethenc.com/) | نص الحديث ودرجته وتخريجه وشرحه المنشور |
+| [الجمهرة](https://islamic-content.com/) | المصطلحات والنصوص الأصلية للمقالات |
+| [الدرر السنية](https://dorar.net/) | المراجع المعتمدة والتفصيل العلمي |
+| [المكتبة الشاملة](https://shamela.ws/) | صفحات الكتب الأصلية المقروءة مع سياق الصفحة والطبعة |
+| [المستودع الدعوي](https://dawa.center/) | فهارس الناشر والمنشورات الدعوية المعتمدة |
+| [MCP المحتوى الإسلامي](https://mcp.islamiccontent.org/mcp) | اكتشاف محتوى الناشرين واسترجاعه |
+
+تُحدد بقية النطاقات والروابط المسموح بها في السياسة الحالية. إدراج مصدر لا يعني توفر كل مجموعاته أو صلاحية استخراج كل ملف PDF. يُميز النظام بين نص المصدر والشرح المولد. عند غياب الأدلة الكافية، يقيّد الإجابة أو يمتنع أو يحيل. لا تُستبدل ترجمة القرآن والحديث المنشورة بترجمة يولدها النموذج.
+
+### الحقوق والتراخيص
+
+- **الكود الأصلي:** ترخيص MIT، وحقوقه لعبد الحميد عبيد. لا يشمل نصوص الناشرين والأصول الخارجية.
+- **محتوى الناشرين:** تبقى حقوقه للناشرين والمؤلفين، ويخضع الاسترجاع والاقتباس وإعادة النشر لشروطهم. الكتب المحمّلة والذاكرة المؤقتة الخاصة غير مرفوعة. تحتفظ عينات الاختبارات بروابط مصادرها.
+- **الخط:** IBM Plex Sans Arabic عبر Google Fonts، بترخيص SIL Open Font License لدى المصدر. لا يتضمن المستودع ملفات الخط. [المشروع الأصلي](https://github.com/IBM/plex).
+- **الشعارات:** شعارات المنظمين والشركاء محفوظة لأصحابها، واستخدامها في قالب المسابقة لا يمنح ترخيصاً للعلامة التجارية.
+- **البرمجيات:** لكل مكوّن ترخيصه الخاص؛ تثبيت المتطلبات يوفر بيانات الترخيص، ولا يلغي ترخيص المشروع حقوق المكونات.
+- **PyMuPDF:** متاح بترخيص GNU AGPL v3 أو ترخيص تجاري. يجب الالتزام بشروطه عند النشر الشبكي وإعادة التوزيع. الكود الكامل للتطبيق متاح في المستودع العام، ولا يحل MIT محل التزامات هذا المكوّن. [ترخيص PyMuPDF](https://pymupdf.readthedocs.io/en/latest/about.html#license-and-copyright).
+
+لا يحتوي المستودع على مفاتيح API أو بيانات مستفيدين أو مفاتيح توقيع أو قواعد بيانات خاصة.
+
+---
+
+## English
 
 ## Source policy
 
@@ -26,7 +59,3 @@ Additional allowed publisher hosts and routes are listed in the active policy. A
 - **PyMuPDF:** offered under GNU AGPL v3 or commercial license. Respect its license for network deployment and redistribution. The complete source of this application is provided publicly; the MIT notice does not replace PyMuPDF’s obligations. [PyMuPDF licensing](https://pymupdf.readthedocs.io/en/latest/about.html#license-and-copyright).
 
 Keep upstream copyright notices and dependency licenses. The dependency list identifies the installed tools; installers supply their license metadata.
-
-## العربية
-
-يعتمد بَيان على سياسة المصادر المعتمدة في ملفات الإعدادات، ويعرض نص المصدر مستقلاً عن شرح الذكاء الاصطناعي. تبقى حقوق الكتب والنصوص والشعارات والخطوط لأصحابها. ترخيص MIT يخص الكود الأصلي فقط، ولا يمنح إعادة ترخيص محتوى الناشرين. لم تُرفع المفاتيح أو البيانات الخاصة أو الكتب المحمّلة أو قواعد البيانات إلى هذا المستودع.

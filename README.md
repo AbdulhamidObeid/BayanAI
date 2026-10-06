@@ -1,16 +1,140 @@
 # بَيان · Bayan AI
 
-**Trusted Islamic sources. An explanation shaped for the reader.**
-
 **مصادر إسلامية موثقة، وشرح يناسب السائل.**
 
-Bayan is a Python web application that retrieves accredited Islamic sources, understands the question, and creates a reviewed explanation suited to the reader’s knowledge, language and selected regional context. Published source passages remain separate from AI commentary, with direct citations.
+[العربية](#العربية) · [English](#english) · **[افتح بَيان](https://bayanai.onrender.com/)**
 
-**[Open Bayan · افتح بَيان](https://bayanai.onrender.com/)**
+## العربية
 
-[العربية](#العربية) · [English setup](#english-setup) · [Free hosting](docs/DEPLOYMENT.md) · [Sources and credits](docs/SOURCES_AND_LICENSES.md)
+بَيان تطبيق ويب يسترجع المصادر الإسلامية المعتمدة، ويحلل السؤال، ثم يقدم شرحاً مراجعاً يناسب مستوى السائل ولغته والجمهور الذي يختاره. تظهر نصوص المصادر المنشورة مستقلة عن شرح الذكاء الاصطناعي، مع إحالات وروابط مباشرة للتحقق.
 
-![Bayan website — a real source-grounded answer](docs/evidence/knowledge-beginner-website.jpg)
+![واجهة بَيان — إجابة حقيقية موثقة بالمصادر](docs/evidence/knowledge-beginner-website.jpg)
+
+### ماذا يقدم بَيان؟
+
+- **مستوى المعرفة:** شرح تأسيسي للمبتدئ، وتفصيل أعمق لمن لديه معرفة سابقة، وفق صياغة السؤال.
+- **التوطين الثقافي:** يكيّف مدخل الشرح للجمهور المختار، مع الحفاظ على المعنى الموثق.
+- **تعدد اللغات:** إجابة عربية؛ وإجابة إنجليزية مع نسخة عربية؛ ولغات الإخراج الأخرى المدعومة مع نسختين عربية وإنجليزية.
+- **مراجعة الأدلة:** يسترجع المصادر، ويفحص صلتها بالسؤال وتغطيتها له، ويراجع الشرح والمصطلحات.
+- **الفتوى الشخصية:** يحيل الحالات الفردية إلى المختصين.
+- **السجل:** يحفظ الأسئلة والإجابات في المتصفح نفسه، مع البحث والحذف.
+
+### ملفات المشروع والعرض
+
+| الملف | الرابط |
+|---|---|
+| العرض التقديمي المعتمد | [BayanAI_Pitch.pdf](docs/pitch_deck/BayanAI_Pitch.pdf) |
+| فيديو العرض المعتمد | [شاهد الفيديو في Google Drive](https://drive.google.com/drive/folders/1c98Vzm2Pys6o9yc2JVSXn22shmvREeG0) |
+| أدلة من الموقع الفعلي | [الصور ومصفوفة الاختبارات](docs/evidence/Bayan_Website_Proof.zip) |
+| شرح فئات الاختبار | [مصفوفة الاختبارات الاثني عشر](docs/evidence/TEST_MATRIX.md) |
+
+في التشغيل المحلي المسجل يوم 6 أكتوبر 2026، اجتاز بَيان **12 من 12 فئة و41 من 41 تحققاً**، باستخدام 24 مدخلاً مختلفاً ودون إعادة استخدام إجابات سابقة. هذه نتيجة تشغيل محلي، وليست درجة تحكيم أو اعتماداً شرعياً مستقلاً أو ضماناً لكل سؤال.
+
+### 1. تثبيت المشروع
+
+ثبّت **Python 3.12** وGit، ثم نفّذ:
+
+```bash
+git clone https://github.com/AbdulhamidObeid/BayanAI.git
+cd BayanAI
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+cp .env.example .env
+```
+
+على Windows، أنشئ البيئة باستخدام `py -3.12 -m venv .venv`، ثم فعّلها في PowerShell باستخدام `.venv\Scripts\Activate.ps1`، وانسخ الملف باستخدام `Copy-Item .env.example .env`.
+
+### 2. إعداد مفتاح Gemini 3.8 Flash
+
+1. افتح [صفحة المفاتيح في Google AI Studio](https://aistudio.google.com/apikey).
+2. سجّل الدخول، واختر أو أنشئ مشروع Google، ثم أنشئ مفتاح API.
+3. تأكد من إتاحة [Gemini 3.8 Flash](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash) في مشروعك، وراجع الحصة والفوترة.
+4. افتح ملف `.env` المحلي وضع مفتاحك:
+
+```dotenv
+GEMINI_API_KEY=your_private_key_here
+```
+
+معرّف النموذج المستخدم هو **`gemini-3.8-flash`**، وإعداداته في `configs/model_routing.json`. **لا ترفع المفتاح أو ملف `.env` إلى GitHub، ولا تضع المفتاح في كود المتصفح.** [تعليمات Google الرسمية](https://ai.google.dev/gemini-api/docs/api-key).
+
+من يشغّل نسخته من GitHub يستخدم مفتاحه الخاص. الموقع المستضاف يستخدم مفتاح الخادم المضبوط في إعدادات الاستضافة؛ الواجهة الحالية لا تتضمن إدخال مفتاح لكل زائر. استضافة الخادم مجانية ضمن حدود خطة Render، واستخدام Gemini يخضع لحصة وفوترة مشروع Google.
+
+### 3. تشغيل بَيان
+
+```bash
+python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000
+```
+
+افتح **http://127.0.0.1:8000/**. اختر لغة الإجابة والجمهور، واكتب السؤال ثم اضغط إرسال. مرجع API في `/docs`، وفحص الاتصال بمزود النموذج في `/api/health`.
+
+يتطلب التشغيل اتصالاً بالإنترنت للوصول إلى Google والناشرين المعتمدين. عند التشغيل الأول تُجلب الأدلة ويُبنى فهرس خاص، وقد تحتاج الإجابة إلى وقت للاسترجاع والمراجعة. لا يتضمن المستودع قواعد البيانات الخاصة أو الإجابات المخزنة؛ النسخة الجديدة تسترجع الأدلة من مصادرها.
+
+لتحديث نصوص المصادر الأصلية اختيارياً:
+
+```bash
+PYTHONPATH=. python scripts/build_source_index.py
+```
+
+### 4. تجربة نقاط القوة
+
+| التجربة | السؤال والإعدادات |
+|---|---|
+| مستوى المبتدئ | `أنا لا أعرف شيئاً عن الإسلام، ما معنى التوحيد؟ اشرح لي ببساطة.` — العربية، عام |
+| معرفة سابقة | `أعرف معنى التوحيد إجمالاً، فما الفرق بين توحيد الربوبية والألوهية والأسماء والصفات؟` — العربية، عام |
+| التوطين حسب الجمهور | `ما معنى الدعوة إلى الإسلام، وكيف نفهمها مع مبدأ عدم الإكراه في الدين؟` — العربية، قارن الجمهور العام والغربي |
+| تعدد اللغات | `لماذا يتجه المسلمون إلى الكعبة في الصلاة؟ هل يعبدون الكعبة؟` — اختر الإنجليزية للإجابة |
+
+### 5. التحقق والاختبارات
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m pytest tests/test_answer_presentation.py tests/test_api_health.py tests/test_query_jobs.py tests/test_terminology_preserver.py -q
+```
+
+للتقييم الكامل، استخدم `python scripts/evaluate_acceptance.py --mode offline` أو `--mode live`. الوضع المباشر يستدعي المزود فعلياً ويستهلك الحصة. الاختبارات دون اتصال تفحص عمل البرمجيات، ولا تعني اعتماد صحة المحتوى شرعياً. نتائج أي تشغيل مسجل تخص نسخة الكود والإعدادات التي استُخدمت فيه.
+
+### كيف يعمل النظام؟
+
+السؤال واللغة والجمهور ← فحص الحالات الشخصية وتصنيف A/B/C/D ← تحليل مستوى المعرفة وأجزاء السؤال ← استرجاع المصادر المعتمدة ← تقييم الأدلة والتغطية ← كتابة شرح مستند إلى الأدلة ومراجعته منفصلاً ← فحص المصطلحات وإبقاء نصوص الناشر دون تغيير ← إجابة موثقة وسجل في المتصفح.
+
+### دليل المجلدات
+
+| المسار | الغرض |
+|---|---|
+| `src/web/` | واجهة الويب، مسارات FastAPI وسجل المتصفح |
+| `src/core/` | تحليل السؤال، الاسترجاع، فحص الأدلة واستعادة الطلبات |
+| `src/agents/` | توطين الشرح وحماية المصطلحات |
+| `configs/` | سياسات المصادر والنماذج والمصطلحات والعرض |
+| `scripts/` | التشغيل، فهرسة النصوص الأصلية والتقييم |
+| `tests/` | اختبارات البرمجيات وعينات استجابات الناشرين |
+| `docs/` | الأدلة والعرض والفيديو والصور |
+| `render.yaml` | إعداد استضافة Python مجانية من فرع `main` |
+
+### الخصوصية والتشغيل
+
+يبقى سجل الأسئلة والإجابات في المتصفح حتى يحذفه المستخدم. يحتفظ الخادم بالطلبات لاستعادة المعالجة، وبالنتائج الخاصة لمدة ساعة بعد اكتمالها. تُنشأ المفاتيح الخاصة وملفات التخزين والفهرسة في `data/private/` أو المسار `BAYAN_PRIVATE_STORE`، ولا تُنشر في GitHub.
+
+تتوقف خدمة Render المجانية بعد الخمول، وقد يتأخر أول فتح للموقع. ملفات الخادم مؤقتة وتُفقد عند إعادة التشغيل أو النشر؛ يشمل ذلك الطوابير والذاكرة المؤقتة ومفتاح توقيع إيصالات المشاركة. يبقى سجل المتصفح في متصفحه. يتطلب حفظ سجلات الخادم طويل الأجل تخزيناً دائماً.
+
+بَيان أداة معلومات مبنية على المصادر وتستخدم الذكاء الاصطناعي، ويُحيل الفتاوى الفردية إلى المختصين. البصمة الرقمية تثبت سلامة المحتوى من التغيير، ولا تثبت صحته الشرعية.
+
+### المصادر والتراخيص
+
+الكود الأصلي مرخص وفق [MIT](LICENSE). تبقى حقوق نصوص الناشرين والخطوط والشعارات والمكونات الخارجية لأصحابها، ولكل منها شروطه. [المصادر والتراخيص](docs/SOURCES_AND_LICENSES.md) · [دليل GitHub](docs/GITHUB_GUIDE.md) · [دليل الاستضافة](docs/DEPLOYMENT.md).
+
+إدارة المشروع: [عبد الحميد عبيد](https://github.com/AbdulhamidObeid).
+
+---
+
+## English
+
+**Trusted Islamic sources. An explanation shaped for the reader.**
+
+Bayan retrieves accredited Islamic sources, analyses the question, and produces a reviewed explanation suited to the reader’s knowledge, requested language and selected audience. Published source passages remain separate from AI commentary, with direct citations.
+
+**[Open Bayan](https://bayanai.onrender.com/)**
 
 ## What Bayan does
 
@@ -25,12 +149,12 @@ Bayan is a Python web application that retrieves accredited Islamic sources, und
 
 | Deliverable | File |
 |---|---|
-| Pitch deck | [PowerPoint](docs/pitch/Bayan_Final_Pitch.pptx) · [PDF](docs/pitch/Bayan_Final_Pitch.pdf) |
-| Demo: 1 minute 56 seconds | [Full HD MP4](docs/demo/Bayan_Demo_1080p.mp4) · [Arabic speaking script](docs/demo/SCRIPT.md) |
+| Approved pitch deck | [BayanAI_Pitch.pdf](docs/pitch_deck/BayanAI_Pitch.pdf) |
+| Approved demo video | [Watch on Google Drive](https://drive.google.com/drive/folders/1c98Vzm2Pys6o9yc2JVSXn22shmvREeG0) |
 | Real website evidence | [Screenshots and matrix](docs/evidence/Bayan_Website_Proof.zip) |
 | Test explanations | [12-category matrix](docs/evidence/TEST_MATRIX.md) |
 
-The recorded local evaluation on 6 October 2026 passed **12/12 example categories and 41/41 checks**, using 24 unique inputs and previous-answer reuse disabled. This is a recorded local result, not an independent scholarly certification or a guarantee for every question. The video shows real website captures and labelled saved comparisons.
+The recorded local evaluation on 6 October 2026 passed **12/12 example categories and 41/41 checks**, using 24 unique inputs and previous-answer reuse disabled. This is a recorded local result, not an independent scholarly certification or a guarantee for every question.
 
 ## English setup
 
@@ -90,23 +214,6 @@ python -m pytest tests/test_answer_presentation.py tests/test_api_health.py test
 ```
 
 For the complete evaluation, use `python scripts/evaluate_acceptance.py --mode offline` or `--mode live`. Live evaluation uses real provider calls and quota. Offline tests verify software contracts and do not certify religious correctness. Recorded results belong to their original code/configuration snapshot.
-
-## العربية
-
-بَيان تطبيق ويب يسترجع المصادر الإسلامية المعتمدة، ويحلل السؤال، ثم يقدم شرحاً مراجعاً يناسب مستوى السائل ولغته وسياقه الثقافي. تظهر نصوص المصادر المنشورة مستقلة عن شرح الذكاء الاصطناعي، مع روابط للتحقق.
-
-### التثبيت والتشغيل
-
-1. ثبّت **Python 3.12** وGit.
-2. نفّذ أوامر التثبيت الواردة في قسم English setup أعلاه.
-3. أنشئ مفتاح API من [Google AI Studio](https://aistudio.google.com/apikey)، وتأكد من إتاحة **Gemini 3.8 Flash** والحصة والفوترة في مشروعك.
-4. انسخ `.env.example` إلى `.env`، ثم ضع مفتاحك في `GEMINI_API_KEY`.
-5. نفّذ أمر التشغيل أعلاه، وافتح **http://127.0.0.1:8000/**.
-6. اختر لغة الإجابة والجمهور، واكتب السؤال، ثم اضغط إرسال. يحتاج التشغيل الأول إلى جلب الأدلة، ويحتاج توليد الإجابة إلى مراجعة المصادر والشرح.
-
-**لا ترفع مفتاح API أو ملف `.env` إلى GitHub.** ضع المفتاح في إعدادات Environment عند الاستضافة. معرّف النموذج الحالي هو `gemini-3.8-flash` في `configs/model_routing.json`.
-
-[دليل الاستضافة المجانية](docs/DEPLOYMENT.md) · [دليل GitHub](docs/GITHUB_GUIDE.md) · [المصادر والتراخيص](docs/SOURCES_AND_LICENSES.md)
 
 ## How it works
 

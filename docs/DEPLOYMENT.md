@@ -1,4 +1,59 @@
-# Free hosting from GitHub · الاستضافة المجانية
+# الاستضافة المجانية من GitHub
+
+## العربية
+
+**الموقع المباشر: https://bayanai.onrender.com/**
+
+تم التحقق يوم 6 أكتوبر 2026 من الصفحة الرئيسية والاتصال بـGemini. نجحت إجابة عربية للمبتدئ بإحالتين إلى موسوعة الأحاديث، واستغرقت 133.9 ثانية. نجح استرجاع آية برقمها، وفتح رابطا الحديث برمز HTTP 200. هذا تحقق من الاستضافة، وليس إعادة تشغيل لجميع اختبارات التقييم.
+
+بَيان يحتاج خادم Python. لا تكفي GitHub Pages لتشغيل FastAPI. يحدد `render.yaml` خدمة ويب على خطة **Free** مرتبطة بفرع `main`.
+
+### خطوات النشر
+
+1. ارفع الإصدار النظيف إلى [المستودع العام](https://github.com/AbdulhamidObeid/BayanAI).
+2. افتح [Render](https://dashboard.render.com/)، ثم **New → Blueprint** واربط المستودع، أو اختر Web Service باستخدام رابطه العام.
+3. اختر `main` وPython 3 وخطة **Free**.
+4. أمر البناء:
+
+```bash
+pip install -r requirements.txt
+```
+
+5. أمر التشغيل:
+
+```bash
+python -m uvicorn src.web.app:app --host 0.0.0.0 --port $PORT --workers 1
+```
+
+6. أضف في **Environment**:
+
+| الاسم | القيمة |
+|---|---|
+| `PYTHON_VERSION` | `3.12.12` |
+| `BAYAN_PRIVATE_STORE` | `/tmp/bayan-private` |
+| `GEMINI_API_KEY` | مفتاحك الخاص من Google AI Studio، كقيمة سرية |
+
+لا تضع المفتاح في GitHub أو YAML أو الصور. اترك بيانات إدارة المصطلحات فارغة إن لم تحتاجها.
+
+7. اضغط النشر، وانتظر **Live**، ثم انسخ الرابط الفعلي `https://…onrender.com`.
+8. افتح الرابط في متصفح جديد، وتحقق من اتصال API وإجابة عربية والتوطين والإخراج الإنجليزي وروابط المصادر.
+9. أضف الرابط المتحقق منه إلى المستودع وبوابة المسابقة.
+
+### ما يجب معرفته
+
+- استضافة الخادم مجانية ضمن حدود الخطة؛ استهلاك Gemini يخضع لحصة وفوترة مشروع Google.
+- تتوقف الخدمة المجانية بعد 15 دقيقة دون زيارات، ويحتاج أول فتح إلى وقت لتشغيلها مجدداً.
+- ملفات الخادم مؤقتة؛ إعادة التشغيل أو النشر أو التوقف تفقد الطوابير والذاكرة المؤقتة ومفاتيح توقيع المشاركة. يبقى سجل المتصفح في متصفحه.
+- لا تُرفع قواعد المصادر الخاصة إلى GitHub؛ تجلب النسخة الجديدة الأدلة من الناشرين، وقد تختلف سرعتها عن العرض ذي المصادر المخزنة.
+- استخدم عملية واحدة؛ يشغل التطبيق العمال في الخلفية. ذاكرة الخدمة المجانية 512 ميغابايت، وتحتاج متابعة أثناء جلب المحتوى.
+- مسار فحص الاستضافة `/` لا يستهلك طلبات Gemini. المسار `/api/health` يفحص اتصال المزود.
+- عند تعديل التوثيق فقط، يمكن وضع `[skip render]` في رسالة Git لتجنب إعادة نشر الخادم تلقائياً.
+
+[توثيق Render الرسمي](https://render.com/docs/web-services) · [حدود الخطة المجانية](https://render.com/docs/free) · [إعداد Blueprint](https://render.com/docs/blueprint-spec).
+
+---
+
+## English
 
 Bayan requires a Python backend. GitHub Pages serves static files and cannot run this FastAPI application. The provided `render.yaml` selects a **Free** Render web service, connected to `main`.
 
@@ -27,16 +82,3 @@ Verified on 6 October 2026: homepage HTTP 200, Gemini connected, a real beginner
 - Fresh deployment has no private local source cache; evidence is fetched and indexed again. First-generation performance may differ from the recorded warm-source demo.
 - Use one process; background question workers are started by the application. A free instance has 512 MB RAM; monitor memory while fetching publisher content.
 - The homepage health path avoids consuming Gemini quota during Render’s liveness probes. `/api/health` checks provider connectivity.
-
-## العربية
-
-1. ارفع المشروع إلى GitHub على فرع `main`.
-2. سجّل الدخول إلى Render، واربط المستودع عبر Blueprint أو Web Service.
-3. اختر الخطة **Free**، واستخدم أوامر البناء والتشغيل أعلاه.
-4. أضف مفتاح Gemini في Environment كقيمة سرية؛ لا تضعه في GitHub.
-5. انتظر ظهور **Live**، ثم افتح الرابط واختبر إجابة حقيقية والمصادر.
-6. أضف الرابط الذي تم التحقق منه إلى GitHub وبوابة المسابقة.
-
-الاستضافة المجانية قد تتوقف عند الخمول وتفقد ملفات الخادم عند إعادة التشغيل. تبقى الإجابات في سجل متصفح المستخدم. استخدام Gemini يخضع لحصة وفوترة مشروع Google.
-
-Official references: [Render web services](https://render.com/docs/web-services), [Free services](https://render.com/docs/free), [Blueprint configuration](https://render.com/docs/blueprint-spec).
