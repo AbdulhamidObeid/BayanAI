@@ -1,0 +1,90 @@
+{
+  "poll_seconds": 1,
+  "lease_seconds": 120,
+  "heartbeat_seconds": 10,
+  "result_retention_seconds": 3600,
+  "retry_initial_seconds": 2,
+  "retry_max_seconds": 60,
+  "model_attempt_max_seconds": 120,
+  "transport_timeout_ms": 15000,
+  "messages": {
+    "ar": {
+      "queued": "تم استلام سؤالك، وهو بانتظار بدء المعالجة.",
+      "running": "",
+      "retrying": "الخدمة متأخرة مؤقتًا. سؤالك محفوظ وسنعيد المحاولة تلقائيًا.",
+      "reconnecting": "جارٍ إعادة الاتصال لمتابعة طلبك نفسه…",
+      "expired": "انتهت مدة الاحتفاظ بهذه النتيجة. يمكنك إرسال السؤال من جديد.",
+      "privacy": "هذا نظام ذكاء اصطناعي. تُحفظ أسئلتك وإجاباتها تلقائيًا في سجل هذا المتصفح حتى تحذفها. يمكن لمن يستخدم المتصفح نفسه الاطلاع عليها. يحتفظ الخادم بالطلب لاستعادة المعالجة، وبالنتيجة الخاصة لمدة ساعة بعد اكتمالها."
+    },
+    "en": {
+      "queued": "Your question is saved and waiting to start.",
+      "running": "",
+      "retrying": "The service is temporarily delayed. Your question is saved and will retry automatically.",
+      "reconnecting": "Reconnecting to follow the same request…",
+      "expired": "This result is no longer retained. You can submit the question again.",
+      "privacy": "This is an AI system. Questions and answers are saved automatically in this browser’s History until you delete them. Anyone using this browser can view them. The server keeps requests for recovery and completed private results for one hour."
+    }
+  },
+  "history": {
+    "messages": {
+      "ar": {
+        "ask": "اسأل بيان",
+        "title": "السجل",
+        "subtitle": "أسئلتك وإجاباتك، في مكان واحد.",
+        "search": "ابحث بكلمة في الأسئلة والإجابات…",
+        "newest": "الأحدث أولًا",
+        "oldest": "الأقدم أولًا",
+        "clear": "مسح السجل",
+        "confirmClear": "حذف جميع الأسئلة والإجابات المحفوظة في هذا المتصفح؟",
+        "delete": "حذف",
+        "open": "عرض الإجابة",
+        "empty": "سجلك يبدأ بسؤال",
+        "emptyHint": "ستجد هنا كل سؤال وإجابته تلقائيًا.",
+        "noMatches": "لا توجد نتائج مطابقة",
+        "noMatchesHint": "جرّب كلمة أخرى من السؤال أو الإجابة.",
+        "queued": "قيد المعالجة",
+        "completed": "مكتمل",
+        "error": "تعذرت الإجابة",
+        "saved": "إجابة محفوظة",
+        "reused": "أُعيد استخدام إجابة موثقة",
+        "unavailable": "تعذر حفظ السجل في هذا المتصفح. تحقق من السماح بالتخزين والمساحة المتاحة.",
+        "pending": "الإجابة لم تكتمل بعد.",
+        "back": "العودة إلى السجل",
+        "interrupted": "طلب سابق غير مكتمل",
+        "today": "اليوم",
+        "yesterday": "أمس",
+        "close": "إغلاق",
+        "openOnSearch": "فتح في صفحة البحث"
+      },
+      "en": {
+        "ask": "Ask Bayan",
+        "title": "History",
+        "subtitle": "Every question. Every answer. One place.",
+        "search": "Search words in questions and answers…",
+        "newest": "Newest first",
+        "oldest": "Oldest first",
+        "clear": "Clear history",
+        "confirmClear": "Delete all saved questions and answers in this browser?",
+        "delete": "Delete",
+        "open": "View answer",
+        "empty": "Your history starts with a question",
+        "emptyHint": "Every question and its answer will appear here automatically.",
+        "noMatches": "No matching results",
+        "noMatchesHint": "Try another word from the question or answer.",
+        "queued": "Processing",
+        "completed": "Completed",
+        "error": "Could not answer",
+        "saved": "Saved answer",
+        "reused": "Verified answer reused",
+        "unavailable": "History could not be saved in this browser. Check storage permissions and available space.",
+        "pending": "This answer is not complete yet.",
+        "back": "Back to history",
+        "interrupted": "Earlier unfinished request",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "close": "Close",
+        "openOnSearch": "Open on search page"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "max_pdf_bytes": 30000000,
+  "max_pdf_pages": 3000,
+  "artifact_directory": "data/source_documents",
+  "publications": {
+    "bayyanat_2024_ar": {
+      "title": "بينات: أسئلة وأجوبة عن الإسلام",
+      "publisher": "مركز أصول",
+      "year": 2024,
+      "language": "ar",
+      "landing_url": "https://dawa.center/file/7937",
+      "pdf_url": "https://dawa.center/storage/files/AMYj6DfmHlSnZ766Zz0VlBNwmYtdwhAl31XMETlT.pdf",
+      "observed_sha256": "619b7201833419b8fbf86c463208462b9a2a7f02ad2306a2667490f3b410ad4e",
+      "metadata_checked_at": "2026-10-05"
+    }
+  }
+}

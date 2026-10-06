@@ -1,0 +1,25 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+# Generated private records, caches and downloaded publications
+data/*
+!data/.gitkeep
+# Local/editor files
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+*.log
+*.tmp

@@ -1,0 +1,11 @@
+{
+  "request_pattern": "\\b(recite|recitation|entire surah|full surah|whole chapter|complete surah)\\b|اقرأ|سورة كاملة|قراءة سورة|تلاوة سورة|récit|recitar",
+  "chapter_scope_pattern": "\\b(surah|sura|chapter|sourate|capítulo)\\b|سورة|سوره",
+  "api_template": "{api}/translation/sura/{translation_key}/{surah}",
+  "verse_selector": ".panel-body[data-aya]",
+  "arabic_selector": ".aya_text",
+  "translation_selector": ".ayah_translation_block .ttc",
+  "name_match_ratio": 0.85,
+  "max_chapters": 2,
+  "description": "Chapter names from the existing publisher navigation index discover full QuranEnc surah records. Complete API verse sequences are checked against the live publisher page; no generated or truncated scripture."
+}

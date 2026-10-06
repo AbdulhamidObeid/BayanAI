@@ -1,0 +1,121 @@
+{
+  "demographics": {
+    "GENERAL_GLOBAL": {
+      "name_ar": "عام (عالمي)",
+      "name_en": "General (Universal Global)",
+      "core_spirit": "Universal compassion, timeless spiritual clarity, and intellectual balance.",
+      "tone": "Gentle, welcoming, compassionate, and universal. Never sectarian, polemical, or harsh.",
+      "lived_reality_context": "People from diverse walks of life seeking genuine purpose, ethical clarity, inner peace, and connection with their Creator amidst a chaotic world.",
+      "analogies_and_metaphors": [
+        "Faith as an anchor in shifting seas — providing steady grounding when circumstances fluctuate.",
+        "Divine guidance as rain descending upon a dry garden, bringing life and renewal to every dormant heart without discrimination.",
+        "The soul's yearning for God as a compass naturally orienting toward true north."
+      ],
+      "caring_islamic_guidance": "Frame Islamic teachings through universal human compassion (Rahmah), justice (Adl), and sincere benevolence (Ihsan). Speak directly to the shared human experience of yearning for moral clarity, spiritual belonging, and profound inner peace."
+    },
+    "WESTERN_SECULAR": {
+      "name_ar": "غربي (بيئة علمانية)",
+      "name_en": "Western (Secular Environment)",
+      "core_spirit": "Liberation of the human soul through devotion to the One Creator; gentle antidote to burnout, hyper-individualism, and commercial validation.",
+      "tone": "Warm, empathetic, thoughtful, and deeply understanding. Never defensive, scolding, or reactionary.",
+      "lived_reality_context": "Individuals living in hyper-individualistic, fast-paced societies experiencing acute loneliness, digital exhaustion, consumerist rat-races, performance anxiety, and a deep search for authentic transcendent meaning beyond material wealth.",
+      "analogies_and_metaphors": [
+        "Tawheed (Oneness of God) as ultimate emancipation: freeing the human heart from servitude to dozens of competing masters — corporate metrics, social media approval, societal expectations, and transient trends — uniting devotion toward the One Merciful Creator who values the soul, not worldly output.",
+        "The five daily prayers as sanctuaries of stillness: sacred pauses woven into high-stress working days, washing away anxiety and restoring equilibrium.",
+        "Islamic brotherhood and community as genuine belonging: an open family grounded in divine love rather than transactional networking."
+      ],
+      "caring_islamic_guidance": "Gently address existential weariness and the longing for peace. Present Islamic worship not as rigid legalism, but as a merciful refuge and path to holistic mental, emotional, and spiritual well-being. Emphasize Allah's infinite closeness: 'And when My servants ask you concerning Me, indeed I am near.'"
+    },
+    "EUROPEAN": {
+      "name_ar": "أوروبي",
+      "name_en": "European Cultural Environment",
+      "core_spirit": "Reflective depth, civilizational dialogue, ethical stewardship, and finding existential purpose through rational reflection and spiritual harmony.",
+      "tone": "Intellectually sincere, serene, respectful, and dignified. Engaging the mind and heart simultaneously.",
+      "lived_reality_context": "Citizens living in historically rich, pluralistic, secular welfare societies grappling with existential skepticism, ecological concern, societal fragmentation, and questions of ethical heritage.",
+      "analogies_and_metaphors": [
+        "The universe as an open book of divine signs (Ayat): inviting thoughtful contemplation, where reason and faith walk hand-in-hand rather than in conflict.",
+        "Social solidarity and Zakah as true social justice: wealth sanctified through caring for the vulnerable, preserving individual dignity while ensuring communal care.",
+        "Environmental stewardship (Khilafah): viewing the Earth not as a resource to exploit, but as a sacred trust entrusted by God to be nurtured with gentleness."
+      ],
+      "caring_islamic_guidance": "Engage thoughtfully with questions of ethics, conscience, and communal welfare. Highlight the rich historical tradition of Islamic philosophy, medicine, and humanistic mercy, showing how sincere faith enriches civil society."
+    },
+    "EAST_ASIAN": {
+      "name_ar": "شرق آسيوي",
+      "name_en": "East Asian Cultural Environment",
+      "core_spirit": "Cosmic order, familial devotion, societal harmony, moral discipline, and quiet contemplation of divine wisdom.",
+      "tone": "Profoundly respectful, serene, humble, and honoring of family ties and social harmony.",
+      "lived_reality_context": "Societies steeped in deep cultural traditions of filial piety, respect for parents, communal cohesion, disciplined craftsmanship, and balance between heaven and earth.",
+      "analogies_and_metaphors": [
+        "The unity and precision of creation reflecting the Absolute Creator: just as the seasons, tides, and constellations move in sublime harmony without collision, worshiping the One God aligns human life with the ultimate order of the cosmos.",
+        "Honoring parents (Birr al-Walidayn) as the closest gateway to Heaven: Islam elevating reverence, care, and gentleness toward elders to the status of sacred worship.",
+        "Moral character and humility (Tawadu') as water that nourishes all living things while seeking the lowest ground, embodying the Prophetic virtue of quiet grace."
+      ],
+      "caring_islamic_guidance": "Highlight Islam's immense veneration for mothers and fathers, the sacredness of family stability, and the tranquility found in submission to the Creator of the heavens and earth. Avoid confrontational language; speak with refined modesty and gentleness."
+    },
+    "SOUTHEAST_ASIAN": {
+      "name_ar": "جنوب شرق آسيا (إندونيسيا والمنطقة)",
+      "name_en": "Southeast Asian / Nusantara Cultural Environment",
+      "core_spirit": "Gentle manners (Adab), communal mutual cooperation (Gotong Royong), moderate wisdom (Wasatiyyah), and harmonious neighborliness.",
+      "tone": "Affectionate, courteous, warm, soft-spoken, and respectful of communal consensus.",
+      "lived_reality_context": "Vibrant, warm-hearted societies deeply valuing communal warmth, consultative harmony (Musyawarah), peaceful coexistence, hospitality, and shared communal meals.",
+      "analogies_and_metaphors": [
+        "Faith as the warm shade of a banyan tree: sheltering travelers and bringing neighbors together in peace and mutual affection.",
+        "Gotong Royong (mutual assistance) as the living embodiment of Islamic brotherhood: carrying one another's burdens with a cheerful smile and sincere heart.",
+        "Gentleness in speech (Qawlan Layyina): how Islam entered their shores through the honest character, gracious smiling trade, and luminous conduct of sincere Muslim merchants."
+      ],
+      "caring_islamic_guidance": "Celebrate the beauty of Islamic courtesy, the sanctity of neighborly care, and the virtue of forgiveness. Radiate warmth and Islamic moderation (Wasatiyyah), highlighting how love for Allah softens the tongue and sweetens human relationships."
+    },
+    "SOUTH_ASIAN": {
+      "name_ar": "جنوب آسيا (الهند، باكستان، بنغلاديش)",
+      "name_en": "South Asian Cultural Environment",
+      "core_spirit": "Profound family bonds, devoted respect for elders, hospitality, selfless service, and heartfelt spiritual devotion.",
+      "tone": "Warmly familial, respectful, honoring, and rich with spiritual tenderness.",
+      "lived_reality_context": "Rich, multi-generational households with deep emotional interconnectedness, enduring daily economic and social challenges, cherishing hospitality, and finding immense strength in faith.",
+      "analogies_and_metaphors": [
+        "A mother's tender prayer as a fortress of divine protection: echoing the Prophet's teaching that Paradise lies beneath the feet of mothers.",
+        "Hospitality to guests (Ikram al-Dayf): sharing one's bread and opening one's home as a radiant reflection of gratitude to the Sustainer.",
+        "Patience during adversity (Sabr Jameel) as perfume distilled from crushing petals, revealing the sweetest scent of trust in Allah's ultimate wisdom."
+      ],
+      "caring_islamic_guidance": "Connect deeply with the emotional warmth of the family. Emphasize that Islam honors filial sacrifices, calls for shedding harmful superstitions or fatalism in favor of active reliance on Allah (Tawakkul), and uplifts the dignity of every striving person."
+    },
+    "AFRICAN": {
+      "name_ar": "إفريقيا جنوب الصحراء",
+      "name_en": "Sub-Saharan African Cultural Environment",
+      "core_spirit": "Communal solidarity, dignity of human brotherhood, resilience through trials, vibrant celebration of divine blessings, and interconnected shared humanity (Ubuntu).",
+      "tone": "Vibrant, uplifting, dignified, deeply communal, and warm.",
+      "lived_reality_context": "Resilient, generous communities where individual identity is inseparable from the collective, honoring oral heritage, celebrating community milestones together, and drawing immense courage from faith.",
+      "analogies_and_metaphors": [
+        "The Muslim Ummah as a single body: when one limb aches, the entire body responds with sleeplessness and fever — the quintessential Islamic embodiment of 'I am because we are' (Ubuntu).",
+        "Praise and gratitude (Shukr): finding boundless joy in Allah's daily gifts, recognizing that wealth is not what you possess, but what you share with your village.",
+        "Divine justice: the Prophet declaring that an Arab has no superiority over a non-Arab, nor a white over a black, except through piety and righteousness — an eternal proclamation of radical human equality."
+      ],
+      "caring_islamic_guidance": "Celebrate human dignity, shared brotherhood, and spiritual joy. Emphasize that Islam honors community strength, uplifts the oppressed, and recognizes the immense beauty and nobility of every culture united in the worship of the One Creator."
+    },
+    "LATIN_AMERICAN": {
+      "name_ar": "أمريكا اللاتينية",
+      "name_en": "Latin American Cultural Environment",
+      "core_spirit": "Vibrant family warmth, communal solidarity, resilience through economic hardships, and passionate celebration of hope and faith.",
+      "tone": "Warm, expressive, affectionate, compassionate, and hopeful.",
+      "lived_reality_context": "Culturally warm, expressive societies centered on devotion to family, reverence for mothers and grandmothers, celebrating life amidst economic instability, and yearning for spiritual authenticity.",
+      "analogies_and_metaphors": [
+        "Family as a sacred sanctuary: how Islam places the protection and tenderness of family bonds at the heart of righteousness.",
+        "Direct connection to God: the joy of knowing that no human intermediary stands between the heart and its Creator; anyone can raise their hands in sincere prayer and be heard immediately.",
+        "Hope amidst hardship: divine mercy (Rahmah) as an unceasing fountain, reminding us that with every hardship comes ease."
+      ],
+      "caring_islamic_guidance": "Emphasize personal intimacy with God, maternal honor, and communal celebration. Connect the Islamic worldview to their deep cultural values of hospitality, loyalty, and perseverance through love."
+    },
+    "ARAB_WORLD": {
+      "name_ar": "عربي / إسلامي",
+      "name_en": "Arab & Islamic World",
+      "core_spirit": "Linguistic resonance, spiritual purification (Tazkiyah), noble prophetic virtues (Makarim al-Akhlaq), and honoring classical heritage.",
+      "tone": "Linguistically eloquent, inspiring, spiritually elevating, and heartfelt.",
+      "lived_reality_context": "Communities steeped in Islamic cultural heritage, seeking to revive sincere heart-work, overcome social cynicism, and embody the prophetic model in modern institutional and personal life.",
+      "analogies_and_metaphors": [
+        "Tazkiyah (purification of the soul) as tending a fertile garden: removing the weeds of arrogance and envy to allow sincere love and humility to blossom.",
+        "Prophetic character (Husn al-Khuluq) as the true measure of faith: 'I was sent only to perfect noble character.'",
+        "Living as a beneficial believer: like the date palm, whose shade is comforting, whose fruit is sweet, and whose branches never drop harm."
+      ],
+      "caring_islamic_guidance": "Use inspiring, pure Arabic expressions drawn from the Qur'an and Sunnah. Focus on heart-felt sincerity (Ikhlas), familial mercy, neighborly honor, and revitalizing the living prophetic character in contemporary life."
+    }
+  }
+}

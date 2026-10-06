@@ -1,0 +1,13 @@
+{
+  "route_pattern": "/(?P<language>[a-z]{2,3})/content/(?P<id>[0-9]+)",
+  "language": "ar",
+  "language_selector": "main .section_header_bg .col-lg-8 a[href]",
+  "language_label": "أعرض المحتوى باللغة العربية",
+  "container_selector": "main div.border-bottom",
+  "label_selector": "button span.hover_black_bold",
+  "original_label": "الوصف المفصل",
+  "paragraph_selector": "p[id]",
+  "paragraph_id_pattern": "p([0-9]+)",
+  "minimum_paragraphs": 3,
+  "description": "Observed complete structured publisher article body with sequential paragraph IDs and exact title. Summaries, catalog descriptions and book landing metadata are excluded."
+}

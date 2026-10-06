@@ -1,0 +1,3031 @@
+{
+  "version": "1.1.0",
+  "source_standards": [
+    "موسوعة مفردات المحتوى الإسلامي - الجمهرة (islamic-content.com/dictionary)",
+    "المرجعية والحزمة العلمية والبيانات - تحدي الذكاء الاصطناعي في خدمة المحتوى الإسلامي (مؤسسة باذل)",
+    "مجمع الملك فهد لطباعة المصحف الشريف",
+    "مجمع الفقه الإسلامي الدولي",
+    "المعجم الفقهي الموحد - الإيسيسكو",
+    "موسوعة الأحاديث النبوية المترجمة (HadeethEnc)"
+  ],
+  "terms": {
+    "taqwa": {
+      "arabic": "التقوى",
+      "root": "وقي",
+      "transliteration": "Taqwā",
+      "translations": {
+        "en": {
+          "canonical": "Taqwā (mindful God-consciousness)",
+          "approved_gloss": "the conscious vigilance of heart that fulfills Allah's commands and avoids His prohibitions out of reverent love and awe",
+          "forbidden_substitutes": [
+            "fear",
+            "scare",
+            "terror",
+            "dread",
+            "panic",
+            "blind fear"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bfear of (?:God|Allah)\\b",
+            "(?i)\\bterror of (?:God|Allah)\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Taqwā (la piété vigilante et la conscience d'Allah)",
+          "approved_gloss": "la vigilance du cœur qui accomplit les ordres d'Allah et s'écarte de Ses interdits par amour et révérence",
+          "forbidden_substitutes": [
+            "peur",
+            "terreur",
+            "crainte servile",
+            "frayeur"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bpeur d'(?:Allah|Dieu)\\b",
+            "(?i)\\bterreur d'(?:Allah|Dieu)\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Taqwā (la conciencia devota de Dios)",
+          "approved_gloss": "la vigilancia consciente del corazón que cumple los mandatos de Dios y evita Sus prohibiciones con reverente amor",
+          "forbidden_substitutes": [
+            "miedo",
+            "terror",
+            "temor ciego",
+            "pánico"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmiedo a (?:Dios|Alá)\\b",
+            "(?i)\\btemor ciego a (?:Dios|Alá)\\b"
+          ]
+        },
+        "id": {
+          "canonical": "Takwa (kesadaran dan kepatuhan penuh kepada Allah)",
+          "approved_gloss": "menjalankan segala perintah Allah dan menjauhi segala larangan-Nya dengan rasa cinta dan takut yang benar",
+          "forbidden_substitutes": [
+            "ketakutan buta",
+            "kepanikan religius"
+          ]
+        },
+        "tr": {
+          "canonical": "Takva (Allah bilinci ve sorumluluk duyarlılığı)",
+          "approved_gloss": "Allah'ın emirlerine uyup yasaklarından kaçınarak O'nun rızasını gözetme ve kalbi uyanıklık hali",
+          "forbidden_substitutes": [
+            "kör korku",
+            "dehşet"
+          ]
+        },
+        "de": {
+          "canonical": "Taqwā (achtsame Gottesfurcht und Gottesbewusstsein)",
+          "approved_gloss": "das bewusste Hütungsgefühl des Herzens, das Allahs Gebote erfüllt und Seine Verbote aus ehrfürchtiger Liebe meidet",
+          "forbidden_substitutes": [
+            "blinde Angst",
+            "Panik vor Gott",
+            "Terror"
+          ]
+        }
+      }
+    },
+    "tawheed": {
+      "arabic": "التوحيد",
+      "root": "وحد",
+      "transliteration": "Tawḥīd",
+      "translations": {
+        "en": {
+          "canonical": "Tawḥīd (the exclusive Oneness of Allah)",
+          "approved_gloss": "the singular exclusivity of Allah in His Lordship, divine worship, and unique Names and Attributes, not reducible to mere numerical oneness",
+          "forbidden_substitutes": [
+            "monotheism",
+            "unitarianism",
+            "singularity",
+            "generic oneness"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bgeneric monotheism\\b",
+            "(?i)\\bsimple monotheism\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Tawḥīd (l'Unicité exclusive d'Allah)",
+          "approved_gloss": "l'unicité absolue d'Allah dans Sa seigneurie, Son adoration exclusive, et Ses Noms et Attributs sublimes",
+          "forbidden_substitutes": [
+            "monothéisme général",
+            "unitarisme"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmonothéisme générique\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Tawḥīd (la Unicidad exclusiva de Dios)",
+          "approved_gloss": "la unicidad absoluta de Dios en Su señorío, Su adoración exclusiva y Sus Nombres y Atributos perfectos",
+          "forbidden_substitutes": [
+            "monoteísmo genérico",
+            "unitarismo"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmonoteísmo genérico\\b"
+          ]
+        },
+        "id": {
+          "canonical": "Tauhid (Keesaan mutlak Allah)",
+          "approved_gloss": "mengesakan Allah secara mutlak dalam Rububiyah, Uluhiyah, serta Asma dan Sifat-Nya yang sempurna",
+          "forbidden_substitutes": [
+            "monoteisme generik",
+            "kesatuan sederhana"
+          ]
+        },
+        "tr": {
+          "canonical": "Tevhid (Allah'ın mutlak birliği)",
+          "approved_gloss": "Allah'ı rububiyetinde, uluhiyetinde, isim ve sıfatlarında tek ve eşsiz kabul etmek",
+          "forbidden_substitutes": [
+            "genel tektanrıcılık",
+            "basit teklik"
+          ]
+        },
+        "de": {
+          "canonical": "Tawḥīd (die ausschließliche Einheit und Einzigartigkeit Allahs)",
+          "approved_gloss": "die absolute Einzigkeit Allahs in Seiner Herrschaft, Seiner alleinigen Anbetung und Seinen vollkommenen Namen und Eigenschaften",
+          "forbidden_substitutes": [
+            "abstrakter Monotheismus",
+            "einfache Einzigkeit"
+          ]
+        }
+      }
+    },
+    "shariah": {
+      "arabic": "الشريعة",
+      "root": "شرع",
+      "transliteration": "Sharī‘ah",
+      "translations": {
+        "en": {
+          "canonical": "Sharī‘ah (the holistic divine way of life and guidance)",
+          "approved_gloss": "the comprehensive divine guidance ordained by Allah to preserve human faith, life, intellect, lineage, and property; never to be reduced solely to penal codes",
+          "forbidden_substitutes": [
+            "penal code",
+            "punishment dogma",
+            "barbaric law",
+            "strict legalism",
+            "draconian code"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bpenal code\\b",
+            "(?i)\\bIslamic punishment law\\b",
+            "(?i)\\bdraconian code\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Sharī‘ah (la voie divine intégrale et la guidance)",
+          "approved_gloss": "la guidance divine globale ordonnée par Allah pour préserver la foi, la vie, la raison, la famille et les biens",
+          "forbidden_substitutes": [
+            "code pénal",
+            "loi punitive",
+            "dogme répressif"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bcode pénal islamique\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Sharī‘ah (la ley divina integral y guía de vida)",
+          "approved_gloss": "la guía divina comprehensiva ordenada por Dios para preservar la fe, la vida, el intelecto, la familia y los bienes",
+          "forbidden_substitutes": [
+            "código penal draconiano",
+            "ley punitiva"
+          ]
+        },
+        "id": {
+          "canonical": "Syariat (tuntunan hidup komprehensif dari Allah)",
+          "approved_gloss": "hukum dan petunjuk hidup menyeluruh dari Allah untuk menjaga agama, jiwa, akal, keturunan, dan harta",
+          "forbidden_substitutes": [
+            "hukum pidana semata",
+            "hukum kejam"
+          ]
+        },
+        "tr": {
+          "canonical": "Şeriat (Allah'ın vaz ettiği kapsamlı ilahi hayat rehberi)",
+          "approved_gloss": "dini, canı, aklı, nesli ve malı korumayı amaçlayan ilahi hüküm ve rehberliğin bütünü",
+          "forbidden_substitutes": [
+            "sadece ceza kanunu",
+            "baskıcı kanun"
+          ]
+        },
+        "de": {
+          "canonical": "Sharī‘ah (die ganzheitliche göttliche Lebensordnung)",
+          "approved_gloss": "die von Allah gegebene umfassende Rechtleitung zum Schutz von Glaube, Leben, Verstand, Familie und Besitz",
+          "forbidden_substitutes": [
+            "bloßes Strafrecht",
+            "drakonisches Gesetz"
+          ]
+        }
+      }
+    },
+    "zakah": {
+      "arabic": "الزكاة",
+      "root": "زكو",
+      "transliteration": "Zakāh",
+      "translations": {
+        "en": {
+          "canonical": "Zakāh (the obligatory purifying alms)",
+          "approved_gloss": "the prescribed annual wealth purification ordained by Allah for the designated eight beneficiary categories",
+          "forbidden_substitutes": [
+            "tax",
+            "taxation",
+            "state levy",
+            "charity donation",
+            "voluntary tip"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bIslamic tax\\b",
+            "(?i)\\bMuslim tax\\b",
+            "(?i)\\bwealth tax\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Zakāh (l'aumône légale purificatrice)",
+          "approved_gloss": "la part obligatoire prescrite sur la richesse pour purifier les biens et soutenir les huit catégories d'ayants droit",
+          "forbidden_substitutes": [
+            "impôt",
+            "taxe",
+            "prélèvement",
+            "don facultatif"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bimpôt islamique\\b",
+            "(?i)\\btaxe religieuse\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Zakāh (la limosna obligatoria purificadora)",
+          "approved_gloss": "el porcentaje obligatorio prescrito sobre la riqueza para purificar los bienes y sostener a las ocho categorías de beneficiarios",
+          "forbidden_substitutes": [
+            "impuesto",
+            "tributo",
+            "tasa estatal",
+            "donación voluntaria"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bimpuesto islámico\\b",
+            "(?i)\\btributo religioso\\b"
+          ]
+        },
+        "id": {
+          "canonical": "Zakat (kewajiban menyucikan harta)",
+          "approved_gloss": "kewajiban mengeluarkan sebagian harta tertentu yang mencapai nisab untuk disalurkan kepada delapan asnaf",
+          "forbidden_substitutes": [
+            "pajak negara",
+            "sumbangan sukarela"
+          ]
+        },
+        "tr": {
+          "canonical": "Zekat (malın arındırılmasını sağlayan farz ibadet)",
+          "approved_gloss": "İslam'ın beş şartından biri; nisap miktarı mala sahip olanların yılda bir kez ihtiyaç sahiplerine vermesi farz olan ibadet",
+          "forbidden_substitutes": [
+            "devlet vergisi",
+            "gönüllü sadaka"
+          ]
+        },
+        "de": {
+          "canonical": "Zakāh (die verpflichtende reinigende Sozialabgabe)",
+          "approved_gloss": "die jährliche Pflichtabgabe auf erspartes Vermögen zur Reinigung des Besitzes und Unterstützung Bedürftiger",
+          "forbidden_substitutes": [
+            "Steuer",
+            "Staatsabgabe",
+            "Spende"
+          ]
+        }
+      }
+    },
+    "jihad": {
+      "arabic": "الجهاد",
+      "root": "جهد",
+      "transliteration": "Jihād",
+      "translations": {
+        "en": {
+          "canonical": "Jihād (earnest spiritual and legitimate struggle in the way of Allah)",
+          "approved_gloss": "exerting one's utmost righteous effort spiritually, intellectually, financially, or lawfully defensive to uphold truth and justice according to strict divine guidelines",
+          "forbidden_substitutes": [
+            "holy war",
+            "religious crusade",
+            "violence",
+            "extremism"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bholy war\\b",
+            "(?i)\\bMuslim holy war\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Jihād (l'effort spirituel noble et la lutte légitime pour la justice)",
+          "approved_gloss": "le déploiement du maximum d'efforts sincères sur les plans spirituel, intellectuel, financier et légitime pour la vérité",
+          "forbidden_substitutes": [
+            "guerre sainte",
+            "croisade religieuse",
+            "violence"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bguerre sainte\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Jihād (el esfuerzo noble y lucha legítima por la justicia)",
+          "approved_gloss": "el esfuerzo sincero en el plano espiritual, moral, intelectual y defensivo legítimo por la justicia",
+          "forbidden_substitutes": [
+            "guerra santa",
+            "violencia religiosa"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bguerra santa\\b"
+          ]
+        },
+        "id": {
+          "canonical": "Jihad (perjuangan mulia dan sungguh-sungguh di jalan Allah)",
+          "approved_gloss": "mencurahkan segenap kemampuan secara spiritual, intelektual, dan pembelaan yang sah untuk menegakkan keadilan",
+          "forbidden_substitutes": [
+            "perang suci",
+            "ekstremisme"
+          ]
+        },
+        "tr": {
+          "canonical": "Cihad (Allah yolunda samimi gayret ve meşru mücadele)",
+          "approved_gloss": "nefisle mücadele, ilim, tebliğ ve gerektiğinde meşru müdafaa ile adaleti ayakta tutma çabası",
+          "forbidden_substitutes": [
+            "kutsal savaş",
+            "şiddet"
+          ]
+        },
+        "de": {
+          "canonical": "Jihād (die aufrichtige spirituelle und rechtmäßige Anstrengung auf dem Wege Allahs)",
+          "approved_gloss": "der größte aufrichtige Einsatz im geistigen, moralischen und legitimen defensiven Sinne für Gerechtigkeit",
+          "forbidden_substitutes": [
+            "heiliger Krieg",
+            "Extremismus"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bheiliger Krieg\\b"
+          ]
+        }
+      }
+    },
+    "barakah": {
+      "arabic": "البركة",
+      "root": "برك",
+      "transliteration": "Barakah",
+      "translations": {
+        "en": {
+          "canonical": "Barakah (divine multiplying grace and spiritual blessing)",
+          "approved_gloss": "the continuous presence and exponential growth of divine goodness within a provision, time, or action",
+          "forbidden_substitutes": [
+            "luck",
+            "good fortune",
+            "karma",
+            "serendipity"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bgood luck\\b",
+            "(?i)\\bIslamic karma\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Barakah (la grâce divine multipliante et la bénédiction)",
+          "approved_gloss": "la présence continue et la multiplication du bien divin dans les biens, le temps ou les actes",
+          "forbidden_substitutes": [
+            "chance",
+            "bonne fortune",
+            "hasard heureux"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bbonne chance\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Barakah (la gracia y bendición divina multiplicadora)",
+          "approved_gloss": "la presencia continua y multiplicación del bien que Dios concede en el sustento, tiempo o acciones",
+          "forbidden_substitutes": [
+            "suerte",
+            "fortuna",
+            "karma"
+          ]
+        },
+        "id": {
+          "canonical": "Berkah (limpahan kebaikan ilahi yang bertambah)",
+          "approved_gloss": "kebaikan ilahi yang melimpah dan terus bertambah dalam rezeki, waktu, maupun perbuatan",
+          "forbidden_substitutes": [
+            "keberuntungan acak",
+            "karma"
+          ]
+        },
+        "tr": {
+          "canonical": "Bereket (ilahi lütuf ve artan hayır)",
+          "approved_gloss": "Allah'ın ömre, rızka ve amele bahşettiği kalıcı ve artan ilahi hayır",
+          "forbidden_substitutes": [
+            "şans",
+            "tesadüf"
+          ]
+        },
+        "de": {
+          "canonical": "Barakah (göttlicher Segen und fortwährende Gnade)",
+          "approved_gloss": "das beständige Wirken und Wachsen göttlichen Guten in Zeit, Nahrung und Taten",
+          "forbidden_substitutes": [
+            "Glück",
+            "Zufall",
+            "Karma"
+          ]
+        }
+      }
+    },
+    "fatwa": {
+      "arabic": "الفتوى",
+      "root": "فتي",
+      "transliteration": "Fatwā",
+      "translations": {
+        "en": {
+          "canonical": "Fatwā (qualified formal Sharia legal opinion)",
+          "approved_gloss": "a reasoned non-binding legal response issued by a certified Sharia authority regarding a specific inquiry; never to be confused with general information or hostile edicts",
+          "forbidden_substitutes": [
+            "death sentence",
+            "arbitrary curse",
+            "religious decree",
+            "edict of condemnation"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bdeath sentence\\b",
+            "(?i)\\barbitrary edict\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Fatwā (l'avis juridique religieux qualifié)",
+          "approved_gloss": "un avis juridique consultatif émis par un savant qualifié en réponse à une question précise; à ne pas confondre avec un arrêt de mort",
+          "forbidden_substitutes": [
+            "arrêt de mort",
+            "décret de condamnation"
+          ]
+        },
+        "es": {
+          "canonical": "Fatwā (el dictamen jurídico religioso calificado)",
+          "approved_gloss": "una respuesta legal consultiva emitida por una autoridad competente sobre un caso específico",
+          "forbidden_substitutes": [
+            "pena de muerte",
+            "edicto de condena"
+          ]
+        },
+        "id": {
+          "canonical": "Fatwa (pendapat hukum dari ulama berwenang)",
+          "approved_gloss": "penjelasan hukum syariat yang dikeluarkan oleh ulama atau lembaga fatwa atas pertanyaan pemohon fatwa",
+          "forbidden_substitutes": [
+            "vonis mati",
+            "kutukan"
+          ]
+        },
+        "tr": {
+          "canonical": "Fetva (ehil alimlerin verdiği dini hüküm görüşü)",
+          "approved_gloss": "yetkili bir müftü veya kurumun sorulan dini bir meseleye dair verdiği şer'i cevap",
+          "forbidden_substitutes": [
+            "ölüm fermanı",
+            "lanet"
+          ]
+        },
+        "de": {
+          "canonical": "Fatwā (das qualifizierte Rechtsgutachten)",
+          "approved_gloss": "ein fundiertes rechtliches Gutachten eines qualifizierten Gelehrten zu einer bestimmten Frage; kein Todesurteil",
+          "forbidden_substitutes": [
+            "Todesurteil",
+            "Verdammungserlass"
+          ]
+        }
+      }
+    },
+    "dawah": {
+      "arabic": "الدعوة",
+      "root": "دعو",
+      "transliteration": "Da‘wah",
+      "translations": {
+        "en": {
+          "canonical": "Da‘wah (compassionate invitation to Islamic truth with wisdom)",
+          "approved_gloss": "the benevolent introduction of Islamic tenets and values to humanity through intellectual clarity, wisdom, and exemplary moral character",
+          "forbidden_substitutes": [
+            "proselytization",
+            "forced conversion",
+            "indoctrination",
+            "religious propaganda"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bforced conversion\\b",
+            "(?i)\\breligious indoctrination\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Da‘wah (l'invitation bienveillante à l'Islam avec sagesse)",
+          "approved_gloss": "la transmission éclairée et sage des principes islamiques par le dialogue respectueux et l'exemple moral",
+          "forbidden_substitutes": [
+            "prosélytisme forcé",
+            "endoctrinement",
+            "propagande"
+          ]
+        },
+        "es": {
+          "canonical": "Da‘wah (la invitación sabia y compasiva al Islam)",
+          "approved_gloss": "la presentación benevolente de los valores islámicos mediante la sabiduría y el buen ejemplo moral",
+          "forbidden_substitutes": [
+            "proselitismo forzado",
+            "adoctrinamiento"
+          ]
+        },
+        "id": {
+          "canonical": "Dakwah (seruan bijak mengajak kepada kebaikan)",
+          "approved_gloss": "mengajak manusia kepada jalan Allah dengan hikmah, nasihat yang baik, dan teladan mulia",
+          "forbidden_substitutes": [
+            "paksaan beragama",
+            "indoktrinasi keras"
+          ]
+        },
+        "tr": {
+          "canonical": "Tebliğ ve Davet (hikmet ve güzel öğütle İslam'a çağrı)",
+          "approved_gloss": "İslam'ın güzelliklerini insanlara hikmetle, nezaketle ve güzel ahlakla anlatma vazifesi",
+          "forbidden_substitutes": [
+            "baskıyla din değiştirme",
+            "propaganda"
+          ]
+        },
+        "de": {
+          "canonical": "Da‘wah (die weise und gütige Einladung zum Islam)",
+          "approved_gloss": "die wohlwollende Vorstellung islamischer Werte durch Weisheit, gute Ermahnung und vorbildlichen Charakter",
+          "forbidden_substitutes": [
+            "Zwangsbekehrung",
+            "Indoktrination"
+          ]
+        }
+      }
+    },
+    "revelation": {
+      "arabic": "الوحي",
+      "root": "وحي",
+      "transliteration": "Waḥy",
+      "translations": {
+        "en": {
+          "canonical": "Waḥy (divine revelation to God's chosen Prophets)",
+          "approved_gloss": "the direct divine communication imparted by Allah unto His chosen Messengers; distinct from subjective personal intuition, poetic trance, or subconscious thought",
+          "forbidden_substitutes": [
+            "personal intuition",
+            "poetic inspiration",
+            "hallucination",
+            "subconscious thought"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bpoetic inspiration\\b",
+            "(?i)\\bpersonal intuition\\b",
+            "(?i)\\bsubconscious hallucination\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Waḥy (la révélation divine aux Prophètes)",
+          "approved_gloss": "la communication divine directe transmise par Allah à Ses messagers choisis; distincte de l'intuition poétique",
+          "forbidden_substitutes": [
+            "intuition personnelle",
+            "inspiration poétique",
+            "hallucination"
+          ]
+        },
+        "es": {
+          "canonical": "Waḥy (la revelación divina a los Profetas)",
+          "approved_gloss": "la comunicación divina directa otorgada por Dios a Sus mensajeros elegidos, distinta de la intuición humana",
+          "forbidden_substitutes": [
+            "intuición personal",
+            "inspiración poética"
+          ]
+        },
+        "id": {
+          "canonical": "Wahyu (petunjuk ilahi kepada para Nabi)",
+          "approved_gloss": "komunikasi langsung dan petunjuk dari Allah yang diturunkan kepada para Nabi dan Rasul pilihan-Nya",
+          "forbidden_substitutes": [
+            "ilusi",
+            "khayalan puitis"
+          ]
+        },
+        "tr": {
+          "canonical": "Vahiy (Allah'ın peygamberlerine ilahi bildirimi)",
+          "approved_gloss": "Allah'ın emir ve hakikatlerini peygamberlerine bildirmesi; şahsi sezgi veya şiirsel esinden tamamen farklıdır",
+          "forbidden_substitutes": [
+            "şahsi sezgi",
+            "şiirsel ilham"
+          ]
+        },
+        "de": {
+          "canonical": "Waḥy (die göttliche Offenbarung an die Propheten)",
+          "approved_gloss": "die unmittelbare göttliche Botschaft Allahs an Seine auserwählten Gesandten; verschieden von subjektiver Intuition",
+          "forbidden_substitutes": [
+            "persönliche Intuition",
+            "dichterische Eingebung"
+          ]
+        }
+      }
+    },
+    "salah": {
+      "arabic": "الصلاة",
+      "root": "صلو",
+      "transliteration": "Ṣalāh",
+      "translations": {
+        "en": {
+          "canonical": "Ṣalāh (prescribed Islamic ritual prayer)",
+          "approved_gloss": "the second pillar of Islam; prescribed ritual communication with Allah consisting of specific recitations and physical postures performed five times daily",
+          "forbidden_substitutes": [
+            "generic prayer",
+            "meditation",
+            "daily ritual alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bgeneric prayer\\b",
+            "(?i)\\bIslamic meditation\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ṣalāh (la prière rituelle prescrite)",
+          "approved_gloss": "le deuxième pilier de l'Islam; la communication rituelle prescrite avec Allah accomplie cinq fois par jour",
+          "forbidden_substitutes": [
+            "méditation générique",
+            "prière informelle"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bméditation islamique\\b"
+          ]
+        },
+        "es": {
+          "canonical": "Ṣalāh (la oración ritual prescrita)",
+          "approved_gloss": "el segundo pilar del Islam; la comunicación ritual prescrita con Dios realizada cinco veces al día",
+          "forbidden_substitutes": [
+            "meditación genérica",
+            "rezo informal"
+          ]
+        },
+        "id": {
+          "canonical": "Salat (ibadah salat fardhu lima waktu)",
+          "approved_gloss": "rukun Islam kedua; ibadah wajib yang terdiri dari ucapan dan gerakan tertentu menghadap kiblat lima kali sehari",
+          "forbidden_substitutes": [
+            "meditasi biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "Namaz (günde beş vakit farz kılınan ibadet)",
+          "approved_gloss": "İslam'ın beş şartından biri; belirli vakitlerde rukû ve secdelerle Allah'a yönelinen farz ibadet",
+          "forbidden_substitutes": [
+            "sıradan meditasyon"
+          ]
+        },
+        "de": {
+          "canonical": "Ṣalāh (das rituelle Pflichtgebet im Islam)",
+          "approved_gloss": "die zweite Säule des Islam; das fünfmal täglich vorgeschriebene rituelle Gebet zu Allah",
+          "forbidden_substitutes": [
+            "freie Meditation",
+            "formloses Beten"
+          ]
+        }
+      }
+    },
+    "sawm": {
+      "arabic": "الصوم",
+      "root": "صوم",
+      "transliteration": "Ṣawm",
+      "translations": {
+        "en": {
+          "canonical": "Ṣawm (prescribed Ramadan fasting)",
+          "approved_gloss": "the fourth pillar of Islam; intentional abstention from food, drink, and marital relations from dawn until sunset for the sake of Allah",
+          "forbidden_substitutes": [
+            "starvation diet",
+            "intermittent fasting diet",
+            "hunger strike"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bstarvation diet\\b",
+            "(?i)\\bhunger strike\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ṣawm (le jeûne prescrit de Ramadan)",
+          "approved_gloss": "le quatrième pilier de l'Islam; l'abstention intentionnelle de nourriture et boisson de l'aube au coucher du soleil pour Allah",
+          "forbidden_substitutes": [
+            "régime de privation",
+            "grève de la faim"
+          ]
+        },
+        "es": {
+          "canonical": "Ṣawm (el ayuno prescrito de Ramadán)",
+          "approved_gloss": "el cuarto pilar del Islam; la abstención de comida y bebida desde el alba hasta el ocaso por amor a Dios",
+          "forbidden_substitutes": [
+            "huelga de hambre",
+            "dieta de inanición"
+          ]
+        },
+        "id": {
+          "canonical": "Puasa / Saum (ibadah menahan diri di bulan Ramadan)",
+          "approved_gloss": "menahan diri dari makan, minum, dan pembatal puasa dari terbit fajar hingga terbenam matahari karena Allah",
+          "forbidden_substitutes": [
+            "diet kelaparan",
+            "mogok makan"
+          ]
+        },
+        "tr": {
+          "canonical": "Oruç / Savm (Ramazan ayında farz kılınan ibadet)",
+          "approved_gloss": "tan yerinin ağarmasından gün batımına kadar yeme, içme ve nefsi arzulardan Allah rızası için uzak durma",
+          "forbidden_substitutes": [
+            "açlık grevi",
+            "perhiz diyeti"
+          ]
+        },
+        "de": {
+          "canonical": "Ṣawm (das vorgeschriebene Fasten im Ramadan)",
+          "approved_gloss": "die vierte Säule des Islam; das bewusste Fasten von der Morgendämmerung bis zum Sonnenuntergang für Allah",
+          "forbidden_substitutes": [
+            "Hungerstreik",
+            "Diätkur"
+          ]
+        }
+      }
+    },
+    "hajj": {
+      "arabic": "الحج",
+      "root": "حجج",
+      "transliteration": "Ḥajj",
+      "translations": {
+        "en": {
+          "canonical": "Ḥajj (the sacred pilgrimage to Makkah)",
+          "approved_gloss": "the fifth pillar of Islam; the prescribed annual pilgrimage to the Sacred House of Allah in Makkah once in a lifetime for those physically and financially able",
+          "forbidden_substitutes": [
+            "religious tourism",
+            "holy vacation",
+            "shrine excursion"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\breligious tourism\\b",
+            "(?i)\\bholy vacation\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ḥajj (le pèlerinage sacré à La Mecque)",
+          "approved_gloss": "le cinquième pilier de l'Islam; le pèlerinage annuel prescrit à la Maison Sacrée d'Allah pour ceux qui en ont la capacité",
+          "forbidden_substitutes": [
+            "tourisme religieux",
+            "vacances pieuses"
+          ]
+        },
+        "es": {
+          "canonical": "Ḥajj (la peregrinación sagrada a La Meca)",
+          "approved_gloss": "el quinto pilar del Islam; la peregrinación obligatoria a La Meca una vez en la vida para quien pueda realizarla",
+          "forbidden_substitutes": [
+            "turismo religioso"
+          ]
+        },
+        "id": {
+          "canonical": "Haji (ibadah haji ke Baitullah di Makkah)",
+          "approved_gloss": "rukun Islam kelima; ziarah ibadah ke Baitullah di Makkah sekali seumur hidup bagi yang mampu",
+          "forbidden_substitutes": [
+            "wisata religi biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "Hac (Mekke'ye yapılan farz ibadet)",
+          "approved_gloss": "İslam'ın beş şartından biri; gücü yetenlerin ömründe bir kez Kabe ve kutsal mekanları ziyaret etmesi",
+          "forbidden_substitutes": [
+            "dini turizm",
+            "tatil gezisi"
+          ]
+        },
+        "de": {
+          "canonical": "Ḥajj (die heilige Pilgerfahrt nach Mekka)",
+          "approved_gloss": "die fünfte Säule des Islam; die einmal im Leben vorgeschriebene Pilgerfahrt zur Kaaba für fähige Gläubige",
+          "forbidden_substitutes": [
+            "religiöser Tourismus",
+            "Urlaubsreise"
+          ]
+        }
+      }
+    },
+    "iman": {
+      "arabic": "الإيمان",
+      "root": "أمن",
+      "transliteration": "Īmān",
+      "translations": {
+        "en": {
+          "canonical": "Īmān (firm authentic faith and conviction)",
+          "approved_gloss": "true faith residing firmly in the heart, affirmed by the tongue, and manifested through righteous deeds across the six pillars of belief",
+          "forbidden_substitutes": [
+            "blind belief",
+            "irrational dogma",
+            "superstition"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bblind belief\\b",
+            "(?i)\\birrational dogma\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Īmān (la foi authentique et la conviction sincère)",
+          "approved_gloss": "la foi sincère ancrée dans le cœur, prononcée par la langue et concrétisée par les actes vertueux",
+          "forbidden_substitutes": [
+            "croyance aveugle",
+            "dogme irrationnel"
+          ]
+        },
+        "es": {
+          "canonical": "Īmān (la fe auténtica y convicción firme)",
+          "approved_gloss": "la fe verdadera arraigada en el corazón, expresada con la lengua y manifestada en buenas obras",
+          "forbidden_substitutes": [
+            "creencia ciega",
+            "dogma irracional"
+          ]
+        },
+        "id": {
+          "canonical": "Iman (keyakinan teguh dan keimanan yang lurus)",
+          "approved_gloss": "keyakinan teguh yang membenarkan dalam hati, diucapkan dengan lisan, dan diamalkan dengan perbuatan",
+          "forbidden_substitutes": [
+            "kepercayaan buta",
+            "dogma tak berdasar"
+          ]
+        },
+        "tr": {
+          "canonical": "İman (hakiki inanç ve kalbi tasdik)",
+          "approved_gloss": "kalp ile tasdik, dil ile ikrar ve amellerle ortaya konan hakiki dini inanç",
+          "forbidden_substitutes": [
+            "körü körüne inanç",
+            "boş itikat"
+          ]
+        },
+        "de": {
+          "canonical": "Īmān (wahrhafter Glaube und feste Überzeugung)",
+          "approved_gloss": "fester Glaube im Herzen, bezeugt mit der Zunge und verwirklicht durch rechtschaffene Taten",
+          "forbidden_substitutes": [
+            "blinder Glaube",
+            "irrationales Dogma"
+          ]
+        }
+      }
+    },
+    "ihsan": {
+      "arabic": "الإحسان",
+      "root": "حسن",
+      "transliteration": "Iḥsān",
+      "translations": {
+        "en": {
+          "canonical": "Iḥsān (spiritual excellence in worship and conduct)",
+          "approved_gloss": "worshipping Allah as though you see Him, knowing that even if you cannot see Him, He truly sees you; perfection in devotion and ethics",
+          "forbidden_substitutes": [
+            "mere philanthropy",
+            "kindness alone",
+            "secular charity"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmere philanthropy\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Iḥsān (l'excellence spirituelle et la perfection de la dévotion)",
+          "approved_gloss": "adorer Allah comme si tu Le voyais, car si tu ne Le vois pas, certes Lui te voit",
+          "forbidden_substitutes": [
+            "simple bienfaisance",
+            "charité laïque"
+          ]
+        },
+        "es": {
+          "canonical": "Iḥsān (la excelencia espiritual en la adoración)",
+          "approved_gloss": "adorar a Dios como si Lo vieras, pues aunque no Lo veas, ciertamente Él te ve a ti",
+          "forbidden_substitutes": [
+            "mera filantropía",
+            "simple caridad"
+          ]
+        },
+        "id": {
+          "canonical": "Ihsan (kesempurnaan ibadah dan akhlak)",
+          "approved_gloss": "beribadah kepada Allah seakan-akan melihat-Nya, dan jika tidak dapat melihat-Nya, yakinlah Dia melihatmu",
+          "forbidden_substitutes": [
+            "kedermawanan biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "İhsan (kullukta manevi mükemmellik)",
+          "approved_gloss": "Allah'ı görüyormuş gibi ibadet etmek; O'nu görmesen de O'nun seni gördüğünün bilincinde olmak",
+          "forbidden_substitutes": [
+            "sadece iyilik",
+            "sıradan yardım"
+          ]
+        },
+        "de": {
+          "canonical": "Iḥsān (spirituelle Vollkommenheit im Gottesdienst)",
+          "approved_gloss": "Allah so anzubeten, als ob man Ihn sähe; denn sieht man Ihn auch nicht, so sieht Er einen doch",
+          "forbidden_substitutes": [
+            "bloße Philanthropie",
+            "weltliche Wohltat"
+          ]
+        }
+      }
+    },
+    "sunnah": {
+      "arabic": "السنة",
+      "root": "سنن",
+      "transliteration": "Sunnah",
+      "translations": {
+        "en": {
+          "canonical": "Sunnah (the prophetic guidance, teachings, and practice)",
+          "approved_gloss": "the authentic teachings, practical example, sayings, actions, and tacit approvals of Prophet Muhammad ﷺ serving as the second primary source of Islamic guidance",
+          "forbidden_substitutes": [
+            "folklore",
+            "ancient Arab custom",
+            "tribal myth"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bArab folklore\\b",
+            "(?i)\\btribal custom\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Sunnah (la tradition et la voie prophétique)",
+          "approved_gloss": "les enseignements authentiques, la pratique, les paroles et les actes du Prophète Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "coutume arabe",
+            "folklore tribal"
+          ]
+        },
+        "es": {
+          "canonical": "Sunnah (la tradición y práctica profética ejemplar)",
+          "approved_gloss": "las enseñanzas, ejemplo práctico y dichos del Profeta Mahoma como guía para los musulmanes",
+          "forbidden_substitutes": [
+            "costumbre tribal árabe"
+          ]
+        },
+        "id": {
+          "canonical": "Sunnah (teladan dan petunjuk hidup Nabi ﷺ)",
+          "approved_gloss": "segala yang bersumber dari Nabi Muhammad ﷺ berupa perkataan, perbuatan, dan ketetapan sebagai sumber hukum kedua",
+          "forbidden_substitutes": [
+            "adat istiadat suku"
+          ]
+        },
+        "tr": {
+          "canonical": "Sünnet (Hz. Peygamber'in yolu ve örnekliği)",
+          "approved_gloss": "Hz. Muhammed'in (s.a.v.) söz, fiil ve onaylarından oluşan, Kur'an'dan sonraki ikinci temel kaynak",
+          "forbidden_substitutes": [
+            "Arap göreneği",
+            "kabile geleneği"
+          ]
+        },
+        "de": {
+          "canonical": "Sunnah (die prophetische Lebensweise und Überlieferung)",
+          "approved_gloss": "die vorbildlichen Lehren, Aussprüche und Taten des Propheten Muhammad ﷺ als zweite Quelle des Islam",
+          "forbidden_substitutes": [
+            "arabische Folklore",
+            "Stammesbrauch"
+          ]
+        }
+      }
+    },
+    "hadith": {
+      "arabic": "الحديث",
+      "root": "حدث",
+      "transliteration": "Ḥadīth",
+      "translations": {
+        "en": {
+          "canonical": "Ḥadīth (transmitted Prophetic tradition and narration)",
+          "approved_gloss": "the recorded narrations of the sayings, actions, traits, or tacit approvals of Prophet Muhammad ﷺ, preserved with rigorous chains of transmission",
+          "forbidden_substitutes": [
+            "rumor",
+            "legend",
+            "mythology",
+            "hearsay"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bIslamic mythology\\b",
+            "(?i)\\bhearsay narration\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ḥadīth (la narration et tradition prophétique transmise)",
+          "approved_gloss": "les récits rapportant les paroles, actes, approbations et qualités du Prophète Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "rumeur",
+            "légende",
+            "ouï-dire"
+          ]
+        },
+        "es": {
+          "canonical": "Ḥadīth (el relato o dicho profético transmitido)",
+          "approved_gloss": "los relatos auténticos de las palabras, hechos o aprobaciones del Profeta Mahoma",
+          "forbidden_substitutes": [
+            "leyenda",
+            "rumor"
+          ]
+        },
+        "id": {
+          "canonical": "Hadis (riwayat sabda dan perbuatan Nabi ﷺ)",
+          "approved_gloss": "catatan riwayat ucapan, perbuatan, dan persetujuan Nabi Muhammad ﷺ dengan sanad teruji",
+          "forbidden_substitutes": [
+            "desas-desus",
+            "mitos kuno"
+          ]
+        },
+        "tr": {
+          "canonical": "Hadis (Hz. Peygamber'in söz ve nakilleri)",
+          "approved_gloss": "Hz. Muhammed'in (s.a.v.) söz, fiil ve takrirlerini nakleden güvenilir rivayetler",
+          "forbidden_substitutes": [
+            "efsane",
+            "rivayet söylentisi"
+          ]
+        },
+        "de": {
+          "canonical": "Ḥadīth (die prophetische Überlieferung)",
+          "approved_gloss": "die niedergeschriebenen Berichte über Worte, Taten und Bestätigungen des Propheten Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "Gerücht",
+            "Legende"
+          ]
+        }
+      }
+    },
+    "fitrah": {
+      "arabic": "الفطرة",
+      "root": "فطر",
+      "transliteration": "Fiṭrah",
+      "translations": {
+        "en": {
+          "canonical": "Fiṭrah (the primordial human disposition toward God and truth)",
+          "approved_gloss": "the pure, innate nature created by Allah in every human being, intrinsically inclined toward recognizing the One Creator, moral goodness, and truth",
+          "forbidden_substitutes": [
+            "animal instinct",
+            "biological determinism",
+            "blank slate"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\banimal instinct\\b",
+            "(?i)\\bblank slate\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Fiṭrah (la disposition primordiale innée vers Dieu)",
+          "approved_gloss": "la nature pure et innée créée par Allah en chaque être humain, orientée vers la vérité et l'unicité divine",
+          "forbidden_substitutes": [
+            "instinct animal",
+            "déterminisme biologique"
+          ]
+        },
+        "es": {
+          "canonical": "Fiṭrah (la disposición primordial innata hacia Dios)",
+          "approved_gloss": "la naturaleza pura e innata creada por Dios en todo ser humano, inclinada a reconocer al Creador y el bien",
+          "forbidden_substitutes": [
+            "instinto animal"
+          ]
+        },
+        "id": {
+          "canonical": "Fitrah (kesucian nurani dan potensi dasar manusia)",
+          "approved_gloss": "keadaan suci dan bawaan alami ciptaan Allah dalam diri manusia yang condong kepada kebenaran tauhid",
+          "forbidden_substitutes": [
+            "insting hewani"
+          ]
+        },
+        "tr": {
+          "canonical": "Fıtrat (insanın yaratılıştan gelen temiz doğası)",
+          "approved_gloss": "Allah'ın insanın özüne yerleştirdiği, hakikate ve tevhide yatkın temiz ve saf yaratılış hali",
+          "forbidden_substitutes": [
+            "hayvani içgüdü"
+          ]
+        },
+        "de": {
+          "canonical": "Fiṭrah (die ursprüngliche, gottgewandte Veranlagung des Menschen)",
+          "approved_gloss": "die reine, angeborene Natur, die Allah in jedem Menschen erschaffen hat und die zum Monotheismus neigt",
+          "forbidden_substitutes": [
+            "tierischer Instinkt"
+          ]
+        }
+      }
+    },
+    "shirk": {
+      "arabic": "الشرك",
+      "root": "شرك",
+      "transliteration": "Shirk",
+      "translations": {
+        "en": {
+          "canonical": "Shirk (ascribing partners or equals to Allah)",
+          "approved_gloss": "the ultimate theological transgression of associating partners with Allah in His Lordship, divine worship, or unique Names and Attributes",
+          "forbidden_substitutes": [
+            "paganism alone",
+            "simple idol worship",
+            "polytheistic superstition"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bsimple idol worship\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Shirk (l'associationnisme et l'attribution d'associés à Allah)",
+          "approved_gloss": "l'acte suprême d'associer des partenaires ou des égaux à Allah dans Sa seigneurie ou Son adoration exclusive",
+          "forbidden_substitutes": [
+            "simple idolâtrie",
+            "superstition"
+          ]
+        },
+        "es": {
+          "canonical": "Shirk (la asociación de copartícipes con Dios)",
+          "approved_gloss": "el acto de atribuir socios, iguales o intermediarios a Dios en Su soberanía o culto",
+          "forbidden_substitutes": [
+            "simple idolatría"
+          ]
+        },
+        "id": {
+          "canonical": "Syirik (menyekutukan Allah dalam ibadah atau kekuasaan)",
+          "approved_gloss": "dosa terbesar berupa menyekutukan Allah dengan sesuatu dalam hak uluhiyah, rububiyah, atau sifat-Nya",
+          "forbidden_substitutes": [
+            "sekadar berhala"
+          ]
+        },
+        "tr": {
+          "canonical": "Şirk (Allah'a ortak koşma)",
+          "approved_gloss": "Allah'ın zatında, sıfatlarında veya ibadette O'na denk veya ortak varlıklar kabul etme günahı",
+          "forbidden_substitutes": [
+            "basit putperestlik"
+          ]
+        },
+        "de": {
+          "canonical": "Schirk (die Beigesellung von Partnern neben Allah)",
+          "approved_gloss": "das schwerste Vergehen, Allah in Seiner Herrschaft oder Anbetung Partner oder Teilhaber beizugesellen",
+          "forbidden_substitutes": [
+            "bloßer Götzendienst"
+          ]
+        }
+      }
+    },
+    "kufr": {
+      "arabic": "الكفر",
+      "root": "كفر",
+      "transliteration": "Kufr",
+      "translations": {
+        "en": {
+          "canonical": "Kufr (willful denial or rejection of divine truth)",
+          "approved_gloss": "the deliberate rejection, denial, or ungrateful concealment of the divine truth revealed by Allah after it has become evident",
+          "forbidden_substitutes": [
+            "infidelity alone",
+            "simple difference of opinion"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bsimple difference of opinion\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Kufr (le rejet et la mécréance délibérée de la vérité divine)",
+          "approved_gloss": "le rejet délibéré ou la dissimulation ingrate de la vérité divine révélée par Allah",
+          "forbidden_substitutes": [
+            "infidélité générale"
+          ]
+        },
+        "es": {
+          "canonical": "Kufr (el rechazo deliberado de la verdad divina)",
+          "approved_gloss": "la negación consciente de la verdad revelada por Dios o la ingratitud ante Su guía",
+          "forbidden_substitutes": [
+            "mera infidelidad"
+          ]
+        },
+        "id": {
+          "canonical": "Kufur (pengingkaran terhadap kebenaran wahyu Allah)",
+          "approved_gloss": "mengingkari atau menyembunyikan kebenaran ajaran Allah setelah datangnya penjelasan",
+          "forbidden_substitutes": [
+            "ketidaksetiaan biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "Küfür (ilahi hakikati inkar ve nankörlük)",
+          "approved_gloss": "Allah'ın bildirdiği hakikati bilerek inkar etme, örtme veya ilahi nimete nankörlük etme",
+          "forbidden_substitutes": [
+            "basit fikir ayrılığı"
+          ]
+        },
+        "de": {
+          "canonical": "Kufr (die bewusste Leugnung göttlicher Wahrheit)",
+          "approved_gloss": "das absichtliche Verleugnen oder undankbare Verbergen der von Allah offenbarten Wahrheit",
+          "forbidden_substitutes": [
+            "bloße Untreue"
+          ]
+        }
+      }
+    },
+    "nifaq": {
+      "arabic": "النفاق",
+      "root": "نفق",
+      "transliteration": "Nifāq",
+      "translations": {
+        "en": {
+          "canonical": "Nifāq (hypocrisy in faith and religious duplicity)",
+          "approved_gloss": "outwardly professing Islamic belief while inwardly concealing disbelief or enmity toward Allah and the believers",
+          "forbidden_substitutes": [
+            "mere two-facedness",
+            "social insincerity"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bsocial insincerity\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Nifāq (l'hypocrisie spirituelle et religieuse)",
+          "approved_gloss": "le fait de manifester extérieurement la foi tout en dissimulant intérieurement le rejet et l'inimitié",
+          "forbidden_substitutes": [
+            "fausseté sociale"
+          ]
+        },
+        "es": {
+          "canonical": "Nifāq (la hipocresía en la fe y duplicidad religiosa)",
+          "approved_gloss": "mostrar exteriormente la fe mientras se oculta en el corazón la incredulidad o el engaño",
+          "forbidden_substitutes": [
+            "mera falsedad social"
+          ]
+        },
+        "id": {
+          "canonical": "Nifaq (kemunafikan dalam keimanan)",
+          "approved_gloss": "menampakkan keislaman di luar namun menyembunyikan kekufuran di dalam hati",
+          "forbidden_substitutes": [
+            "bermuka dua sosial"
+          ]
+        },
+        "tr": {
+          "canonical": "Nifak (dinde ikiyüzlülük ve münafıklık)",
+          "approved_gloss": "diliyle iman ettiğini söylerken kalbinde inkar ve düşmanlığı gizleme hali",
+          "forbidden_substitutes": [
+            "sosyal riyakarlık"
+          ]
+        },
+        "de": {
+          "canonical": "Nifāq (Heuchelei im Glauben)",
+          "approved_gloss": "äußerlich den Glauben zu bekennen, während man innerlich Unglauben oder Feindseligkeit verbirgt",
+          "forbidden_substitutes": [
+            "soziale Unaufrichtigkeit"
+          ]
+        }
+      }
+    },
+    "ibadah": {
+      "arabic": "العبادة",
+      "root": "عبد",
+      "transliteration": "‘Ibādah",
+      "translations": {
+        "en": {
+          "canonical": "‘Ibādah (holistic worship and loving servitude to Allah)",
+          "approved_gloss": "all inward and outward words and deeds that Allah loves and is pleased with, performed with love, reverence, and sincere obedience",
+          "forbidden_substitutes": [
+            "ritual cult",
+            "clerical ceremony",
+            "empty ritualism"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bempty ritualism\\b",
+            "(?i)\\bclerical ceremony\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "‘Ibādah (l'adoration intégrale et la dévotion à Allah)",
+          "approved_gloss": "l'ensemble des paroles et des actes intérieurs et extérieurs qu'Allah aime et agrée, accomplis par amour et soumission",
+          "forbidden_substitutes": [
+            "culte mécanique",
+            "cérémonie cléricale"
+          ]
+        },
+        "es": {
+          "canonical": "‘Ibādah (la adoración integral y entrega sincera a Dios)",
+          "approved_gloss": "todas las palabras y acciones que Dios ama y complace, realizadas con amor, reverencia y obediencia",
+          "forbidden_substitutes": [
+            "culto vacío"
+          ]
+        },
+        "id": {
+          "canonical": "Ibadah (penghambaan dan ketaatan total kepada Allah)",
+          "approved_gloss": "segala perkataan dan perbuatan lahir maupun batin yang dicintai dan diridhai Allah",
+          "forbidden_substitutes": [
+            "ritual mekanis semata"
+          ]
+        },
+        "tr": {
+          "canonical": "İbadet (Allah'a sevgi ve saygıyla kulluk)",
+          "approved_gloss": "Allah'ın sevdiği ve razı olduğu her türlü söz, fiil ve hal; O'na gönülden boyun eğme",
+          "forbidden_substitutes": [
+            "boş tören"
+          ]
+        },
+        "de": {
+          "canonical": "‘Ibādah (ganzheitliche Anbetung und Hingabe an Allah)",
+          "approved_gloss": "alle inneren und äußeren Taten und Worte, die Allah liebt und mit denen Er zufrieden ist",
+          "forbidden_substitutes": [
+            "mechanischer Ritus"
+          ]
+        }
+      }
+    },
+    "nubuwwah": {
+      "arabic": "النبوة",
+      "root": "نبأ",
+      "transliteration": "Nubuwwah",
+      "translations": {
+        "en": {
+          "canonical": "Nubuwwah (divine prophethood and messengership)",
+          "approved_gloss": "the divine selection of righteous human messengers receiving revelation from Allah to guide humanity, culminating in Prophet Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "soothsaying",
+            "clairvoyance",
+            "poetic genius"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bsoothsaying\\b",
+            "(?i)\\bpoetic genius\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Nubuwwah (la prophétie divine)",
+          "approved_gloss": "l'élection divine d'hommes pieux recevant la révélation d'Allah pour guider l'humanité, scellée par le Prophète Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "divination",
+            "voyance",
+            "génie poétique"
+          ]
+        },
+        "es": {
+          "canonical": "Nubuwwah (la profecía divina)",
+          "approved_gloss": "la elección de mensajeros por parte de Dios para transmitir Su revelación a la humanidad",
+          "forbidden_substitutes": [
+            "adivinación",
+            "videncia"
+          ]
+        },
+        "id": {
+          "canonical": "Kenabian (pilihan ilahi mengemban risalah)",
+          "approved_gloss": "pengangkatan manusia mulia oleh Allah untuk menerima wahyu dan membimbing umat manusia",
+          "forbidden_substitutes": [
+            "dukun",
+            "peramal"
+          ]
+        },
+        "tr": {
+          "canonical": "Nübüvvet (ilahi peygamberlik müessesesi)",
+          "approved_gloss": "Allah'ın insanları hidayete erdirmek için vahiy ile görevlendirdiği kutlu elçilik makamı",
+          "forbidden_substitutes": [
+            "kahinlik",
+            "şairlik"
+          ]
+        },
+        "de": {
+          "canonical": "Nubuwwah (das göttliche Prophetentum)",
+          "approved_gloss": "die göttliche Erwählung rechtschaffener Menschen zum Empfang von Offenbarungen zur Führung der Menschheit",
+          "forbidden_substitutes": [
+            "Wahrsagerei",
+            "Hellseherei"
+          ]
+        }
+      }
+    },
+    "halal": {
+      "arabic": "الحلال",
+      "root": "حلل",
+      "transliteration": "Ḥalāl",
+      "translations": {
+        "en": {
+          "canonical": "Ḥalāl (divinely lawful and permissible)",
+          "approved_gloss": "that which is explicitly or implicitly permitted by Allah in faith, conduct, food, and transactions, free from divine prohibition",
+          "forbidden_substitutes": [
+            "kosher equivalent",
+            "secular certified",
+            "cultural habit"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bsecular certified\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ḥalāl (ce qui est licite et permis par Dieu)",
+          "approved_gloss": "ce qu'Allah a expressément ou implicitement autorisé dans la foi, les actes, l'alimentation et les transactions",
+          "forbidden_substitutes": [
+            "coutume culturelle"
+          ]
+        },
+        "es": {
+          "canonical": "Ḥalāl (lo lícito y permitido por Dios)",
+          "approved_gloss": "lo que Dios ha permitido en la fe, la comida, las transacciones y las relaciones humanas",
+          "forbidden_substitutes": [
+            "costumbre cultural"
+          ]
+        },
+        "id": {
+          "canonical": "Halal (perkara yang diperbolehkan oleh syariat)",
+          "approved_gloss": "segala sesuatu yang diizinkan dan dibolehkan oleh Allah tanpa adanya larangan",
+          "forbidden_substitutes": [
+            "adat semata"
+          ]
+        },
+        "tr": {
+          "canonical": "Helal (dinen yapılması veya yenmesi serbest olan)",
+          "approved_gloss": "Allah'ın yapılmasını veya tüketilmesini açıkça serbest bıraktığı temiz şeyler",
+          "forbidden_substitutes": [
+            "kültürel alışkanlık"
+          ]
+        },
+        "de": {
+          "canonical": "Ḥalāl (das göttlich Erlaubte und Zulässige)",
+          "approved_gloss": "dasjenige, was von Allah in Nahrung, Verträgen und Handlungen ausdrücklich oder stillschweigend erlaubt ist",
+          "forbidden_substitutes": [
+            "kulturelle Gewohnheit"
+          ]
+        }
+      }
+    },
+    "haram": {
+      "arabic": "الحرام",
+      "root": "حرم",
+      "transliteration": "Ḥarām",
+      "translations": {
+        "en": {
+          "canonical": "Ḥarām (divinely prohibited and forbidden)",
+          "approved_gloss": "that which is decisively forbidden by Allah, incurring divine accountability if violated, and reward if abstained from out of obedience",
+          "forbidden_substitutes": [
+            "taboo",
+            "cultural stigma",
+            "arbitrary ban"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bcultural taboo\\b",
+            "(?i)\\barbitrary ban\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ḥarām (ce qui est illicite et interdit par Dieu)",
+          "approved_gloss": "ce qu'Allah a formellement interdit, impliquant la responsabilité morale et divine en cas de transgression",
+          "forbidden_substitutes": [
+            "tabou culturel",
+            "interdit social"
+          ]
+        },
+        "es": {
+          "canonical": "Ḥarām (lo prohibido e ilícito por Dios)",
+          "approved_gloss": "lo que Dios ha prohibido de forma concluyente, acarreando falta moral y castigo si se transgrede",
+          "forbidden_substitutes": [
+            "tabú social"
+          ]
+        },
+        "id": {
+          "canonical": "Haram (perkara yang dilarang tegas oleh syariat)",
+          "approved_gloss": "segala sesuatu yang dilarang keras oleh Allah dengan tuntutan pasti untuk ditinggalkan",
+          "forbidden_substitutes": [
+            "pantangan adat"
+          ]
+        },
+        "tr": {
+          "canonical": "Haram (dinen kesin olarak yasaklanan şey)",
+          "approved_gloss": "Allah'ın kesin delillerle yapılmasını yasakladığı, işlenmesi günah olan şeyler",
+          "forbidden_substitutes": [
+            "toplumsal tabu"
+          ]
+        },
+        "de": {
+          "canonical": "Ḥarām (das göttlich Verbotene und Unzulässige)",
+          "approved_gloss": "dasjenige, was von Allah bindend verboten ist und dessen Begehung zur Verantwortung vor Gott führt",
+          "forbidden_substitutes": [
+            "kulturelles Tabu"
+          ]
+        }
+      }
+    },
+    "qiblah": {
+      "arabic": "القبلة",
+      "root": "قبل",
+      "transliteration": "Qiblah",
+      "translations": {
+        "en": {
+          "canonical": "Qiblah (the sacred direction of prayer toward the Kaaba)",
+          "approved_gloss": "the unified geographic orientation toward the Kaaba in Makkah ordained for Muslim prayers globally; a focal point of unity, not an object of worship",
+          "forbidden_substitutes": [
+            "idol direction",
+            "shrine orientation"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bidol direction\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Qiblah (la direction sacrée de la prière vers la Kaaba)",
+          "approved_gloss": "l'orientation géographique unifiée vers la Kaaba à La Mecque prescrite pour les prières musulmanes; symbole d'unité et non objet d'adoration",
+          "forbidden_substitutes": [
+            "direction d'idole"
+          ]
+        },
+        "es": {
+          "canonical": "Qiblah (la dirección sagrada de la oración hacia la Kaaba)",
+          "approved_gloss": "la orientación hacia la Kaaba en La Meca durante el rezo; símbolo de unidad, no objeto de adoración",
+          "forbidden_substitutes": [
+            "dirección a un ídolo"
+          ]
+        },
+        "id": {
+          "canonical": "Kiblat (arah hadap salat menuju Ka'bah)",
+          "approved_gloss": "arah persatuan menghadapkan wajah ke Ka'bah di Makkah dalam salat, bukan menyembah bangunan Ka'bah",
+          "forbidden_substitutes": [
+            "arah berhala"
+          ]
+        },
+        "tr": {
+          "canonical": "Kıble (namazda Kabe'ye yönelme istikameti)",
+          "approved_gloss": "namaz kılarken yönelinen Mekke'deki Kabe yönü; birlik sembolüdür, tapınma nesnesi değildir",
+          "forbidden_substitutes": [
+            "put yönü"
+          ]
+        },
+        "de": {
+          "canonical": "Qiblah (die Gebetsrichtung zur Kaaba)",
+          "approved_gloss": "die einheitliche Ausrichtung aller Muslime beim Gebet zur Kaaba in Mekka als Symbol der Einheit",
+          "forbidden_substitutes": [
+            "Richtung zu einem Idol"
+          ]
+        }
+      }
+    },
+    "ummah": {
+      "arabic": "الأمة",
+      "root": "أمم",
+      "transliteration": "Ummah",
+      "translations": {
+        "en": {
+          "canonical": "Ummah (the global fraternity of Muslim believers)",
+          "approved_gloss": "the worldwide community of believers bound by faith in Allah and His Messenger, transcending race, nationality, ethnicity, and geography",
+          "forbidden_substitutes": [
+            "Arab bloc",
+            "political nation alone",
+            "ethnic tribe"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bArab bloc\\b",
+            "(?i)\\bethnic tribe\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ummah (la communauté fraternelle universelle des croyants)",
+          "approved_gloss": "la communauté mondiale des croyants unie par la foi en Allah et Son Messager, au-delà des races et frontières",
+          "forbidden_substitutes": [
+            "bloc arabe",
+            "tribu ethnique"
+          ]
+        },
+        "es": {
+          "canonical": "Ummah (la comunidad fraterna global de creyentes)",
+          "approved_gloss": "la fraternidad universal de creyentes unidos por la fe, más allá de fronteras, razas y naciones",
+          "forbidden_substitutes": [
+            "bloque árabe"
+          ]
+        },
+        "id": {
+          "canonical": "Umat (persaudaraan global umat Islam)",
+          "approved_gloss": "komunitas universal kaum beriman yang diikat oleh tali akidah melampaui batas suku dan bangsa",
+          "forbidden_substitutes": [
+            "bangsa Arab saja"
+          ]
+        },
+        "tr": {
+          "canonical": "Ümmet (Müslümanların evrensel inanç kardeşliği)",
+          "approved_gloss": "ırk, dil ve coğrafya farkı gözetmeksizin aynı tevhid inancına bağlı dünya Müslümanları topluluğu",
+          "forbidden_substitutes": [
+            "Arap bloku",
+            "etnik kabile"
+          ]
+        },
+        "de": {
+          "canonical": "Ummah (die weltweite Gemeinschaft der Gläubigen)",
+          "approved_gloss": "die globale Bruderschaft der Gläubigen, vereint durch den Glauben an Allah, jenseits von Rasse und Nation",
+          "forbidden_substitutes": [
+            "arabischer Block",
+            "Stammesbund"
+          ]
+        }
+      }
+    },
+    "tawbah": {
+      "arabic": "التوبة",
+      "root": "توب",
+      "transliteration": "Tawbah",
+      "translations": {
+        "en": {
+          "canonical": "Tawbah (sincere repentance and return to Allah)",
+          "approved_gloss": "turning back to Allah from transgression with deep remorse, immediate cessation of the sin, and sincere resolve never to return to it",
+          "forbidden_substitutes": [
+            "penance to priest",
+            "guilt trip",
+            "confession ritual"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bpenance to priest\\b",
+            "(?i)\\bconfession ritual\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Tawbah (le repentir sincère et le retour vers Allah)",
+          "approved_gloss": "le retour sincère vers Allah après un péché avec regret profond, cessation immédiate et résolution de ne plus récidiver",
+          "forbidden_substitutes": [
+            "pénitence cléricale",
+            "aveu confessionnel"
+          ]
+        },
+        "es": {
+          "canonical": "Tawbah (el arrepentimiento sincero ante Dios)",
+          "approved_gloss": "el retorno sincero a Dios abandonando el pecado con pesar genuino y firme propósito de enmienda",
+          "forbidden_substitutes": [
+            "confesión sacerdotal"
+          ]
+        },
+        "id": {
+          "canonical": "Taubat (penyesalan tulus dan kembali kepada Allah)",
+          "approved_gloss": "menyesali dosa secara tulus, menghentikannya seketika, dan bertekad tidak mengulanginya demi Allah",
+          "forbidden_substitutes": [
+            "pengakuan dosa ke pendeta"
+          ]
+        },
+        "tr": {
+          "canonical": "Tövbe (samimi pişmanlık ve Allah'a dönüş)",
+          "approved_gloss": "işlenen günahtan dolayı derin pişmanlık duyarak onu derhal terk etmek ve Allah'a yönelmek",
+          "forbidden_substitutes": [
+            "günah çıkarma"
+          ]
+        },
+        "de": {
+          "canonical": "Tawbah (die aufrichtige Reue und Umkehr zu Allah)",
+          "approved_gloss": "die aufrichtige Rückkehr zu Allah mit tiefer Reue, sofortigem Ablassen von der Sünde und festem Vorsatz",
+          "forbidden_substitutes": [
+            "Beichte beim Priester"
+          ]
+        }
+      }
+    },
+    "dhikr": {
+      "arabic": "الذكر",
+      "root": "ذكر",
+      "transliteration": "Dhikr",
+      "translations": {
+        "en": {
+          "canonical": "Dhikr (mindful remembrance and glorification of Allah)",
+          "approved_gloss": "the conscious remembrance of Allah through prescribed verbal glorifications, contemplation of His signs, and devotional awareness",
+          "forbidden_substitutes": [
+            "mantra chanting",
+            "trance repetition",
+            "secular meditation"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmantra chanting\\b",
+            "(?i)\\btrance repetition\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Dhikr (le rappel conscient et l'évocation d'Allah)",
+          "approved_gloss": "l'évocation consciente d'Allah par la glorification verbale prescrite, la contemplation et la vigilance du cœur",
+          "forbidden_substitutes": [
+            "mantra païen",
+            "répétition de transe"
+          ]
+        },
+        "es": {
+          "canonical": "Dhikr (el recuerdo consciente y alabanza de Dios)",
+          "approved_gloss": "el recuerdo constante de Dios mediante la glorificación verbal prescrita y la contemplación del corazón",
+          "forbidden_substitutes": [
+            "cántico de trance"
+          ]
+        },
+        "id": {
+          "canonical": "Zikir (mengingat dan menyebut nama Allah)",
+          "approved_gloss": "mengingat Allah dengan lisan dan hati melalui lafaz-lafaz tasbih, tahmid, dan tahlil yang disyariatkan",
+          "forbidden_substitutes": [
+            "mantra yoga"
+          ]
+        },
+        "tr": {
+          "canonical": "Zikir (Allah'ı anma ve O'nu hatırda tutma)",
+          "approved_gloss": "Allah'ı isimleriyle anmak, O'nu tesbih etmek ve kalpte O'nun bilincini daima diri tutmak",
+          "forbidden_substitutes": [
+            "trans zikri",
+            "mantra"
+          ]
+        },
+        "de": {
+          "canonical": "Dhikr (das achtsame Gedenken Allahs)",
+          "approved_gloss": "das bewusste Erinnern an Allah durch vorgeschriebene Lobpreisungen und Herzensandacht",
+          "forbidden_substitutes": [
+            "Trancerepetition",
+            "Mantra"
+          ]
+        }
+      }
+    },
+    "dua": {
+      "arabic": "الدعاء",
+      "root": "دعو",
+      "transliteration": "Du‘ā’",
+      "translations": {
+        "en": {
+          "canonical": "Du‘ā’ (personal heartfelt supplication to Allah)",
+          "approved_gloss": "heartfelt personal invocation, supplication, and humble petition directed exclusively to Allah in all circumstances",
+          "forbidden_substitutes": [
+            "incantation",
+            "magic spell",
+            "wish granting"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmagic spell\\b",
+            "(?i)\\bincantation\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Du‘ā’ (l'invocation et supplication personnelle à Allah)",
+          "approved_gloss": "l'appel sincère et l'humble demande adressés exclusivement à Allah en toutes circonstances",
+          "forbidden_substitutes": [
+            "incantation",
+            "formule magique"
+          ]
+        },
+        "es": {
+          "canonical": "Du‘ā’ (la súplica y ruego personal a Dios)",
+          "approved_gloss": "la petición sincera e íntima dirigida exclusivamente a Dios en todo momento",
+          "forbidden_substitutes": [
+            "hechizo",
+            "deseo mágico"
+          ]
+        },
+        "id": {
+          "canonical": "Doa (permohonan tulus hamba kepada Allah)",
+          "approved_gloss": "permohonan tulus dan perendahan diri kepada Allah untuk memohon kebaikan dunia dan akhirat",
+          "forbidden_substitutes": [
+            "mantra",
+            "sihir"
+          ]
+        },
+        "tr": {
+          "canonical": "Dua (kulun Allah'a yakarışı ve niyazı)",
+          "approved_gloss": "kulun acziyetini bilerek doğrudan ve sadece Allah'a yalvarıp istekte bulunması",
+          "forbidden_substitutes": [
+            "büyülü söz",
+            "dilek tutma"
+          ]
+        },
+        "de": {
+          "canonical": "Du‘ā’ (das persönliche Bittgebet an Allah)",
+          "approved_gloss": "das aufrichtige persönliche Rufen und demütige Bitten an Allah in allen Lebenslagen",
+          "forbidden_substitutes": [
+            "Zauberspruch",
+            "Wunschzauber"
+          ]
+        }
+      }
+    },
+    "tafsir": {
+      "arabic": "التفسير",
+      "root": "فسر",
+      "transliteration": "Tafsīr",
+      "translations": {
+        "en": {
+          "canonical": "Tafsīr (authentic Quranic exegesis and commentary)",
+          "approved_gloss": "the scholarly discipline dedicated to elucidating the meanings, context of revelation, linguistic nuances, and legal rulings of the Quranic text",
+          "forbidden_substitutes": [
+            "subjective opinion",
+            "free personal interpretation"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bfree personal interpretation\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Tafsīr (l'exégèse et le commentaire authentique du Coran)",
+          "approved_gloss": "la science islamique dédiée à l'explication des sens, du contexte de révélation et des finesses du texte coranique",
+          "forbidden_substitutes": [
+            "opinion subjective libre"
+          ]
+        },
+        "es": {
+          "canonical": "Tafsīr (la exégesis y comentario autorizado del Corán)",
+          "approved_gloss": "la ciencia de clarificar el significado, contexto y enseñanzas del texto coránico",
+          "forbidden_substitutes": [
+            "interpretación libre arbitraria"
+          ]
+        },
+        "id": {
+          "canonical": "Tafsir (penjelasan dan pemahaman ayat Al-Qur'an)",
+          "approved_gloss": "ilmu untuk memahami kitab Allah yang diturunkan kepada Nabi Muhammad ﷺ, menjelaskan makna dan hukumnya",
+          "forbidden_substitutes": [
+            "opini pribadi bebas"
+          ]
+        },
+        "tr": {
+          "canonical": "Tefsir (Kur'an-ı Kerim'in ilmi açıklaması)",
+          "approved_gloss": "Kur'an ayetlerinin manalarını, iniş sebeplerini ve maksatlarını açıklayan ilim dalı",
+          "forbidden_substitutes": [
+            "keyfi yorum"
+          ]
+        },
+        "de": {
+          "canonical": "Tafsīr (die authentische Koranexegese)",
+          "approved_gloss": "die wissenschaftliche Erläuterung der Bedeutungen, des Offenbarungskontextes und der Lehren des Korans",
+          "forbidden_substitutes": [
+            "subjektive Auslegung"
+          ]
+        }
+      }
+    },
+    "fiqh": {
+      "arabic": "الفقه",
+      "root": "فقه",
+      "transliteration": "Fiqh",
+      "translations": {
+        "en": {
+          "canonical": "Fiqh (Islamic jurisprudence and practical rulings)",
+          "approved_gloss": "the systematic understanding and derivation of practical legal rulings from detailed Sharia sources by qualified jurists",
+          "forbidden_substitutes": [
+            "blind dogma",
+            "draconian code",
+            "statutory politics"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bblind dogma\\b",
+            "(?i)\\bstatutory politics\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Fiqh (la jurisprudence et compréhension méthodique de la Sharia)",
+          "approved_gloss": "la déduction méthodique des règles pratiques à partir des sources scripturaires par des juristes qualifiés",
+          "forbidden_substitutes": [
+            "dogme aveugle",
+            "politique statutaire"
+          ]
+        },
+        "es": {
+          "canonical": "Fiqh (la jurisprudencia islámica y dictámenes prácticos)",
+          "approved_gloss": "la comprensión y deducción de las normas prácticas derivadas de las fuentes de la revelación",
+          "forbidden_substitutes": [
+            "dogma ciego"
+          ]
+        },
+        "id": {
+          "canonical": "Fikih (hukum Islam praktis yang digali dari dalil)",
+          "approved_gloss": "ilmu tentang hukum-hukum syar'i amaliah yang digali dari dalil-dalil tafshili oleh para mujtahid",
+          "forbidden_substitutes": [
+            "dogma kaku"
+          ]
+        },
+        "tr": {
+          "canonical": "Fıkıh (İslam hukuku ve amelî hükümler ilmi)",
+          "approved_gloss": "şer'i delillerden çıkarılan amelî hükümlerin ilmi; İslam hukuk metodolojisi",
+          "forbidden_substitutes": [
+            "kör dogma"
+          ]
+        },
+        "de": {
+          "canonical": "Fiqh (die islamische Rechtswissenschaft)",
+          "approved_gloss": "das methodische Verständnis und Ableiten praktischer Normen aus den primären Quellen durch Rechtsgelehrte",
+          "forbidden_substitutes": [
+            "blindes Dogma"
+          ]
+        }
+      }
+    },
+    "sadaqah": {
+      "arabic": "الصدقة",
+      "root": "صدق",
+      "transliteration": "Ṣadaqah",
+      "translations": {
+        "en": {
+          "canonical": "Ṣadaqah (voluntary righteous charity)",
+          "approved_gloss": "any voluntary act of financial giving, assistance, or kindness rendered sincerely for the pleasure of Allah, distinct from obligatory Zakah",
+          "forbidden_substitutes": [
+            "mere tip",
+            "alms begging",
+            "tax write-off"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmere tip\\b",
+            "(?i)\\btax write-off\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ṣadaqah (l'aumône volontaire et l'acte de bienfaisance)",
+          "approved_gloss": "tout acte volontaire de don, d'aide ou de bonté accompli sincèrement pour l'agrément d'Allah, distinct de la Zakat obligatoire",
+          "forbidden_substitutes": [
+            "simple pourboire",
+            "déduction fiscale"
+          ]
+        },
+        "es": {
+          "canonical": "Ṣadaqah (la caridad voluntaria piadosa)",
+          "approved_gloss": "toda donación, ayuda o bondad voluntaria hecha con el fin de complacer a Dios",
+          "forbidden_substitutes": [
+            "simple propina"
+          ]
+        },
+        "id": {
+          "canonical": "Sedekah (kebajikan sukarela demi keridhaan Allah)",
+          "approved_gloss": "pemberian sukarela baik berupa harta maupun kebaikan yang dilakukan demi mencari ridha Allah",
+          "forbidden_substitutes": [
+            "uang tip biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "Sadaka (Allah rızası için yapılan gönüllü iyilik)",
+          "approved_gloss": "Allah'ın rızasını kazanmak amacıyla karşılıksız olarak yapılan her türlü maddi ve manevi bağış",
+          "forbidden_substitutes": [
+            "bahşiş"
+          ]
+        },
+        "de": {
+          "canonical": "Ṣadaqah (die freiwillige rechtschaffene Spende)",
+          "approved_gloss": "jede freiwillige Gabe oder gute Tat, die aufrichtig zur Erlangung des Wohlgefallens Allahs geleistet wird",
+          "forbidden_substitutes": [
+            "bloßes Trinkgeld"
+          ]
+        }
+      }
+    },
+    "waqf": {
+      "arabic": "الوقف",
+      "root": "وقف",
+      "transliteration": "Waqf",
+      "translations": {
+        "en": {
+          "canonical": "Waqf (inalienable Islamic charitable endowment)",
+          "approved_gloss": "the perpetual dedication of a property or asset whose usufruct or revenue is designated for charitable, religious, or public welfare purposes",
+          "forbidden_substitutes": [
+            "commercial trust",
+            "family trust alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bcommercial trust\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Waqf (la fondation pieuse et donation perpétuelle inaliénable)",
+          "approved_gloss": "l'affectation perpétuelle d'un bien dont l'usufruit est destiné à des œuvres de bienfaisance religieuses ou d'utilité publique",
+          "forbidden_substitutes": [
+            "fiducie commerciale"
+          ]
+        },
+        "es": {
+          "canonical": "Waqf (la donación piadosa inalienable a perpetuidad)",
+          "approved_gloss": "la asignación perpetua de un bien cuyos beneficios se destinan a fines benéficos o comunitarios",
+          "forbidden_substitutes": [
+            "fideicomiso comercial"
+          ]
+        },
+        "id": {
+          "canonical": "Wakaf (harta abadi untuk kemaslahatan umat)",
+          "approved_gloss": "menahan harta yang tahan lama untuk dimanfaatkan bagi kepentingan umum demi mendekatkan diri kepada Allah",
+          "forbidden_substitutes": [
+            "bisnis komersial"
+          ]
+        },
+        "tr": {
+          "canonical": "Vakıf (hayır gayesiyle ebediyen adanmış mülk)",
+          "approved_gloss": "bir malın mülkiyetinin kamu yararına veya dini bir amaca ebediyen tahsis edilmesi",
+          "forbidden_substitutes": [
+            "ticari ortaklık"
+          ]
+        },
+        "de": {
+          "canonical": "Waqf (die unveräußerliche fromme Stiftung)",
+          "approved_gloss": "die dauerhafte Widmung eines Vermögenswertes, dessen Erträge für wohltätige oder religiöse Zwecke bestimmt sind",
+          "forbidden_substitutes": [
+            "kommerzieller Trust"
+          ]
+        }
+      }
+    },
+    "akhlaq": {
+      "arabic": "الأخلاق",
+      "root": "خلق",
+      "transliteration": "Akhlāq",
+      "translations": {
+        "en": {
+          "canonical": "Akhlāq (Islamic virtue and noble moral character)",
+          "approved_gloss": "the comprehensive moral virtues, manners, and ethical character traits commanded and exemplified by Prophet Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "utilitarian morals",
+            "social etiquette alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\butilitarian morals\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Akhlāq (l'éthique islamique et les nobles vertus morales)",
+          "approved_gloss": "l'ensemble des vertus morales, manières et caractères nobles enseignés et incarnés par le Prophète Muhammad ﷺ",
+          "forbidden_substitutes": [
+            "morale utilitariste",
+            "simple étiquette"
+          ]
+        },
+        "es": {
+          "canonical": "Akhlāq (la moral y virtudes éticas nobles del Islam)",
+          "approved_gloss": "las virtudes éticas y conducta ejemplar enseñadas y modeladas por el Profeta Mahoma",
+          "forbidden_substitutes": [
+            "moral utilitarista"
+          ]
+        },
+        "id": {
+          "canonical": "Akhlak (keluhuran budi pekerti dan moral islami)",
+          "approved_gloss": "sikap batin dan perilaku mulia yang diajarkan dan dicontohkan oleh Rasulullah ﷺ",
+          "forbidden_substitutes": [
+            "sopan santun semata"
+          ]
+        },
+        "tr": {
+          "canonical": "Ahlak (İslam'ın yüce erdem ve ahlak ilkeleri)",
+          "approved_gloss": "Hz. Peygamber'in tebliğ ve temsil ettiği faziletli davranışlar ve güzel ahlak bütünü",
+          "forbidden_substitutes": [
+            "çıkarcı ahlak"
+          ]
+        },
+        "de": {
+          "canonical": "Akhlāq (die islamische Tugend- und Charakterlehre)",
+          "approved_gloss": "die edlen moralischen Tugenden und Charaktereigenschaften, die der Prophet Muhammad ﷺ verkörpert hat",
+          "forbidden_substitutes": [
+            "bloße Etikette"
+          ]
+        }
+      }
+    },
+    "adab": {
+      "arabic": "الأدب",
+      "root": "أدب",
+      "transliteration": "Adab",
+      "translations": {
+        "en": {
+          "canonical": "Adab (spiritual etiquette and noble comportment)",
+          "approved_gloss": "the refined, respectful etiquette and decorum governing a Muslim's conduct toward Allah, the Prophet ﷺ, fellow humans, and creation",
+          "forbidden_substitutes": [
+            "rigid formality",
+            "courtly manners alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\brigid formality\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Adab (la bienséance spirituelle et l'étiquette noble)",
+          "approved_gloss": "les convenances et le comportement respectueux régissant les rapports avec Allah, le Prophète ﷺ et les êtres humains",
+          "forbidden_substitutes": [
+            "formalité rigide",
+            "mondanité"
+          ]
+        },
+        "es": {
+          "canonical": "Adab (los buenos modales y cortesía espiritual)",
+          "approved_gloss": "la conducta refinada y respetuosa hacia Dios, el Profeta y la creación entera",
+          "forbidden_substitutes": [
+            "etiqueta superficial"
+          ]
+        },
+        "id": {
+          "canonical": "Adab (tata krama dan kesopanan spiritual)",
+          "approved_gloss": "etika dan budi pekerti halus yang menempatkan segala sesuatu pada tempat semestinya menurut adab Islam",
+          "forbidden_substitutes": [
+            "formalitas kaku"
+          ]
+        },
+        "tr": {
+          "canonical": "Edep (güzel terbiye ve manevi nezaket)",
+          "approved_gloss": "insanın Allah'a, Peygambere ve insanlara karşı takınması gereken saygılı, ölçülü ve zarif tutum",
+          "forbidden_substitutes": [
+            "şekilci kurallar"
+          ]
+        },
+        "de": {
+          "canonical": "Adab (die spirituelle Etikette und das edle Benehmen)",
+          "approved_gloss": "der respektvolle, achtsame Anstand gegenüber Allah, dem Propheten und allen Mitgeschöpfen",
+          "forbidden_substitutes": [
+            "starre Förmlichkeit"
+          ]
+        }
+      }
+    },
+    "malaikah": {
+      "arabic": "الملائكة",
+      "root": "لأك",
+      "transliteration": "Malā’ikah",
+      "translations": {
+        "en": {
+          "canonical": "Malā’ikah (the Angels of Allah created from light)",
+          "approved_gloss": "honorable celestial beings created from divine light who never disobey Allah and execute His commands flawlessly",
+          "forbidden_substitutes": [
+            "mythological cherubs",
+            "cupids",
+            "demigods"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmythological cherubs\\b",
+            "(?i)\\bdemigods\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Malā’ikah (les Anges d'Allah créés de lumière)",
+          "approved_gloss": "des créatures célestes nobles créées de lumière qui ne désobéissent jamais à Allah et accomplissent Ses ordres",
+          "forbidden_substitutes": [
+            "chérubins mythologiques",
+            "demi-dieux"
+          ]
+        },
+        "es": {
+          "canonical": "Malā’ikah (los Ángeles de Dios creados de luz)",
+          "approved_gloss": "seres celestiales nobles creados de luz que jamás desobedecen a Dios y ejecutan Sus designios",
+          "forbidden_substitutes": [
+            "cupidos",
+            "semidioses"
+          ]
+        },
+        "id": {
+          "canonical": "Malaikat (makhluk mulia ciptaan Allah dari cahaya)",
+          "approved_gloss": "makhluk mulia yang diciptakan dari cahaya, senantiasa taat dan tidak pernah membangkang kepada Allah",
+          "forbidden_substitutes": [
+            "makhluk mitos",
+            "dewa kecil"
+          ]
+        },
+        "tr": {
+          "canonical": "Melekler (Allah'ın nurdan yarattığı elçileri)",
+          "approved_gloss": "Allah'ın nurdan yarattığı, günah işlemeyen ve O'nun emirlerini eksiksiz yerine getiren nurani varlıklar",
+          "forbidden_substitutes": [
+            "mitolojik peri",
+            "yarı tanrı"
+          ]
+        },
+        "de": {
+          "canonical": "Malā’ikah (die aus Licht erschaffenen Engel Allahs)",
+          "approved_gloss": "edle himmlische Geschöpfe aus Licht, die Allah niemals ungehorsam sind und Seine Befehle vollkommen ausführen",
+          "forbidden_substitutes": [
+            "mythologische Wesen",
+            "Halbgötter"
+          ]
+        }
+      }
+    },
+    "kutub": {
+      "arabic": "الكتب السماوية",
+      "root": "كتب",
+      "transliteration": "Kutub",
+      "translations": {
+        "en": {
+          "canonical": "Kutub (divinely revealed scriptures of Allah)",
+          "approved_gloss": "the authentic holy scriptures revealed by Allah to His messengers for human guidance (Torah, Gospel, Psalms, and the Quran as the final criterion)",
+          "forbidden_substitutes": [
+            "man-made lore",
+            "ancient mythology"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bman-made lore\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Kutub (les Livres célestes révélés par Allah)",
+          "approved_gloss": "les écritures saintes révélées par Allah à Ses messagers pour guider l'humanité, scellées par le Coran",
+          "forbidden_substitutes": [
+            "mythologie ancienne",
+            "légendes humaines"
+          ]
+        },
+        "es": {
+          "canonical": "Kutub (los Libros sagrados revelados por Dios)",
+          "approved_gloss": "las escrituras sagradas reveladas por Dios a Sus mensajeros para guiar a la humanidad, culminando en el Corán",
+          "forbidden_substitutes": [
+            "mitología antigua"
+          ]
+        },
+        "id": {
+          "canonical": "Kitab-kitab Samawi (kitab suci wahyu Allah)",
+          "approved_gloss": "kitab-kitab wahyu yang diturunkan Allah kepada para rasul-Nya sebagai petunjuk manusia, disempurnakan oleh Al-Qur'an",
+          "forbidden_substitutes": [
+            "kitab buatan manusia"
+          ]
+        },
+        "tr": {
+          "canonical": "İlahi Kitaplar (Allah'ın vahyettiği kutsal kitaplar)",
+          "approved_gloss": "Allah'ın insanlara hidayet olarak peygamberlerine indirdiği kutsal kitaplar, Kur'an ile tamamlanmıştır",
+          "forbidden_substitutes": [
+            "insan ürünü metinler"
+          ]
+        },
+        "de": {
+          "canonical": "Kutub (die göttlich offenbarten Schriften)",
+          "approved_gloss": "die von Allah an Seine Gesandten herabgesandten heiligen Schriften zur Rechtleitung der Menschheit, versiegelt durch den Koran",
+          "forbidden_substitutes": [
+            "antike Mythen"
+          ]
+        }
+      }
+    },
+    "rusul": {
+      "arabic": "الرسل والأنبياء",
+      "root": "رسل",
+      "transliteration": "Rusul",
+      "translations": {
+        "en": {
+          "canonical": "Rusul (the chosen Messengers and Prophets of Allah)",
+          "approved_gloss": "righteous human beings selected by Allah to convey His divine message and moral guidance to humanity without claim to divinity",
+          "forbidden_substitutes": [
+            "demigods",
+            "soothsayers",
+            "fortune tellers"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bsoothsayers\\b",
+            "(?i)\\bdemigods\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Rusul (les Messagers et Prophètes choisis d'Allah)",
+          "approved_gloss": "des êtres humains vertueux élus par Allah pour transmettre Son message sans prétention à la divinité",
+          "forbidden_substitutes": [
+            "devins",
+            "demi-dieux"
+          ]
+        },
+        "es": {
+          "canonical": "Rusul (los Mensajeros y Profetas elegidos de Dios)",
+          "approved_gloss": "seres humanos justos elegidos por Dios para transmitir Su mensaje sin atribuirse divinidad alguna",
+          "forbidden_substitutes": [
+            "adivinos",
+            "semidioses"
+          ]
+        },
+        "id": {
+          "canonical": "Rasul-rasul (para utusan pilihan Allah)",
+          "approved_gloss": "manusia-manusia pilihan yang diutus Allah untuk menyampaikan risalah wahyu kepada umat manusia",
+          "forbidden_substitutes": [
+            "peramal",
+            "makhluk separuh dewa"
+          ]
+        },
+        "tr": {
+          "canonical": "Resuller ve Nebiler (Allah'ın seçtiği elçiler)",
+          "approved_gloss": "Allah'ın ilahi mesajını insanlara tebliğ etmek üzere seçtiği pak ve faziletli peygamberler",
+          "forbidden_substitutes": [
+            "kahinler",
+            "yarı tanrılar"
+          ]
+        },
+        "de": {
+          "canonical": "Rusul (die auserwählten Gesandten und Propheten Allahs)",
+          "approved_gloss": "von Allah auserwählte rechtschaffene menschliche Gesandte zur Übermittlung Seiner göttlichen Botschaft",
+          "forbidden_substitutes": [
+            "Wahrsager",
+            "Halbgötter"
+          ]
+        }
+      }
+    },
+    "yawm_al_qiyamah": {
+      "arabic": "يوم القيامة",
+      "root": "قوم",
+      "transliteration": "Yawm al-Qiyāmah",
+      "translations": {
+        "en": {
+          "canonical": "Yawm al-Qiyāmah (the Day of Resurrection and Divine Reckoning)",
+          "approved_gloss": "the definitive final Day ordained by Allah when all humanity is resurrected from death to stand for ultimate justice and accountability",
+          "forbidden_substitutes": [
+            "doomsday apocalypse alone",
+            "end of physical universe alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmere physical apocalypse\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Yawm al-Qiyāmah (le Jour de la Résurrection et du Jugement Dernier)",
+          "approved_gloss": "le Jour suprême fixé par Allah où l'humanité sera ressuscitée pour rendre compte de ses actes en toute justice",
+          "forbidden_substitutes": [
+            "simple fin du monde"
+          ]
+        },
+        "es": {
+          "canonical": "Yawm al-Qiyāmah (el Día de la Resurrección y Juicio Final)",
+          "approved_gloss": "el Día final establecido por Dios en el que toda la humanidad resucitará para rendir cuentas con absoluta justicia",
+          "forbidden_substitutes": [
+            "simple apocalipsis físico"
+          ]
+        },
+        "id": {
+          "canonical": "Hari Kiamat (Hari Kebangkitan dan Pengadilan Terakhir)",
+          "approved_gloss": "hari akhir yang ditetapkan Allah saat seluruh manusia dibangkitkan untuk mempertanggungjawabkan amalnya",
+          "forbidden_substitutes": [
+            "kiamat fiksi semata"
+          ]
+        },
+        "tr": {
+          "canonical": "Kıyamet Günü (Diriliş ve Büyük Hesap Günü)",
+          "approved_gloss": "bütün insanların diriltilip amellerinin hesabını vermek üzere Allah'ın huzurunda toplanacağı hak gün",
+          "forbidden_substitutes": [
+            "sıradan kıyamet senaryosu"
+          ]
+        },
+        "de": {
+          "canonical": "Yawm al-Qiyāmah (der Tag der Auferstehung und des Gerichts)",
+          "approved_gloss": "der endgültige Tag, an dem die gesamte Menschheit auferweckt wird, um vor Allah Rechenschaft abzulegen",
+          "forbidden_substitutes": [
+            "bloßer Weltuntergang"
+          ]
+        }
+      }
+    },
+    "qadar": {
+      "arabic": "القدر",
+      "root": "قدر",
+      "transliteration": "Qadar",
+      "translations": {
+        "en": {
+          "canonical": "Qadar (divine destiny and eternal decree of Allah)",
+          "approved_gloss": "Allah's comprehensive knowledge, recording, willing, and creation of all things in existence, coexisting harmoniously with human moral agency",
+          "forbidden_substitutes": [
+            "fatalism",
+            "blind luck",
+            "determinism alone",
+            "karma"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bblind fatalism\\b",
+            "(?i)\\bIslamic karma\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Qadar (le décret divin et la prédestination sage d'Allah)",
+          "approved_gloss": "la prescience absolue d'Allah et Sa volonté sage dans la création de toute chose, sans annuler le libre arbitre humain",
+          "forbidden_substitutes": [
+            "fatalisme aveugle",
+            "karma"
+          ]
+        },
+        "es": {
+          "canonical": "Qadar (el decreto divino y destino sabio de Dios)",
+          "approved_gloss": "el conocimiento previo y decreto soberano de Dios en todo lo existente, en armonía con la responsabilidad humana",
+          "forbidden_substitutes": [
+            "fatalismo ciego",
+            "karma"
+          ]
+        },
+        "id": {
+          "canonical": "Qadar (takdir dan ketetapan bijaksana Allah)",
+          "approved_gloss": "ketetapan Allah yang meliputi ilmu, pencatatan, dan kehendak-Nya atas segala sesuatu dengan tetap adanya ikhtiar manusia",
+          "forbidden_substitutes": [
+            "nasib buta",
+            "fatalisme"
+          ]
+        },
+        "tr": {
+          "canonical": "Kader (Allah'ın ezeli takdiri ve hikmetli ilmi)",
+          "approved_gloss": "Allah'ın her şeyi ezeli ilmiyle bilmesi, takdir etmesi ve insanın iradesiyle uyumlu biçimde yaratması",
+          "forbidden_substitutes": [
+            "kör kadercilik",
+            "fatalizm"
+          ]
+        },
+        "de": {
+          "canonical": "Qadar (die göttliche Vorherbestimmung und Fügung Allahs)",
+          "approved_gloss": "das allumfassende Wissen und der weise Beschluss Allahs über alle Dinge, im Einklang mit der menschlichen Verantwortung",
+          "forbidden_substitutes": [
+            "blinder Fatalismus",
+            "Karma"
+          ]
+        }
+      }
+    },
+    "bidaah": {
+      "arabic": "البدعة",
+      "root": "بدع",
+      "transliteration": "Bid‘ah",
+      "translations": {
+        "en": {
+          "canonical": "Bid‘ah (unsanctioned innovation in religious doctrine or worship)",
+          "approved_gloss": "any newly invented matter introduced into the religion of Islam claiming divine merit without precedent from the Quran or Sunnah",
+          "forbidden_substitutes": [
+            "scientific invention",
+            "modern technology",
+            "progress"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bscientific innovation as bidah\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Bid‘ah (l'innovation blâmable en matière religieuse)",
+          "approved_gloss": "toute nouveauté inventée dans le culte ou le dogme sans fondement dans le Coran ou la Sunnah",
+          "forbidden_substitutes": [
+            "progrès scientifique",
+            "technologie moderne"
+          ]
+        },
+        "es": {
+          "canonical": "Bid‘ah (la innovación ilegítima en la religión)",
+          "approved_gloss": "cualquier práctica inventada en la doctrina o culto que no tenga fundamento en las fuentes sagradas",
+          "forbidden_substitutes": [
+            "invento científico"
+          ]
+        },
+        "id": {
+          "canonical": "Bid'ah (inovasi terlarang dalam perkara agama)",
+          "approved_gloss": "perkara baru yang diada-adakan dalam urusan ibadah dan akidah tanpa dalil syar'i",
+          "forbidden_substitutes": [
+            "kemajuan teknologi"
+          ]
+        },
+        "tr": {
+          "canonical": "Bid'at (dinde asılsız sonradan uydurulan şeyler)",
+          "approved_gloss": "dinin aslında ve ibadetlerde dayanağı olmaksızın sonradan ihdas edilen asılsız uygulamalar",
+          "forbidden_substitutes": [
+            "teknolojik yenilik"
+          ]
+        },
+        "de": {
+          "canonical": "Bid‘ah (unzulässige Neuerung in Glaubenslehre oder Gottesdienst)",
+          "approved_gloss": "jede neu erfundene Praxis in religiösen Angelegenheiten ohne Grundlage in Koran und Sunnah",
+          "forbidden_substitutes": [
+            "technischer Fortschritt"
+          ]
+        }
+      }
+    },
+    "shahadah": {
+      "arabic": "الشهادة",
+      "root": "شهد",
+      "transliteration": "Shahādah",
+      "translations": {
+        "en": {
+          "canonical": "Shahādah (the Islamic testimony of faith)",
+          "approved_gloss": "the foundational verbal and heartfelt declaration that none has the right to be worshipped except Allah and that Muhammad is His Messenger",
+          "forbidden_substitutes": [
+            "creed chant",
+            "verbal password"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bcreed chant\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Shahādah (l'attestation de foi islamique)",
+          "approved_gloss": "le témoignage solennel qu'il n'y a de divinité digne d'adoration qu'Allah et que Muhammad est Son Messager",
+          "forbidden_substitutes": [
+            "mot de passe religieux"
+          ]
+        },
+        "es": {
+          "canonical": "Shahādah (el testimonio de fe islámico)",
+          "approved_gloss": "el testimonio solemne de que no hay más dios que Dios y que Mahoma es Su Mensajero",
+          "forbidden_substitutes": [
+            "canto de credo"
+          ]
+        },
+        "id": {
+          "canonical": "Syahadat (dua kalimat persaksian iman)",
+          "approved_gloss": "persaksian bahwa tiada sesembahan yang berhak disembah selain Allah dan Muhammad utusan Allah",
+          "forbidden_substitutes": [
+            "mantra agama"
+          ]
+        },
+        "tr": {
+          "canonical": "Kelime-i Şehadet (İslam'ın iman ikrarı)",
+          "approved_gloss": "Allah'tan başka ilah olmadığına ve Muhammed'in O'nun kulu ve elçisi olduğuna dair ikrar",
+          "forbidden_substitutes": [
+            "sözlü şifre"
+          ]
+        },
+        "de": {
+          "canonical": "Schahāda (das islamische Glaubensbekenntnis)",
+          "approved_gloss": "das feierliche Zeugnis, dass es keinen anbetungswürdigen Gott außer Allah gibt und Muhammad Sein Gesandter ist",
+          "forbidden_substitutes": [
+            "Glaubensformel allein"
+          ]
+        }
+      }
+    },
+    "wudu": {
+      "arabic": "الوضوء",
+      "root": "وضأ",
+      "transliteration": "Wuḍū’",
+      "translations": {
+        "en": {
+          "canonical": "Wuḍū’ (prescribed ritual ablution for prayer)",
+          "approved_gloss": "the prescribed ritual washing of the face, arms, head, and feet required before entering prayer or touching the Quran",
+          "forbidden_substitutes": [
+            "casual handwashing",
+            "simple hygiene alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bcasual handwashing\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Wuḍū’ (les ablutions rituelles prescrites)",
+          "approved_gloss": "la purification rituelle prescrite lavant le visage, les mains, la tête et les pieds avant la prière",
+          "forbidden_substitutes": [
+            "simple toilette"
+          ]
+        },
+        "es": {
+          "canonical": "Wuḍū’ (la ablución ritual prescrita)",
+          "approved_gloss": "el lavado ritual prescrito antes de la oración como purificación requerida",
+          "forbidden_substitutes": [
+            "simple aseo"
+          ]
+        },
+        "id": {
+          "canonical": "Wudhu (bersuci ritual sebelum salat)",
+          "approved_gloss": "membasuh anggota tubuh tertentu dengan air bersih sesuai syariat sebelum menunaikan salat",
+          "forbidden_substitutes": [
+            "cuci tangan biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "Abdest (namaz için farz olan temizlik)",
+          "approved_gloss": "namaz kılabilmek için belirli organları usulüne uygun olarak yıkama ve mesh etme ibadeti",
+          "forbidden_substitutes": [
+            "basit el yıkama"
+          ]
+        },
+        "de": {
+          "canonical": "Wuḍū’ (die rituelle Gebetswaschung)",
+          "approved_gloss": "die vorgeschriebene rituelle Reinigung bestimmter Körperteile vor dem Verrichten des Gebets",
+          "forbidden_substitutes": [
+            "gewöhnliches Waschen"
+          ]
+        }
+      }
+    },
+    "ghusl": {
+      "arabic": "الغسل",
+      "root": "غسل",
+      "transliteration": "Ghusl",
+      "translations": {
+        "en": {
+          "canonical": "Ghusl (full major ritual purification bath)",
+          "approved_gloss": "the complete ritual washing of the entire body with clean water according to prescribed Sharia steps following major ritual impurity",
+          "forbidden_substitutes": [
+            "casual shower",
+            "jacuzzi soak"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bcasual shower\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ghusl (le grand bain rituel de purification)",
+          "approved_gloss": "le lavage complet du corps selon les prescriptions islamiques après l'état de grande impureté",
+          "forbidden_substitutes": [
+            "douche ordinaire"
+          ]
+        },
+        "es": {
+          "canonical": "Ghusl (el baño ritual completo de purificación)",
+          "approved_gloss": "el lavado ritual de todo el cuerpo prescrito tras la impureza mayor",
+          "forbidden_substitutes": [
+            "ducha común"
+          ]
+        },
+        "id": {
+          "canonical": "Mandi Wajib / Ghusl (mandi besar penyucian diri)",
+          "approved_gloss": "meratakan air ke seluruh tubuh dengan niat menghilangkan hadas besar",
+          "forbidden_substitutes": [
+            "mandi biasa"
+          ]
+        },
+        "tr": {
+          "canonical": "Gusül (boy abdesti ve büyük temizlik)",
+          "approved_gloss": "bütün vücudu kuru yer kalmayacak şekilde usulünce yıkamak suretiyle yapılan manevi arınma",
+          "forbidden_substitutes": [
+            "sıradan duş"
+          ]
+        },
+        "de": {
+          "canonical": "Ghusl (die rituelle Ganzkörperwaschung)",
+          "approved_gloss": "die vollständige rituelle Waschung des gesamten Körpers zur Behebung des Zustands ritueller Unreinheit",
+          "forbidden_substitutes": [
+            "gewöhnliche Dusche"
+          ]
+        }
+      }
+    },
+    "adhan": {
+      "arabic": "الأذان",
+      "root": "أذن",
+      "transliteration": "Adhān",
+      "translations": {
+        "en": {
+          "canonical": "Adhān (the Islamic call to prescribed prayer)",
+          "approved_gloss": "the public proclamation of Tawheed and invitation to prayer chanted aloud at the arrival of each prescribed prayer time",
+          "forbidden_substitutes": [
+            "church bell equivalent",
+            "minaret chant alone"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bminaret song\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Adhān (l'appel islamique solennel à la prière)",
+          "approved_gloss": "l'appel public proclamant l'unicité divine et invitant les croyants à la prière prescrite",
+          "forbidden_substitutes": [
+            "cloche islamique"
+          ]
+        },
+        "es": {
+          "canonical": "Adhān (la llamada solemne a la oración)",
+          "approved_gloss": "el llamado público que proclama el monoteísmo y convoca a los fieles a la oración prescrita",
+          "forbidden_substitutes": [
+            "campana islámica"
+          ]
+        },
+        "id": {
+          "canonical": "Azan (panggilan suci untuk menunaikan salat)",
+          "approved_gloss": "seruan resmi pemberitahuan masuknya waktu salat wajib dengan lafaz-lafaz tauhid tertentu",
+          "forbidden_substitutes": [
+            "lagu menara"
+          ]
+        },
+        "tr": {
+          "canonical": "Ezan (namaza çağrıyı bildiren ilahi nida)",
+          "approved_gloss": "namaz vaktinin girdiğini müminlere duyuran ve tevhid hakikatini ilan eden kutsal çağrı",
+          "forbidden_substitutes": [
+            "minare şarkısı"
+          ]
+        },
+        "de": {
+          "canonical": "Adhān (der islamische Gebetsruf)",
+          "approved_gloss": "der feierliche öffentliche Ruf zu den Pflichtgebeten, der das Glaubensbekenntnis verkündet",
+          "forbidden_substitutes": [
+            "Kirchturm-Glocke"
+          ]
+        }
+      }
+    },
+    "masjid": {
+      "arabic": "المسجد",
+      "root": "سجد",
+      "transliteration": "Masjid",
+      "translations": {
+        "en": {
+          "canonical": "Masjid (the Islamic house of prayer and prostration)",
+          "approved_gloss": "the designated sanctuary for congregational prayer, communal learning, and pure worship of Allah alone",
+          "forbidden_substitutes": [
+            "clerical temple",
+            "shrine house"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bclerical temple\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Masjid (la mosquée, lieu de prosternation et de prière)",
+          "approved_gloss": "le lieu saint dédié à la prière en assemblée, à l'adoration exclusive d'Allah et au savoir",
+          "forbidden_substitutes": [
+            "temple clérical"
+          ]
+        },
+        "es": {
+          "canonical": "Masjid (la mezquita, lugar de postración y oración)",
+          "approved_gloss": "el templo sagrado destinado a la oración congregacional y la adoración exclusiva a Dios",
+          "forbidden_substitutes": [
+            "templo clerical"
+          ]
+        },
+        "id": {
+          "canonical": "Masjid (tempat suci bersujud dan salat berjamaah)",
+          "approved_gloss": "tempat suci beribadah kepada Allah, salat berjamaah, dan pusat pembinaan umat",
+          "forbidden_substitutes": [
+            "kuil"
+          ]
+        },
+        "tr": {
+          "canonical": "Mescid / Cami (Allah'a secde ve ibadet edilen mekan)",
+          "approved_gloss": "Müslümanların cemaatle namaz kıldığı, Allah'a ibadet edilen mübarek mekan",
+          "forbidden_substitutes": [
+            "kutsal tapınak"
+          ]
+        },
+        "de": {
+          "canonical": "Masjid (die Moschee, Ort der Niederwerfung)",
+          "approved_gloss": "das Gotteshaus für das rituelle Gemeinschaftsgebet und die reine Anbetung Allahs",
+          "forbidden_substitutes": [
+            "klerikaler Tempel"
+          ]
+        }
+      }
+    },
+    "istighfar": {
+      "arabic": "الاستغفار",
+      "root": "غفر",
+      "transliteration": "Istighfār",
+      "translations": {
+        "en": {
+          "canonical": "Istighfār (seeking the forgiveness and pardon of Allah)",
+          "approved_gloss": "sincerely asking Allah to forgive sins, conceal human shortcomings, and protect from their harmful consequences",
+          "forbidden_substitutes": [
+            "self-flagellation",
+            "penance bargaining"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bpenance bargaining\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Istighfār (la demande de pardon à Allah)",
+          "approved_gloss": "demander sincèrement à Allah le pardon de ses péchés et la protection contre leurs conséquences",
+          "forbidden_substitutes": [
+            "mortification corporelle"
+          ]
+        },
+        "es": {
+          "canonical": "Istighfār (la petición de perdón a Dios)",
+          "approved_gloss": "pedir con humildad el perdón de Dios para que absuelva las faltas cometidas",
+          "forbidden_substitutes": [
+            "autocastigo"
+          ]
+        },
+        "id": {
+          "canonical": "Istigfar (memohon ampunan kepada Allah)",
+          "approved_gloss": "memohon kepada Allah dengan tulus agar mengampuni dosa dan menutupi aib hamba-Nya",
+          "forbidden_substitutes": [
+            "penebusan dosa"
+          ]
+        },
+        "tr": {
+          "canonical": "İstiğfar (Allah'tan bağışlanma ve mağfiret dileme)",
+          "approved_gloss": "günahların örtülmesi ve affedilmesi için içtenlikle Allah'a yalvarıp af dileme",
+          "forbidden_substitutes": [
+            "günah pazarlığı"
+          ]
+        },
+        "de": {
+          "canonical": "Istighfār (das Bitten um Vergebung bei Allah)",
+          "approved_gloss": "das aufrichtige Flehen zu Allah, Sünden zu vergeben und vor ihren üblen Folgen zu schützen",
+          "forbidden_substitutes": [
+            "Sühnehandel"
+          ]
+        }
+      }
+    },
+    "makruh": {
+      "arabic": "المكروه",
+      "root": "كره",
+      "transliteration": "Makrūh",
+      "translations": {
+        "en": {
+          "canonical": "Makrūh (discouraged and disliked by divine guidance)",
+          "approved_gloss": "an act that is disliked and discouraged by Allah, the abandonment of which earns reward, but whose commission does not incur sinful punishment",
+          "forbidden_substitutes": [
+            "absolutely sinful",
+            "strictly illegal"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bstrictly illegal as makruh\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Makrūh (ce qui est déconseillé et réprouvé religieusement)",
+          "approved_gloss": "un acte déconseillé dont le délaissement est récompensé sans que son accomplissement n'entraîne de châtiment",
+          "forbidden_substitutes": [
+            "totalement péché"
+          ]
+        },
+        "es": {
+          "canonical": "Makrūh (lo desaconsejado y mal visto por la religión)",
+          "approved_gloss": "un acto reprobado que es mejor evitar sin llegar a constituir pecado grave",
+          "forbidden_substitutes": [
+            "pecaminoso absoluto"
+          ]
+        },
+        "id": {
+          "canonical": "Makruh (perkara yang dianjurkan untuk ditinggalkan)",
+          "approved_gloss": "perbuatan yang lebih baik ditinggalkan dan berpahala jika ditinggalkan, namun tidak berdosa jika dikerjakan",
+          "forbidden_substitutes": [
+            "dosa berat"
+          ]
+        },
+        "tr": {
+          "canonical": "Mekruh (yapılması hoş karşılanmayan, çirkin görülen)",
+          "approved_gloss": "dinen kesin olarak haram olmamakla birlikte terk edilmesi sevap, işlenmesi hoş olmayan amel",
+          "forbidden_substitutes": [
+            "kesin günah"
+          ]
+        },
+        "de": {
+          "canonical": "Makrūh (das Unerwünschte und Missbilligte)",
+          "approved_gloss": "eine Handlung, deren Unterlassung belohnt wird, deren Ausführung jedoch keine Sünde nach sich zieht",
+          "forbidden_substitutes": [
+            "absolut verboten"
+          ]
+        }
+      }
+    },
+    "mustahabb": {
+      "arabic": "المستحب",
+      "root": "حبب",
+      "transliteration": "Mustaḥabb",
+      "translations": {
+        "en": {
+          "canonical": "Mustaḥabb (recommended and meritorious deed)",
+          "approved_gloss": "a commendable righteous act encouraged by Allah and His Messenger, the performance of which brings reward, but without blame for its omission",
+          "forbidden_substitutes": [
+            "mandatory obligation",
+            "harsh requirement"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmandatory obligation as mustahabb\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Mustaḥabb (l'acte recommandé et méritoire)",
+          "approved_gloss": "un acte méritoire encouragé dont l'accomplissement est récompensé sans que son omission ne soit blâmable",
+          "forbidden_substitutes": [
+            "obligation stricte"
+          ]
+        },
+        "es": {
+          "canonical": "Mustaḥabb (el acto recomendado y meritorio)",
+          "approved_gloss": "una acción loable recomendada cuya realización es premiada sin que su omisión sea censurada",
+          "forbidden_substitutes": [
+            "deber obligatorio"
+          ]
+        },
+        "id": {
+          "canonical": "Mustahab / Sunnah (amalan yang dianjurkan dan berpahala)",
+          "approved_gloss": "perbuatan baik yang dianjurkan dan diganjar pahala jika dikerjakan tanpa dosa jika ditinggalkan",
+          "forbidden_substitutes": [
+            "kewajiban mutlak"
+          ]
+        },
+        "tr": {
+          "canonical": "Müstehap (yapılması tavsiye edilen sevaplı amel)",
+          "approved_gloss": "yapılması sevap kazandıran, terk edilmesinde ise günah olmayan güzel ve faziletli amel",
+          "forbidden_substitutes": [
+            "farz zorunluluk"
+          ]
+        },
+        "de": {
+          "canonical": "Mustaḥabb (das Empfohlene und Belohnenswerte)",
+          "approved_gloss": "eine empfohlene rechtschaffene Tat, deren Ausführung belohnt wird, ohne dass ihre Unterlassung Tadel nach sich zieht",
+          "forbidden_substitutes": [
+            "zwingende Pflicht"
+          ]
+        }
+      }
+    },
+    "ijma": {
+      "arabic": "الإجماع",
+      "root": "جمع",
+      "transliteration": "Ijmā‘",
+      "translations": {
+        "en": {
+          "canonical": "Ijmā‘ (unanimous scholarly consensus of the Ummah)",
+          "approved_gloss": "the unanimous consensus of qualified Muslim scholars in a particular era on a religious matter following the Prophet's passing",
+          "forbidden_substitutes": [
+            "majority vote alone",
+            "parliamentary poll"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmajority vote alone\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ijmā‘ (le consensus unanime des savants musulmans)",
+          "approved_gloss": "l'accord unanime des érudits qualifiés de la communauté musulmane sur une question religieuse après le Prophète",
+          "forbidden_substitutes": [
+            "vote majoritaire simple"
+          ]
+        },
+        "es": {
+          "canonical": "Ijmā‘ (el consenso unánime de los eruditos)",
+          "approved_gloss": "el acuerdo unánime de los sabios musulmanes calificados sobre una cuestión tras el fallecimiento del Profeta",
+          "forbidden_substitutes": [
+            "votación de mayoría"
+          ]
+        },
+        "id": {
+          "canonical": "Ijma (kesepakatan bulat para ulama mujtahid)",
+          "approved_gloss": "kesepakatan bulat seluruh ulama mujtahid umat Islam pada suatu masa setelah wafatnya Nabi atas suatu hukum",
+          "forbidden_substitutes": [
+            "pemungutan suara parlemen"
+          ]
+        },
+        "tr": {
+          "canonical": "İcma (alimlerin şer'i meseledeki ittifakı)",
+          "approved_gloss": "Hz. Peygamber'den sonra herhangi bir asırda İslam müçtehitlerinin şer'i bir hüküm üzerinde birleşmesi",
+          "forbidden_substitutes": [
+            "çoğunluk oylaması"
+          ]
+        },
+        "de": {
+          "canonical": "Ijmā‘ (der einhellige Gelehrtenkonsens)",
+          "approved_gloss": "die einstimmige Übereinstimmung der qualifizierten Gelehrten der islamischen Gemeinschaft zu einer Frage nach dem Propheten",
+          "forbidden_substitutes": [
+            "bloße Mehrheitsentscheidung"
+          ]
+        }
+      }
+    },
+    "qiyas": {
+      "arabic": "القياس",
+      "root": "قيس",
+      "transliteration": "Qiyās",
+      "translations": {
+        "en": {
+          "canonical": "Qiyās (juridical analogical deduction)",
+          "approved_gloss": "the rigorous methodology of extending a legal ruling from an established text to a novel scenario based on an identical effective cause (‘illah)",
+          "forbidden_substitutes": [
+            "mere guesswork",
+            "arbitrary speculation"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\bmere guesswork\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Qiyās (le raisonnement analogique juridique rigoureux)",
+          "approved_gloss": "la déduction juridique consistant à appliquer le statut d'un cas textuel à un nouveau cas pour une cause juridique commune",
+          "forbidden_substitutes": [
+            "spéculation arbitraire"
+          ]
+        },
+        "es": {
+          "canonical": "Qiyās (la analogía jurídica fundamentada)",
+          "approved_gloss": "el método de deducir un veredicto legal para un caso nuevo comparándolo con uno establecido con la misma causa",
+          "forbidden_substitutes": [
+            "pura conjetura"
+          ]
+        },
+        "id": {
+          "canonical": "Qiyas (analogi hukum berdasarkan kesamaan sebab)",
+          "approved_gloss": "menetapkan hukum suatu perkara baru yang belum ada nashnya dengan perkara yang ada nashnya karena persamaan 'illat",
+          "forbidden_substitutes": [
+            "tebak-tebakan semata"
+          ]
+        },
+        "tr": {
+          "canonical": "Kıyas (hükümde illete dayalı kıyaslama)",
+          "approved_gloss": "aralarındaki ortak illet sebebiyle hakkında nass bulunan bir meselenin hükmünü hakkında nass bulunmayana uygulama",
+          "forbidden_substitutes": [
+            "rastgele tahmin"
+          ]
+        },
+        "de": {
+          "canonical": "Qiyās (der juristische Analogieschluss)",
+          "approved_gloss": "das methodische Übertragen eines Urteils von einem textlich geregelten Fall auf einen neuen Fall aufgrund desselben Rechtsgrundes",
+          "forbidden_substitutes": [
+            "bloße Spekulation"
+          ]
+        }
+      }
+    },
+    "ijtihad": {
+      "arabic": "الاجتهاد",
+      "root": "جهد",
+      "transliteration": "Ijtihād",
+      "translations": {
+        "en": {
+          "canonical": "Ijtihād (rigorous scholarly legal deduction by qualified jurists)",
+          "approved_gloss": "the utmost intellectual effort exerted by a qualified jurist to derive practical rulings from detailed Sharia sources in new situations",
+          "forbidden_substitutes": [
+            "layman freestyle",
+            "uncontrolled personal whim"
+          ],
+          "regex_fix_patterns": [
+            "(?i)\\blayman freestyle\\b"
+          ]
+        },
+        "fr": {
+          "canonical": "Ijtihād (l'effort de réflexion juridique par des juristes qualifiés)",
+          "approved_gloss": "le déploiement des facultés intellectuelles par un juriste qualifié pour déduire des règles juridiques à partir des textes",
+          "forbidden_substitutes": [
+            "caprice personnel",
+            "improvisation profane"
+          ]
+        },
+        "es": {
+          "canonical": "Ijtihād (el esfuerzo interpretativo de juristas calificados)",
+          "approved_gloss": "el esfuerzo intelectual riguroso ejercido por un experto para deducir dictámenes en situaciones nuevas",
+          "forbidden_substitutes": [
+            "ocurrencia personal"
+          ]
+        },
+        "id": {
+          "canonical": "Ijtihad (upaya sungguh-sungguh ahli hukum menggali hukum)",
+          "approved_gloss": "pencurahan segenap kemampuan oleh mujtahid yang memenuhi syarat untuk menetapkan hukum syar'i",
+          "forbidden_substitutes": [
+            "opini awam bebas"
+          ]
+        },
+        "tr": {
+          "canonical": "İçtihat (ehil müctehidin hüküm çıkarma gayreti)",
+          "approved_gloss": "yetkin bir fıkıh aliminin şer'i delillerden yeni meselelere dair hüküm çıkarmak için harcadığı ilmi çaba",
+          "forbidden_substitutes": [
+            "avamın keyfi görüşü"
+          ]
+        },
+        "de": {
+          "canonical": "Ijtihād (die methodische Rechtsfindung durch qualifizierte Gelehrte)",
+          "approved_gloss": "die größte intellektuelle Anstrengung eines qualifizierten Rechtsgelehrten zur Ableitung praktischer Normen für neue Fragen",
+          "forbidden_substitutes": [
+            "laienhafte Willkür"
+          ]
+        }
+      }
+    }
+  },
+  "total_terms_count": 52,
+  "supported_languages": [
+    "en",
+    "fr",
+    "es",
+    "id",
+    "tr",
+    "de"
+  ]
+}

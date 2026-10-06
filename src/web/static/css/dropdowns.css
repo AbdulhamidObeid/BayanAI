@@ -1,0 +1,42 @@
+/* Shared Bayan menus replace OS popups while native selects retain values. */
+.bayan-native-select { display: none !important; }
+.bayan-select { position: relative; display: inline-block; min-width: 0; flex: 1; }
+.sel-wrap:has(.bayan-select)::after { display: none; }
+.sel-wrap:has(.bayan-select) { display: flex; }
+.bayan-select-trigger {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  width: 100%; min-height: 38px; padding: 7px 12px;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg); color: var(--text-1);
+  font: 500 13px var(--font); text-align: start; cursor: pointer;
+}
+.bayan-select-trigger::after {
+  content: ''; width: 6px; height: 6px; flex-shrink: 0;
+  border-right: 1.5px solid var(--text-3); border-bottom: 1.5px solid var(--text-3);
+  transform: rotate(45deg); margin: -3px 3px 0;
+}
+.bayan-select-trigger:hover { border-color: var(--purple-soft); }
+.bayan-select-trigger:focus-visible, .bayan-select-trigger[aria-expanded="true"] {
+  outline: none; border-color: var(--purple); background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(97,80,234,.1);
+}
+.bayan-select-trigger:disabled { opacity: .5; cursor: not-allowed; }
+.bayan-select-menu {
+  position: absolute; inset-inline-start: 0; top: calc(100% + 8px); z-index: 1100;
+  width: max-content; min-width: 100%; max-width: min(420px, calc(100vw - 48px));
+  max-height: 300px; overflow-y: auto; overscroll-behavior: contain;
+  padding: 6px; border: 1px solid var(--border); border-radius: 12px;
+  background: var(--surface); color: var(--text-1); box-shadow: var(--shadow-md);
+}
+.bayan-select-menu[hidden] { display: none; }
+.bayan-select[data-above="true"] .bayan-select-menu { top: auto; bottom: calc(100% + 8px); }
+.bayan-select-option {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 9px 12px; border-radius: 7px; cursor: pointer;
+  font: 400 13px var(--font); line-height: 1.6; text-align: start;
+}
+.bayan-select-option::after { content: ''; width: 12px; flex-shrink: 0; }
+.bayan-select-option[aria-selected="true"] { background: var(--purple-bg); color: var(--purple); font-weight: 600; }
+.bayan-select-option[aria-selected="true"]::after { content: '✓'; }
+.bayan-select-option.is-active, .bayan-select-option:hover { background: var(--purple-bg); color: var(--purple); }
+.bayan-select-option[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }

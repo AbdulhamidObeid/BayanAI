@@ -1,0 +1,80 @@
+{
+  "name": "Bayan-AI Official Sharia Sources Registry",
+  "version": "1.0.0",
+  "description": "Accredited Islamic Knowledge Repositories mandated by Bathel Foundation for the Islamic AI Challenge",
+  "sources": {
+    "dawah_and_curriculum": {
+      "name": "المستودع الدعوي الرقمي",
+      "url": "https://dawa.center",
+      "description": "Comprehensive digital dawah repository for themes, target countries, religions, languages, and demographics.",
+      "special_files": {
+        "bayanat_misconceptions": {
+          "title": "بيّنات: أسئلة وأجوبة عن الإسلام",
+          "url": "https://dawa.center/file/7937",
+          "description": "Foundational dialogic knowledge base for answering recurring questions and misconceptions."
+        }
+      }
+    },
+    "terminology_and_lexicon": {
+      "name": "موسوعة مفردات المحتوى الإسلامي (الجمهرة)",
+      "url": "https://islamic-content.com",
+      "dictionary_url": "https://islamic-content.com/dictionary",
+      "description": "Primary authoritative terminology dictionary taking strict precedence over automated machine translation for Islamic terms."
+    },
+    "quran_and_translations": {
+      "name": "مجمع الملك فهد لطباعة المصحف الشريف & Quranpedia",
+      "primary_api": "https://quranenc.com/api/v1",
+      "secondary_portal": "https://quranpedia.net",
+      "policy": "Deterministic retrieval of Uthmani script and accredited translations across 70+ languages. Zero machine translation permitted."
+    },
+    "tafseer": {
+      "name": "موسوعة التفسير - الدرر السنية",
+      "url": "https://dorar.net/tafseer",
+      "policy": "Authoritative classical exegesis with strict separation between Quranic scripture and interpretive commentary."
+    },
+    "hadith": {
+      "name": "موسوعة الأحاديث النبوية & الدرر السنية & المكتبة الشاملة",
+      "primary_portal": "https://dorar.net/hadith",
+      "api_hadith_enc": "https://hadeethenc.com/api/v1",
+      "shamela_portal": "https://shamela.ws",
+      "policy": "Only authenticated Hadiths with chain of custody and scholarly grading (Sahih/Hasan) permitted. Attribution without source is strictly prohibited."
+    },
+    "aqeeda": {
+      "name": "موسوعة العقيدة والتعريف بالإسلام - الدرر السنية",
+      "url": "https://dorar.net/aqeeda",
+      "policy": "Faith tenets anchored in the consensus of early generations (Sahaba and Tabi'un)."
+    },
+    "feqh_informational": {
+      "name": "موسوعة الفقه العام - الدرر السنية",
+      "url": "https://dorar.net/feqhia",
+      "policy": "Informational jurisprudence across the four Sunnah schools. Strictly prohibited from acting as a personal fatwa engine or automated preference mechanism."
+    },
+    "history_and_seerah": {
+      "name": "موسوعة السيرة والتاريخ - الدرر السنية",
+      "url": "https://dorar.net/history",
+      "policy": "Verified historical occurrences and Prophetic biography."
+    }
+  },
+  "response_levels": {
+    "LEVEL_A": {
+      "title": "معلومات أصلية مستقرة",
+      "scope": "القرآن، الأحاديث الصحيحة المعتمدة، أركان الإسلام والإيمان، السيرة الأساسية، الأخلاق والقيم، المعلومات التعريفية المستقرة.",
+      "protocol": "إجابة مباشرة موثقة بالمصدر المعتمد."
+    },
+    "LEVEL_B": {
+      "title": "شرح وتعريف واستدلال",
+      "scope": "شرح المفاهيم، المقارنات، مقاصد التشريع، الإجابة عن الأسئلة الفكرية والشبهات العامة.",
+      "protocol": "الإجابة من المادة المعتمدة مع إظهار المرجع، وتجنب القطع فيما يحتمل الخلاف."
+    },
+    "LEVEL_C": {
+      "title": "مسائل خلافية أو عالية الحساسية",
+      "scope": "الخلاف الفقهي، المسائل العقدية التفصيلية، القضايا التاريخية الجدلية، الأسئلة التي تتطلب تحريراً علمياً خاصاً.",
+      "protocol": "إجابة مقيدة بما هو معتمد، أو بيان وجود الخلاف، أو الإحالة للمختص."
+    },
+    "LEVEL_D": {
+      "title": "فتوى أو حالة شخصية",
+      "scope": "الحكم على واقعة فردية، صحة عقد أو عبادة لشخص بعينه، نزاع أسري، مسائل قانونية أو طبية ذات أثر شرعي.",
+      "protocol": "الامتناع والإحالة: لا يقدم النظام حكماً مستقلاً؛ يوضح المعلومات العامة ويحيل إلى جهة إفتاء مؤهلة."
+    }
+  }
+}

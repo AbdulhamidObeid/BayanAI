@@ -1,0 +1,22 @@
+{
+  "translations": [
+    {
+      "key": "english_rwwad",
+      "language_iso_code": "en",
+      "version": "1.0.19",
+      "last_update": 1773348325
+    },
+    {
+      "key": "english_saheeh",
+      "language_iso_code": "en",
+      "version": "1.1.2",
+      "last_update": 1750772247
+    },
+    {
+      "key": "english_hilali_khan",
+      "language_iso_code": "en",
+      "version": "1.1.2",
+      "last_update": 1756933433
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "project_name": "IslamicAI",
+  "challenge_title": "تحدي الذكاء الاصطناعي في خدمة المحتوى الإسلامي",
+  "target_url": "https://islamicaich.org/",
+  "organizer": "مؤسسة باذل الأهلية بالشراكة مع شركة التحول التقني",
+  "target_prize": "المركز الأول - 100,000 ريال سعودي",
+  "total_prize_pool": "200,000 SAR",
+  "prizes": {
+    "first_place": 100000,
+    "second_place": 50000,
+    "third_place": 25000,
+    "fourth_place": 15000,
+    "fifth_place": 10000
+  },
+  "timeline": {
+    "registration_deadline": "2026-09-29T23:59:59+03:00",
+    "screening_announcement": "2026-09-30",
+    "orientation_session": "2026-10-01",
+    "workshops": "2026-10-02 to 2026-10-03",
+    "hackathon_camp": "2026-10-04 to 2026-10-06",
+    "final_submission_deadline": "2026-10-06T23:59:59+03:00",
+    "top_20_announcement": "2026-10-18",
+    "final_judging_sessions": "2026-10-19 to 2026-10-22",
+    "awards_ceremony": "2026-10-26"
+  },
+  "evaluation_criteria_weights": {
+    "scientific_soundness_and_reliability": 0.25,
+    "track_impact_and_outcome": 0.2,
+    "technical_quality_and_readiness": 0.15,
+    "innovation_and_value_add": 0.15,
+    "feasibility_and_sustainability": 0.1,
+    "ux_accessibility_and_communication": 0.1,
+    "presentation_and_verifiability": 0.05
+  },
+  "tracks": [
+    {
+      "id": "track_01",
+      "number": "01",
+      "name": "الحوار المعرفي والإجابات الموثوقة",
+      "theme": "Knowledge Dialogue & Reliable Answers"
+    },
+    {
+      "id": "track_02",
+      "number": "02",
+      "name": "صناعة المحتوى متعدد اللغات والتوطين الثقافي",
+      "theme": "Multilingual Content Creation & Cultural Localization"
+    },
+    {
+      "id": "track_03",
+      "number": "03",
+      "name": "التجارب التفاعلية والرحلة المعرفية للتعريف بالإسلام وتعلمه",
+      "theme": "Interactive Experiences & Knowledge Journeys for Discovering and Learning Islam"
+    },
+    {
+      "id": "track_04",
+      "number": "04",
+      "name": "أدوات المعرفة والتحقق لتمكين المعرفين بالإسلام",
+      "theme": "Knowledge & Verification Tools for Islamic Educators and Scholars"
+    },
+    {
+      "id": "track_05",
+      "number": "05",
+      "name": "المسار المفتوح: حلول مبتكرة في التعريف بالإسلام",
+      "theme": "Open Track: Innovative Solutions in Civilizational Dialogue"
+    }
+  ],
+  "worker_access_code": "ENV:WORKER_ACCESS_CODE",
+  "admin_password": "ENV:ADMIN_PASSWORD"
+}

@@ -1,0 +1,21 @@
+{
+  "agent_id": "cultural_localizer",
+  "name": "Cultural Localization & Rhetoric Agent",
+  "temperature": 0.3,
+  "supported_personas": [
+    "GENERAL_GLOBAL",
+    "WESTERN_SECULAR",
+    "EUROPEAN",
+    "EAST_ASIAN",
+    "SOUTHEAST_ASIAN",
+    "SOUTH_ASIAN",
+    "AFRICAN",
+    "LATIN_AMERICAN",
+    "ARAB_WORLD",
+    "ACADEMIC_SEEKER",
+    "DIGITAL_YOUTH",
+    "NEW_MUSLIM",
+    "SKEPTICAL_WESTERN",
+    "DAWAH_WORKER"
+  ]
+}

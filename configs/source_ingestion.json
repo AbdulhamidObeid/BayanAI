@@ -1,0 +1,32 @@
+{
+  "workers": 4,
+  "timeout_seconds": 600,
+  "search_terms": [
+    "كسوة الكعبة",
+    "الكعبة",
+    "التوحيد",
+    "الصلاة",
+    "الزكاة",
+    "الصيام",
+    "الحج",
+    "إبراهيم",
+    "محمد",
+    "الإسلام",
+    "الموسيقى",
+    "المعازف",
+    "الخلاف في الغناء"
+  ],
+  "article_urls": [
+    "https://islamic-content.com/post/18220",
+    "https://islamic-content.com/t/11662"
+  ],
+  "history_urls": [
+    "https://dorar.net/history/event/4887",
+    "https://dorar.net/history/event/1095"
+  ],
+  "description": "Observed approved publisher links and broad topic discovery, never canned answers. Refresh with the CLI; unavailable collections are reported.",
+  "shamela_urls": [
+    "https://shamela.ws/book/9621/253",
+    "https://shamela.ws/book/742/703"
+  ]
+}

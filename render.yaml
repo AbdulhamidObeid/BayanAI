@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bayan-ai
+    runtime: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn src.web.app:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: BAYAN_PRIVATE_STORE
+        value: /tmp/bayan-private

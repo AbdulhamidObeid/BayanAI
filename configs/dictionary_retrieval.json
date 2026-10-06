@@ -1,0 +1,15 @@
+{
+  "search_url": "https://islamic-content.com/api/search_words",
+  "headers": {"X-Requested-With": "XMLHttpRequest", "Accept": "application/json"},
+  "route_pattern": "/(?:legacy-)?dictionary/word/(?P<id>[0-9]+)(?:/(?P<language>[a-z]{2,3}))?",
+  "entries_per_term": 2,
+  "terms_per_part": 2,
+  "minimum_characters": 20,
+  "maximum_characters": 14000,
+  "section_selector": "main article.term blockquote, main article.term .encyclopedia > p, main .entry-main-content > .bg-white > div > div",
+  "scripture_selector": ".ayah, .hadeeth",
+  "scripture_intro_pattern": "قال الله|قال تعالى|قال رسول|قال النبي|في الحديث الشريف|عن النبي",
+  "language_labels": {"en": ["الإنجليزية"], "fr": ["الفرنسية"], "es": ["الإسبانية"], "id": ["الإندونيسية"], "tr": ["التركية"], "ur": ["الأوردية", "الأردية"], "ru": ["الروسية"], "zh": ["الصينية"], "sw": ["السواحلية"]},
+  "request_pattern": "\\b(translate|translation|definition|meaning|mean|define)\\b|ترجم|معنى|تعريف|tradu|signifi|défin",
+  "description": "Observed Jamharah dictionary API and entry routes. Search labels are navigation; only exact complete definition fields and observed published translations become evidence. No term IDs or answer text are prescribed."
+}

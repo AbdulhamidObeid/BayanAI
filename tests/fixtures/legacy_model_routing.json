@@ -1,0 +1,135 @@
+{
+  "quota_timezone": "America/Los_Angeles",
+  "max_rate_wait_seconds": 15,
+  "unknown_rate_cooldown_seconds": 60,
+  "service_cooldown_seconds": 3,
+  "complex_parts": 3,
+  "complex_languages": 3,
+  "models": {
+    "gemini-3.5-flash-lite": {
+      "rpm": 15,
+      "rpd": 500
+    },
+    "gemini-3.1-flash-lite": {
+      "rpm": 15,
+      "rpd": 500
+    },
+    "gemini-3.8-flash": {
+      "rpm": 5,
+      "rpd": 20
+    },
+    "gemini-2.5-flash": {
+      "rpm": 5,
+      "rpd": 20
+    },
+    "gemini-2.5-flash-lite": {
+      "rpm": 10,
+      "rpd": 20
+    },
+    "gemini-3-flash-preview": {
+      "rpm": 5,
+      "rpd": 20
+    },
+    "gemini-3.5-flash": {
+      "rpm": 5,
+      "rpd": 20
+    }
+  },
+  "pools": {
+    "routine": [
+      "gemini-3.5-flash-lite",
+      "gemini-3.1-flash-lite",
+      "gemini-2.5-flash-lite"
+    ],
+    "review": [
+      "gemini-3.1-flash-lite",
+      "gemini-3.5-flash-lite",
+      "gemini-2.5-flash-lite"
+    ],
+    "strong": [
+      "gemini-3.8-flash",
+      "gemini-3.5-flash",
+      "gemini-3-flash-preview",
+      "gemini-2.5-flash"
+    ]
+  },
+  "contracts": {
+    "QueryAnalysis": "routine",
+    "DiscoveryRanking": "routine",
+    "SearchExpansion": "routine",
+    "EvidenceSelection": "routine",
+    "ExplanationDraft": "routine",
+    "ExplanationReview": "review",
+    "SourceBoundDraft": "routine"
+  },
+  "sensitive_contracts": [
+    "EvidenceSelection",
+    "ExplanationDraft",
+    "ExplanationReview",
+    "SourceBoundDraft"
+  ],
+  "complex_contracts": [
+    "ExplanationReview"
+  ],
+  "messages": {
+    "ar": {
+      "quota_finished": "انتهت الحصة المتاحة للنماذج المطلوبة (Quota finished). لم تُعرض أي إجابة أو مصادر غير مكتملة. حاول بعد تجدد الحصة اليومية.",
+      "model_rate_limited": "تم بلوغ حد الطلبات المؤقت. لم تُعرض إجابة غير مكتملة. انتظر قليلًا ثم أعد المحاولة.",
+      "model_service_unavailable": "تعذر إكمال الطلب بعد إعادة المحاولة وتبديل النماذج بسبب أخطاء مؤقتة من مزود الخدمة. هذا لا يعني نفاد حصتك.",
+      "model_billing_unavailable": "رفض Gemini الطلب بسبب عدم توفر رصيد الدفع المسبق لمشروع API. وجود حصة طلبات متبقية لا يحل خطأ الفوترة. تحقّق من فوترة مشروع API في Google AI Studio.",
+      "model_access_denied": "رفض Gemini وصول مشروع API أو مفتاحه. هذا ليس نفاد حصة الطلبات. تحقّق من حالة المشروع والمفتاح؛ إذا ذكر المزود منع المشروع فتواصل مع دعم Google AI Studio."
+    },
+    "en": {
+      "quota_finished": "Quota finished for the models required to complete this answer. No partial answer or sources were published. Try again after the daily quota resets.",
+      "model_rate_limited": "Temporary request limit reached. No partial answer was published. Please wait briefly and try again.",
+      "model_service_unavailable": "The provider returned temporary errors after retries and model switching. This does not mean your quota is exhausted.",
+      "model_billing_unavailable": "Gemini rejected the request because the project’s prepaid API credit balance is unavailable. Request quota remaining does not resolve this billing error. Check the API project’s billing in Google AI Studio.",
+      "model_access_denied": "Gemini denied access to the API project or key. This is not request quota exhaustion. Check the project and key status; contact Google AI Studio support if the provider reports the project has been denied access."
+    },
+    "fr": {
+      "quota_finished": "Quota épuisé (Quota finished). Aucune réponse ni source incomplète n’a été publiée. Réessayez après le renouvellement du quota quotidien.",
+      "model_rate_limited": "Limite temporaire de requêtes atteinte. Aucune réponse incomplète n’a été publiée. Patientez puis réessayez.",
+      "model_service_unavailable": "Le service des modèles est indisponible. Aucune réponse incomplète n’a été publiée. Réessayez plus tard."
+    },
+    "id": {
+      "quota_finished": "Kuota habis (Quota finished). Jawaban atau sumber yang belum lengkap tidak ditampilkan. Coba lagi setelah kuota harian direset.",
+      "model_rate_limited": "Batas permintaan sementara tercapai. Jawaban yang belum lengkap tidak ditampilkan. Tunggu sebentar dan coba lagi.",
+      "model_service_unavailable": "Layanan model sedang tidak tersedia. Jawaban yang belum lengkap tidak ditampilkan. Coba lagi nanti."
+    },
+    "ur": {
+      "quota_finished": "کوٹہ ختم ہو گیا (Quota finished)۔ کوئی نامکمل جواب یا ماخذ نہیں دکھایا گیا۔ روزانہ کوٹہ بحال ہونے کے بعد دوبارہ کوشش کریں۔",
+      "model_rate_limited": "عارضی درخواست کی حد پوری ہو گئی ہے۔ کوئی نامکمل جواب نہیں دکھایا گیا۔ کچھ دیر بعد دوبارہ کوشش کریں۔",
+      "model_service_unavailable": "ماڈل سروس فی الحال دستیاب نہیں ہے۔ کوئی نامکمل جواب نہیں دکھایا گیا۔ بعد میں دوبارہ کوشش کریں۔"
+    },
+    "de": {
+      "quota_finished": "Kontingent aufgebraucht (Quota finished). Keine unvollständige Antwort oder Quellen wurden veröffentlicht. Versuchen Sie es nach dem täglichen Zurücksetzen erneut.",
+      "model_rate_limited": "Vorübergehendes Anfragelimit erreicht. Keine unvollständige Antwort wurde veröffentlicht. Bitte kurz warten und erneut versuchen.",
+      "model_service_unavailable": "Der Modelldienst ist derzeit nicht verfügbar. Keine unvollständige Antwort wurde veröffentlicht. Bitte später erneut versuchen."
+    },
+    "es": {
+      "quota_finished": "Cuota agotada (Quota finished). No se ha publicado ninguna respuesta ni fuente incompleta. Inténtelo después del reinicio de la cuota diaria.",
+      "model_rate_limited": "Se alcanzó el límite temporal de solicitudes. No se ha publicado ninguna respuesta incompleta. Espere un momento e inténtelo de nuevo.",
+      "model_service_unavailable": "El servicio de modelos no está disponible. No se ha publicado ninguna respuesta incompleta. Inténtelo más tarde."
+    },
+    "sw": {
+      "quota_finished": "Kiwango cha matumizi kimeisha (Quota finished). Hakuna jibu au vyanzo visivyokamilika vilivyoonyeshwa. Jaribu tena baada ya kiwango cha kila siku kuanza upya.",
+      "model_rate_limited": "Kikomo cha muda cha maombi kimefikiwa. Hakuna jibu lisilokamilika lililoonyeshwa. Subiri kidogo kisha ujaribu tena.",
+      "model_service_unavailable": "Huduma ya modeli haipatikani kwa sasa. Hakuna jibu lisilokamilika lililoonyeshwa. Jaribu tena baadaye."
+    },
+    "zh": {
+      "quota_finished": "配额已用完（Quota finished）。未发布任何不完整的回答或来源。请在每日配额重置后重试。",
+      "model_rate_limited": "已达到临时请求限制。未发布不完整的回答。请稍等后重试。",
+      "model_service_unavailable": "模型服务暂不可用。未发布不完整的回答。请稍后重试。"
+    },
+    "tr": {
+      "quota_finished": "Kota bitti (Quota finished). Eksik yanıt veya kaynak yayımlanmadı. Günlük kota yenilendikten sonra tekrar deneyin.",
+      "model_rate_limited": "Geçici istek sınırına ulaşıldı. Eksik yanıt yayımlanmadı. Biraz bekleyip tekrar deneyin.",
+      "model_service_unavailable": "Model hizmeti şu anda kullanılamıyor. Eksik yanıt yayımlanmadı. Daha sonra tekrar deneyin."
+    }
+  },
+  "service_attempts_per_model": 2,
+  "service_retry_window_seconds": 45,
+  "unavailable_cooldown_seconds": 300,
+  "provider_minimum_timeout_seconds": 10,
+  "billing_probe_interval_seconds": 30
+}

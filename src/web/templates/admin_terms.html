@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>بَيان — لوحة إدارة المصطلحات</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #12183F; --purple: #6150EA; --teal: #2EF2C2;
+    --bg: #F5F6FA; --bg2: #FFFFFF; --text-1: #12183F; --text-2: #5A6080;
+    --border: #E2E4F0; --success: #0C9D74; --success-bg: #E8FBF5;
+    --error: #D63F3F; --error-bg: #FEF0F0; --warn: #C47A00; --warn-bg: #FFF8E6;
+    --radius: 12px;
+  }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; background: var(--bg); color: var(--text-1); min-height: 100vh; }
+  .header { background: var(--navy); padding: 14px 32px; display: flex; align-items: center; gap: 12px; }
+  .header-logo { font-size: 22px; font-weight: 800; color: #fff; }
+  .header-logo span { color: var(--teal); }
+  .header-badge { font-size: 11px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 3px 10px; border-radius: 20px; margin-right: auto; }
+  .header-back { font-size: 12px; color: var(--teal); text-decoration: none; padding: 6px 14px; border: 1px solid rgba(46,242,194,0.3); border-radius: 6px; }
+  .wrap { max-width: 900px; margin: 36px auto; padding: 0 16px 60px; }
+  .page-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .page-desc { font-size: 13px; color: var(--text-2); margin-bottom: 28px; }
+
+  /* Auth gate */
+  .gate-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; max-width: 420px; }
+  .gate-label { font-size: 13px; font-weight: 600; color: var(--text-2); margin-bottom: 8px; }
+  .gate-row { display: flex; gap: 10px; }
+  .gate-input { flex: 1; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; direction: ltr; }
+  .gate-input:focus { border-color: var(--purple); }
+  .gate-btn { padding: 10px 22px; background: var(--navy); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .gate-err { font-size: 12px; color: var(--error); margin-top: 8px; display: none; }
+
+  /* Stats row */
+  .stats-row { display: flex; gap: 14px; margin-bottom: 24px; }
+  .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1; }
+  .stat-num { font-size: 28px; font-weight: 800; color: var(--purple); }
+  .stat-label { font-size: 12px; color: var(--text-2); margin-top: 2px; }
+
+  /* Section */
+  .section-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 20px; overflow: hidden; }
+  .section-head { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .section-head-title { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .section-badge { font-size: 11px; padding: 2px 9px; border-radius: 20px; font-weight: 700; }
+  .badge-pending { background: var(--warn-bg); color: var(--warn); }
+  .badge-approved { background: var(--success-bg); color: var(--success); }
+
+  /* Term rows */
+  .term-row { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+  .term-row:last-child { border-bottom: none; }
+  .term-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .term-arabic { font-size: 18px; font-weight: 700; color: var(--navy); }
+  .term-meta { font-size: 11px; color: var(--text-2); margin-top: 4px; }
+  .term-field { margin-bottom: 6px; font-size: 13px; }
+  .term-field-label { font-weight: 600; color: var(--text-2); margin-left: 6px; }
+  .term-field-val { color: var(--text-1); }
+  .term-actions { display: flex; gap: 8px; margin-top: 12px; }
+  .btn-approve { padding: 7px 18px; background: var(--success); color: #fff; border: none; border-radius: 7px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .btn-approve:hover { opacity: 0.88; }
+  .btn-reject { padding: 7px 18px; background: transparent; color: var(--error); border: 1px solid var(--error); border-radius: 7px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .btn-reject:hover { background: var(--error-bg); }
+  .empty-msg { padding: 28px 20px; text-align: center; color: var(--text-2); font-size: 14px; }
+  .admin-panel { display: none; }
+  .admin-panel.visible { display: block; }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 11px 22px; border-radius: 8px; font-size: 14px; display: none; z-index: 999; }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-logo">بَ<span>يان</span></div>
+  <div class="header-badge">لوحة إدارة المصطلحات — مقيّدة</div>
+  <a class="header-back" href="/">العودة للرئيسية</a>
+</header>
+
+<div class="wrap">
+  <div class="page-title">لوحة إدارة المصطلحات</div>
+  <p class="page-desc">مراجعة المصطلحات المقترحة من عمال الدعوة والموافقة عليها أو رفضها.</p>
+
+  <!-- Auth gate -->
+  <div id="gate-card" class="gate-card">
+    <div class="gate-label">كلمة مرور المدير</div>
+    <div class="gate-row">
+      <input type="password" class="gate-input" id="gate-input" placeholder="Admin password..." onkeydown="if(event.key==='Enter') adminLogin()"/>
+      <button class="gate-btn" onclick="adminLogin()">دخول</button>
+    </div>
+    <div class="gate-err" id="gate-err">كلمة المرور غير صحيحة.</div>
+  </div>
+
+  <!-- Admin panel -->
+  <div class="admin-panel" id="admin-panel">
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num" id="stat-pending">—</div><div class="stat-label">في انتظار المراجعة</div></div>
+      <div class="stat-card"><div class="stat-num" id="stat-approved">—</div><div class="stat-label">مصطلح معتمد</div></div>
+    </div>
+
+    <!-- Pending -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-head-title">المصطلحات المقترحة</div>
+        <span class="section-badge badge-pending" id="pending-badge">0 في الانتظار</span>
+      </div>
+      <div id="pending-list"><div class="empty-msg">لا توجد مصطلحات في انتظار المراجعة</div></div>
+    </div>
+
+    <!-- Approved -->
+    <div class="section-card">
+      <div class="section-head">
+        <div class="section-head-title">المصطلحات المعتمدة</div>
+        <span class="section-badge badge-approved" id="approved-badge">—</span>
+      </div>
+      <div id="approved-list"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let adminPwd = '';
+
+function adminLogin() {
+  adminPwd = document.getElementById('gate-input').value.trim();
+  if (!adminPwd) return;
+  loadData();
+}
+
+function loadData() {
+  fetch('/api/admin/terms/list', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({admin_password: adminPwd})
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.error) {
+      document.getElementById('gate-err').style.display = 'block';
+      return;
+    }
+    document.getElementById('gate-card').style.display = 'none';
+    document.getElementById('admin-panel').classList.add('visible');
+
+    const pending  = data.pending  || [];
+    const approved = data.approved || [];
+
+    document.getElementById('stat-pending').textContent  = pending.length;
+    document.getElementById('stat-approved').textContent = approved.length;
+    document.getElementById('pending-badge').textContent  = pending.length + ' في الانتظار';
+    document.getElementById('approved-badge').textContent = approved.length + ' مصطلح';
+
+    renderPending(pending);
+    renderApproved(approved);
+  })
+  .catch(() => { document.getElementById('gate-err').style.display = 'block'; });
+}
+
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderPending(terms) {
+  const el = document.getElementById('pending-list');
+  if (!terms.length) { el.innerHTML = '<div class="empty-msg">لا توجد مصطلحات في انتظار المراجعة</div>'; return; }
+  el.innerHTML = terms.map(t => `
+    <div class="term-row" id="row-${esc(t.id)}">
+      <div class="term-header">
+        <div>
+          <div class="term-arabic">${esc(t.arabic_term)}</div>
+          <div class="term-meta">${esc(t.submitter_name || 'مجهول')} · ${esc(t.submitter_role || '')} · ${esc(t.submitted_at ? t.submitted_at.split('T')[0] : '')}</div>
+        </div>
+      </div>
+      <div class="term-field"><span class="term-field-label">محظور:</span><span class="term-field-val">${esc(t.forbidden_translations ? t.forbidden_translations.join(' | ') : '')}</span></div>
+      <div class="term-field"><span class="term-field-label">الصيغة الرسمية:</span><span class="term-field-val">${esc(t.canonical_form)}</span></div>
+      ${t.scholarly_reference ? `<div class="term-field"><span class="term-field-label">المرجع:</span><span class="term-field-val">${esc(t.scholarly_reference)}</span></div>` : ''}
+      <div class="term-actions">
+        <button class="btn-approve" onclick="approve('${esc(t.id)}')">موافقة وإضافة للقاموس</button>
+        <button class="btn-reject"  onclick="reject('${esc(t.id)}')">رفض</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderApproved(terms) {
+  const el = document.getElementById('approved-list');
+  if (!terms.length) { el.innerHTML = '<div class="empty-msg">لا توجد مصطلحات مضافة حتى الآن من خلال بوابة العمال</div>'; return; }
+  el.innerHTML = terms.map(t => `
+    <div class="term-row">
+      <div class="term-arabic">${esc(t.arabic_term)}</div>
+      <div class="term-field" style="margin-top:6px"><span class="term-field-label">الصيغة الرسمية:</span><span class="term-field-val">${esc(t.canonical_form)}</span></div>
+    </div>
+  `).join('');
+}
+
+function approve(id) {
+  fetch('/api/admin/terms/approve', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({admin_password: adminPwd, term_id: id})
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) { showToast('تمت الموافقة وإضافة المصطلح للقاموس'); loadData(); }
+    else showToast('خطأ: ' + (data.error || 'غير محدد'));
+  });
+}
+
+function reject(id) {
+  if (!confirm('هل تريد رفض هذا المصطلح؟')) return;
+  fetch('/api/admin/terms/reject', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({admin_password: adminPwd, term_id: id})
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) { showToast('تم رفض المصطلح'); loadData(); }
+    else showToast('خطأ');
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 3000);
+}
+</script>
+</body>
+</html>

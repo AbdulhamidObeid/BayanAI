@@ -1,0 +1,23 @@
+{
+  "comparison_cues": {
+    "en": "\\b(compare|comparison|unlike|like|versus|vs|differ|difference|different|distinguish|same|agree|agreement|correct|incorrect)\\b",
+    "ar": "مقارن|مقارنة|خلاف|اختلاف|مختلف|فرق|الفرق|مثل|اتفاق|يتفق|صحيح|خطأ|خاطئ",
+    "fr": "compar|comme|difference|different|contraire|accord|correct|erreur",
+    "es": "compar|como|difer|acuerdo|correct|error",
+    "de": "vergleich|wie|unterschied|einig|richtig|falsch",
+    "id": "banding|seperti|beda|sepakat|benar|salah",
+    "tr": "karsilastir|gibi|fark|hemfikir|dogru|yanlis",
+    "ur": "موازنہ|تقابل|طرح|فرق|اختلاف|اتفاق|درست|غلط",
+    "sw": "linganisha|kama|tofauti|kubaliana|sahihi|kosa",
+    "zh": "比较|像|不同|区别|一致|同意|正确|错误"
+  },
+  "planning_instruction": "The requirement checklist is an interpretation of what this user asks, not an opportunity to supply doctrinal facts or educational extras. A comparison requirement needs an actual comparison, disagreement or correction request in the original question. A simple attribution or identity question does not ask for a comparison with an unmentioned text. Describe the requested explanation without inserting mandatory factual details (named intermediaries, modes, historical events or additional texts) that the user did not request. Optional helpful background must remain optional and must not block a sufficient sourced answer. For practical first-step questions do not invent mandatory procedures or a comprehensive conversion curriculum. Keep the requested initial scope and support every step actually given. An explicit request to give, quote, recite, show or provide a hadith, verse or chapter requires exact_quote; never replace that deliverable with a historical explanation or a yes/no claim about existence. Absence of a retrieved quotation is not evidence of universal nonexistence. For one why question use a requirement describing that question itself: do not expand it into mandatory claims about additional virtues, autonomy, equality or social frameworks not requested. If a hostile premise is unsupported, address it respectfully from retrieved evidence without making extra background mandatory.",
+  "repair_instruction": "Repair the rejected interpretation using the original user question. Preserve every explicit source quotation, comparison, correction, condition and necessary C qualification. Remove only unrequested mandatory comparisons or background claims. A source-text request needs exact_quote rather than an inferred historical explanation. Return the complete analysis contract, without answering the religious question.",
+  "quote_request_cues": {
+    "en": "\\b(?:give|quote|recite|cite|show|provide|write)\\b.{0,100}\\b(?:hadith|hadeeth|ayah|verse|surah|chapter)\\b",
+    "ar": "(?:اذكر|اعطني|هات|اقرا|اكتب|اتل).{0,100}(?:حديث|اية|سورة)",
+    "fr": "(?:donne|cite|recite|montre|fournis).{0,100}(?:hadith|verset|sourate)",
+    "es": "(?:dame|cita|recita|muestra|proporciona).{0,100}(?:hadiz|hadith|versiculo|sura)"
+  },
+  "primary_text_cues": "\\b(?:hadith|hadeeth|quran|qur.an|ayah|surah|verse)\\b|حديث|قران|اية|سورة|verset|sourate|hadiz|versiculo"
+}

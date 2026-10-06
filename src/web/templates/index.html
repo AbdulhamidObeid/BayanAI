@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بَيان — منصة المحتوى الإسلامي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #12183F;
+      --purple:      #6150EA;
+      --purple-soft: #8B7CF6;
+      --purple-bg:   #EEEEFF;
+      --teal:        #2EF2C2;
+      --teal-bg:     #D4FDF4;
+      --bg:          #F5F6FA;
+      --surface:     #FFFFFF;
+      --border:      #E3E6F0;
+      --border-mid:  #C8CEDD;
+      --text-1:      #12183F;
+      --text-2:      #52597A;
+      --text-3:      #98A0BC;
+      --danger:      #E0334C;
+      --danger-bg:   #FFF0F2;
+      --success:     #00B87A;
+      --success-bg:  #E6FAF4;
+      --warn-bg:     #FFF8E6;
+      --warn:        #996600;
+      --radius:      14px;
+      --radius-sm:   9px;
+      --shadow:      0 2px 12px rgba(18,24,63,.07);
+      --shadow-md:   0 6px 24px rgba(18,24,63,.10);
+      --font:        'IBM Plex Sans Arabic', system-ui, sans-serif;
+    }
+
+    html[data-lang="en"] { direction: ltr; }
+    html[data-lang="ar"] { direction: rtl; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-1);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Topbar ─────────────────────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      height: 58px;
+      background: rgba(245,246,250,.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+    }
+    .brand-mark {
+      width: 33px; height: 33px;
+      background: var(--navy);
+      border-radius: 9px;
+      display: grid; place-items: center;
+    }
+    .brand-mark span {
+      font-size: 15px; font-weight: 600;
+      color: var(--teal); font-family: var(--font);
+    }
+    .brand-name {
+      font-size: 17px; font-weight: 600;
+      color: var(--navy); letter-spacing: -.3px;
+    }
+
+    .topbar-right {
+      display: flex; align-items: center; gap: 12px;
+    }
+
+    .status-pill {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text-3);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all .2s ease;
+    }
+    .status-pill:hover {
+      border-color: #94A3B8;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #94A3B8;
+      transition: background-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+    .status-dot.active {
+      background: #10B981;
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+    }
+    .status-dot.error {
+      background: #EF4444;
+      box-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+    }
+    .status-dot.warning {
+      background: #F59E0B;
+      box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+    }
+    .status-dot.checking {
+      background: #94A3B8;
+      animation: pulse-dot 1.2s infinite ease-in-out;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+    }
+    .lang-btn {
+      padding: 5px 14px;
+      font-size: 13px; font-weight: 500;
+      font-family: var(--font);
+      color: var(--text-2);
+      background: none; border: none; cursor: pointer;
+      transition: all .15s;
+    }
+    .lang-btn.active { background: var(--navy); color: #fff; }
+
+
+    /* Level name label */
+    .lvl-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-2);
+      margin-right: 8px;
+      flex: 1;
+      align-self: center;
+    }
+
+    /* Suggest Modal */
+    .smodal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(10,14,40,0.55);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding-top: 60px;
+      z-index: 1000;
+      display: none;
+    }
+    .smodal-overlay.open { display: flex; }
+    .smodal {
+      background: var(--bg2);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 28px;
+      position: relative;
+      animation: slideDown 0.2s ease;
+    }
+    @keyframes slideDown { from { transform: translateY(-16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .smodal-close {
+      position: absolute; top: 16px; left: 16px;
+      background: none; border: none; cursor: pointer;
+      color: var(--text-2); font-size: 18px; line-height: 1;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .smodal-close:hover { background: var(--bg); }
+    .smodal-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .smodal-sub { font-size: 13px; color: var(--text-2); margin-bottom: 20px; line-height: 1.6; }
+    .sgate { margin-bottom: 16px; }
+    .sgate-label { font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+    .sgate-row { display: flex; gap: 8px; }
+    .sgate-input {
+      flex: 1; padding: 9px 12px;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-size: 13px; outline: none; direction: ltr;
+      background: var(--bg); color: var(--text-1);
+    }
+    .sgate-input:focus { border-color: var(--purple); background: #fff; }
+    .sgate-btn {
+      padding: 9px 18px; background: var(--purple); color: #fff;
+      border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
+      cursor: pointer; font-family: inherit;
+    }
+    .sgate-err { font-size: 11px; color: #D63F3F; margin-top: 6px; display: none; }
+    .sform { display: none; }
+    .sform.visible { display: block; }
+    .sfield { margin-bottom: 14px; }
+    .sfield-label { font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 5px; display: block; }
+    .sfield-label .req { color: var(--purple); }
+    .sfield-hint { font-size: 11px; color: var(--text-2); margin-bottom: 5px; opacity: 0.7; }
+    .sfield input, .sfield textarea, .sfield select {
+      width: 100%; padding: 9px 12px;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      font-size: 13px; font-family: inherit; outline: none;
+      background: var(--bg); color: var(--text-1); resize: vertical;
+      transition: border-color 0.18s;
+    }
+    .sfield input:focus, .sfield textarea:focus, .sfield select:focus {
+      border-color: var(--purple); background: #fff;
+    }
+    .sfield textarea { min-height: 72px; }
+    .sfield select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%235A6080' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: left 12px center; padding-left: 32px;
+    }
+    .ssubmit-btn {
+      width: 100%; padding: 11px; background: var(--purple); color: #fff;
+      border: none; border-radius: 9px; font-size: 14px; font-weight: 700;
+      cursor: pointer; font-family: inherit; margin-top: 4px;
+      transition: opacity 0.18s;
+    }
+    .ssubmit-btn:hover { opacity: 0.9; }
+    .ssubmit-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .ssuccess { text-align: center; padding: 16px 0; display: none; }
+    .ssuccess.visible { display: block; }
+    .ssuccess-icon { font-size: 32px; margin-bottom: 8px; color: var(--success); }
+    .ssuccess-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .ssuccess-sub { font-size: 13px; color: var(--text-2); }
+    .ssuccess-again { margin-top: 12px; font-size: 13px; color: var(--purple); cursor: pointer; text-decoration: underline; }
+
+    /* ── Main ───────────────────────────────────────────────── */
+    .main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 52px 32px 100px;
+    }
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 500;
+      color: var(--purple);
+      background: var(--purple-bg);
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 38px; font-weight: 600;
+      color: var(--navy); letter-spacing: -1px;
+      line-height: 1.2; margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--purple); }
+    .hero p {
+      font-size: 15px; color: var(--text-2);
+      line-height: 1.75; max-width: 460px; margin: 0 auto;
+    }
+
+    /* ── Query Card ─────────────────────────────────────────── */
+    .query-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: visible;
+      margin-bottom: 14px;
+    }
+
+    /* Controls row above textarea */
+    .query-controls {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      padding: 20px 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-3);
+      letter-spacing: .6px;
+      padding: 0 2px;
+    }
+
+    /* Custom select — fully styled, no OS chrome */
+    .sel-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .sel-wrap::after {
+      content: '';
+      position: absolute;
+      inset-inline-end: 11px;
+      top: 50%; transform: translateY(-50%);
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid var(--text-3);
+      pointer-events: none;
+    }
+    select.csel {
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-1);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 32px 7px 14px;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    select.csel:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(97,80,234,.1);
+      background: var(--surface);
+    }
+    .lang-sel { min-width: 130px; }
+    .persona-sel { min-width: 160px; }
+
+    /* Textarea */
+    textarea {
+      display: block;
+      width: 100%;
+      border: none; outline: none; resize: none;
+      font-family: var(--font);
+      font-size: 15.5px; line-height: 1.7;
+      color: var(--text-1);
+      padding: 16px 20px;
+      background: transparent;
+      min-height: 90px;
+    }
+    textarea::placeholder { color: var(--text-3); }
+
+    /* Bottom bar */
+    .query-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+    .query-hint {
+      font-size: 12px; color: var(--text-3);
+    }
+    .btn-send {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 22px;
+      background: var(--navy); color: #fff;
+      border: none; border-radius: 8px;
+      font-family: var(--font); font-size: 14px; font-weight: 500;
+      cursor: pointer; flex-shrink: 0;
+      transition: all .15s;
+    }
+    .btn-send:hover { background: #1c2457; transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn-send:active { transform: none; }
+    .btn-send:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-send svg { width: 14px; height: 14px; }
+
+    /* ── Examples ───────────────────────────────────────────── */
+    .examples {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      font-size: 13px; color: var(--text-2);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px; padding: 6px 14px;
+      cursor: pointer; font-family: var(--font);
+      transition: all .15s;
+    }
+    .chip:hover { border-color: var(--purple-soft); color: var(--purple); background: var(--purple-bg); }
+
+    /* ── Loading ─────────────────────────────────────────────── */
+    .loading-bar { display: none; height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: 24px; }
+    .loading-bar.on { display: block; }
+    .loading-bar::after {
+      content: ''; display: block; height: 100%;
+      width: 35%;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+      animation: sweep 1.1s infinite;
+    }
+    @keyframes sweep { from { transform: translateX(-200%); } to { transform: translateX(500%); } }
+    .loading-step {
+      margin-top: 14px; font-size: 13px; font-weight: 600; letter-spacing: .4px;
+      color: var(--purple); text-align: center;
+      opacity: 0; transition: opacity .25s ease;
+      min-height: 1.4em;
+    }
+    .loading-dhikr {
+      margin-top: 18px; font-size: 17px; font-weight: 500; line-height: 1.7;
+      color: var(--text-2); text-align: center; font-family: 'Amiri', serif;
+      opacity: 0; transition: opacity .45s ease;
+      min-height: 2em; padding: 0 12px;
+    }
+
+    /* ── Result ─────────────────────────────────────────────── */
+    #result { display: none; margin-top: 32px; scroll-margin-top: 88px; }
+    #result.on { display: block; }
+
+    /* Result header row */
+    .res-header {
+      display: flex; direction: ltr; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 18px;
+    }
+    #answer-status { order: 0; }
+    #res-time { order: 1; margin-right: auto; }
+    #lvl-pill { order: 2; }
+    .lvl-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 1px 4px rgba(18,24,63,0.06);
+    }
+    .lvl-pill.lvl-a { background: var(--success-bg); color: #007A52; border: 1.5px solid rgba(0,184,122,.3); }
+    .lvl-pill.lvl-b { background: var(--purple-bg);  color: #3D2FA0; border: 1.5px solid rgba(97,80,234,.3); }
+    .lvl-pill.lvl-c { background: var(--warn-bg);    color: var(--warn); border: 1.5px solid rgba(153,102,0,.3); }
+    .lvl-pill.lvl-d { background: var(--danger-bg);  color: var(--danger); border: 1.5px solid rgba(224,51,76,.3); }
+    .lvl-pill-code {
+      font-weight: 700;
+      background: rgba(255,255,255,0.7);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+    .lvl-pill-sep { opacity: 0.4; font-size: 14px; }
+    .lvl-pill-name { font-weight: 600; }
+    .res-time { font-size: 12px; color: var(--text-3); font-family: monospace; }
+
+    /* Answer */
+    .answer-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+      font-size: 15.5px; line-height: 1.85;
+      color: var(--text-1);
+      margin-bottom: 14px;
+      white-space: normal;
+    }
+
+    .explanation-paragraph { margin-bottom: 16px; white-space: pre-wrap; }
+    .answer-scope-notice { background: var(--warn-bg); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 18px; white-space: pre-wrap; }
+    .inline-reference { font-size: 11px; vertical-align: super; color: var(--purple); margin-inline-start: 5px; text-decoration: none; white-space: nowrap; }
+    .numbered-references { padding-inline-start: 24px; margin-bottom: 24px; white-space: normal; }
+    .numbered-references li { padding: 4px 0; overflow-wrap: anywhere; scroll-margin-top: 88px; }
+    .source-box { border: 1px solid var(--border); background: var(--bg); border-radius: var(--radius-sm); padding: 18px; margin-bottom: 16px; white-space: normal; scroll-margin-top: 90px; }
+    .source-box:target { outline: 2px solid var(--purple); }
+    .source-title { font-weight: 600; margin-bottom: 14px; }
+    .source-words { white-space: pre-wrap; margin-bottom: 8px; }
+    .source-box .cit-url { display: block; overflow-wrap: anywhere; margin-bottom: 14px; }
+
+    /* Referral */
+    .referral-card {
+      background: var(--danger-bg);
+      border: 1px solid #F5B8C0;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+    .referral-tag {
+      font-size: 11px; font-weight: 700;
+      color: var(--danger); letter-spacing: .5px;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .referral-body { font-size: 14.5px; color: #8B1A2C; line-height: 1.75; }
+
+    /* Citations */
+    .sec-label {
+      font-size: 11px; font-weight: 700;
+      color: var(--text-3); letter-spacing: .8px;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .cit-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .cit-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .cit-icon {
+      width: 32px; height: 32px; flex-shrink: 0;
+      border-radius: 7px; background: var(--purple-bg);
+      display: grid; place-items: center; font-size: 15px;
+    }
+    .cit-body { flex: 1; min-width: 0; }
+    .cit-ref { font-size: 11px; font-weight: 600; color: var(--purple); margin-bottom: 5px; }
+    .cit-ar  { font-size: 15px; color: var(--text-1); line-height: 1.8; margin-bottom: 4px; }
+    .cit-tr  { font-size: 13px; color: var(--text-2); line-height: 1.65; }
+    .cit-url {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 11px; color: var(--purple-soft);
+      text-decoration: none; margin-top: 6px;
+    }
+    .cit-url:hover { text-decoration: underline; }
+
+    .source-link-btn {
+      display: inline-flex; align-items: center;
+      margin-top: 10px; padding: 6px 14px;
+      font-size: 12px; font-weight: 600; font-family: var(--font);
+      color: var(--purple);
+      background: var(--purple-bg);
+      border: 1px solid rgba(97,80,234,.25);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background .15s, border-color .15s;
+      direction: ltr;
+    }
+    .source-link-btn:hover { background: var(--purple); color: #fff; border-color: var(--purple); }
+    .translation-badge {
+      display: inline-block; margin-top: 8px; margin-inline-start: 8px;
+      font-size: 10px; font-weight: 600; letter-spacing: .4px;
+      color: var(--text-3); border: 1px solid currentColor; border-radius: 10px;
+      padding: 1px 8px; direction: ltr; opacity: .75;
+    }
+
+    .cit-grade {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      color: var(--success); background: var(--success-bg);
+      border-radius: 4px; padding: 1px 6px; margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* Provenance */
+    .prov-bar {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px; margin-bottom: 14px;
+    }
+    .prov-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      border-radius: 6px; background: var(--teal-bg);
+      display: grid; place-items: center; font-size: 13px; color: var(--success);
+    }
+    .prov-hash {
+      font-size: 11px; color: var(--text-3);
+      font-family: 'SF Mono','Fira Code', monospace;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+    }
+    .prov-ok { font-size: 11px; font-weight: 700; color: var(--success); flex-shrink: 0; }
+    .btn-verify {
+      font-size: 11px; font-weight: 600;
+      color: var(--purple); background: var(--purple-bg);
+      border: 1px solid #C4BAF8; border-radius: 6px;
+      padding: 4px 10px; cursor: pointer; font-family: var(--font);
+      flex-shrink: 0; transition: all .15s;
+    }
+    .btn-verify:hover { background: var(--purple); color: #fff; }
+    .btn-copy-id {
+      font-size: 11px; font-weight: 600;
+      color: var(--teal); background: transparent;
+      border: 1px solid rgba(46,242,194,0.3); border-radius: 6px;
+      padding: 4px 10px; cursor: pointer; font-family: var(--font);
+      flex-shrink: 0; transition: all .15s; margin-left: 6px;
+    }
+    .btn-copy-id:hover { background: rgba(46,242,194,0.08); }
+    .prov-id-label { font-size: 10px; font-weight: 600; color: var(--text-2); margin-bottom: 1px; }
+
+    /* Verify modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(18,24,63,.5); z-index: 200;
+      place-items: center;
+    }
+    .modal-overlay.open { display: grid; }
+    .modal {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 28px 32px; max-width: 520px; width: 90%;
+      box-shadow: var(--shadow-md);
+    }
+    .modal-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 16px; }
+    .modal-verdict {
+      font-size: 14px; font-weight: 600; padding: 10px 14px;
+      border-radius: 8px; margin-bottom: 14px; display: none;
+    }
+    .modal-verdict.ok   { background: var(--success-bg); color: #00693E; display: block; }
+    .modal-verdict.fail { background: var(--danger-bg);  color: var(--danger); display: block; }
+    .modal textarea {
+      width: 100%; min-height: 100px; border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px; font-size: 13px;
+      font-family: var(--font); color: var(--text-1); resize: vertical;
+      margin-bottom: 10px;
+    }
+    .modal-footer { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+    .btn-modal-close {
+      padding: 8px 18px; border: 1px solid var(--border); border-radius: 7px;
+      font-family: var(--font); font-size: 13px; color: var(--text-2);
+      background: none; cursor: pointer;
+    }
+    .btn-modal-verify {
+      padding: 8px 18px; background: var(--navy); color: #fff;
+      border: none; border-radius: 7px; font-family: var(--font);
+      font-size: 13px; font-weight: 500; cursor: pointer;
+    }
+
+    /* Pipeline */
+    .pipeline-wrap { margin-bottom: 14px; }
+    .pipeline-toggle {
+      background: none; border: none; font-family: inherit;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; color: var(--text-3);
+      cursor: pointer; user-select: none; padding: 6px 0;
+    }
+    .pipeline-toggle:hover { color: var(--text-2); }
+    .pipeline-toggle svg { transition: transform .2s; }
+    .pipeline-toggle.open svg { transform: rotate(180deg); }
+
+    .pipeline-body {
+      display: none;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden; margin-top: 8px;
+    }
+    .pipeline-body.open { display: flex; }
+
+    .pipe-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pipe-row:last-child { border-bottom: none; }
+    .pipe-row { padding: 18px 20px; align-items: center; }
+    .pipeline-body { border-radius: 16px; box-shadow: 0 3px 14px rgba(20,25,65,.04); }
+    .pipeline-toggle { font-size: 14px; font-weight: 600; color: var(--text-2); padding: 12px 0; }
+    .pipe-header { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .pipe-state { font-size: 11px; border-radius: 20px; padding: 3px 9px; background: #edf8f2; color: #247c5a; }
+    .pipe-state.blocked { background: var(--danger-bg); color: var(--danger); }
+    .pipe-ms { background: var(--bg); border-radius: 9px; padding: 6px 9px !important; font-family: inherit !important; }
+    .pipe-summary { max-width: 65ch; }
+    @media(max-width:600px) { .pipe-row { padding: 14px 12px; gap: 8px; } .pipe-ms { font-size: 10px; } }
+
+    .pipe-dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+    }
+    .dot-ok   { background: var(--success); }
+    .dot-warn { background: #F59E0B; }
+    .dot-fail { background: var(--danger); }
+    .pipe-main { flex: 1; min-width: 0; }
+    .pipe-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+    .pipe-summary { font-size: 12px; color: var(--text-2); line-height: 1.6; margin-top: 3px; }
+    .pipe-ms   { font-size: 11px; color: var(--text-3); font-family: monospace; flex-shrink: 0; padding-top: 2px; }
+
+    /* Error */
+    .err-card {
+      background: var(--danger-bg); border: 1px solid #F5B8C0;
+      border-radius: var(--radius); padding: 18px 22px;
+      font-size: 14px; color: #8B1A2C; line-height: 1.7;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 3px; }
+
+    @media (max-width: 600px) {
+      .topbar { padding: 0 20px; }
+      .main { padding: 28px 18px 80px; }
+      .hero h1 { font-size: 28px; }
+      .query-controls { flex-direction: column; align-items: stretch; }
+    }
+    /* API status uses the site's light surface and centered native modality. */
+    .api-status-dialog { margin: auto; width: min(460px, calc(100% - 32px)); max-height: calc(100dvh - 48px); overflow-y: auto; padding: 28px; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); color: var(--text-1); font-family: var(--font); box-shadow: 0 24px 80px rgba(18,24,63,.2); }
+    .api-status-dialog::backdrop { background: rgba(18,24,63,.35); backdrop-filter: blur(4px); }
+    .api-status-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .api-status-icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: var(--purple-bg); }
+    .api-status-icon .status-dot { width: 10px; height: 10px; }
+    .api-status-heading h2 { font-size: 21px; font-weight: 600; }
+    #hm-desc, #hm-guidance { font-size: 14px; line-height: 1.8; color: var(--text-2); overflow-wrap: anywhere; }
+    #hm-guidance { background: var(--bg); border-radius: 10px; padding: 14px; margin-top: 16px; }
+    .api-status-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .api-status-actions button { font: 500 13px var(--font); border: 1px solid var(--border); border-radius: 9px; padding: 9px 16px; background: var(--surface); color: var(--text-2); cursor: pointer; }
+    .api-status-actions button:hover { border-color: var(--purple-soft); color: var(--purple); background: var(--purple-bg); }
+    .api-status-actions #hm-btn-close { background: var(--purple); border-color: var(--purple); color: white; }
+    .api-status-actions #hm-btn-close:hover { background: #5140da; }
+    .api-status-actions button:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
+    body:has(.api-status-dialog[open]) { overflow: hidden; }
+  </style>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/cursor.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', path='css/dropdowns.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', path='css/history.css') }}" />
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar">
+  <a class="brand" href="/">
+    <div class="brand-mark"><span>ب</span></div>
+    <span class="brand-name">بَيان</span>
+  </a>
+  <div class="topbar-right">
+    <div class="status-pill" id="top-status-pill" onclick="openHealthModal()" title="فحص حالة النظام وربط API">
+      <div class="status-dot checking" id="top-status-dot"></div>
+      <span id="lbl-status">جارٍ الفحص...</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('ar')">العربية</button>
+      <button class="lang-btn" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+        <circle cx="5" cy="5" r="4" fill="#6150EA"/>
+        <path d="M3 5l1.5 1.5L7 3.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span id="lbl-badge">مصادر معتمدة · استرجاع موثق · تحقق من المصدر</span>
+    </div>
+    <h1 id="lbl-title">محتوى إسلامي موثوق<br/><span>بأي لغة، بتوثيق علمي محكم</span></h1>
+    <p id="lbl-desc">استرجاع موثق من المصادر المعتمدة دولياً، توطين ثقافي دقيق، والامتناع عندما لا تتوفر أدلة كافية — للتعلم والعمل الدعوي.</p>
+  </div>
+
+  <nav class="history-tabs" role="tablist" aria-label="Bayan">
+    <button id="ask-tab" role="tab" aria-selected="true" aria-controls="ask-panel" tabindex="0">اسأل بيان</button>
+    <button id="history-tab" role="tab" aria-selected="false" aria-controls="history-panel" tabindex="-1">History</button>
+  </nav>
+  <p id="history-storage-warning" class="history-warning" role="status" hidden></p>
+  <section id="ask-panel" role="tabpanel" aria-labelledby="ask-tab">
+  <div id="history-answer-note" class="history-answer-note" hidden></div>
+  <!-- Query Card -->
+  <div class="query-card">
+
+    <!-- Controls: labels above, custom dropdowns -->
+    <div class="query-controls">
+
+      <div class="ctrl-group">
+        <span class="ctrl-label" id="lbl-outlang">لغة الإخراج</span>
+        <div class="sel-wrap">
+          <select class="csel lang-sel" id="target-lang">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="tr">Türkçe</option>
+            <option value="ur">اردو</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="sw">Swahili</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ctrl-group" style="flex:1;">
+        <span class="ctrl-label" id="lbl-audience">الجمهور المستهدف</span>
+        <div class="sel-wrap" style="width:100%;">
+          <select class="csel persona-sel" id="cultural-context" style="width:100%;">
+            <option value="general" id="opt-general">عام (عالمي)</option>
+            <option value="western" id="opt-western">غربي (بيئة علمانية)</option>
+            <option value="european" id="opt-european">أوروبي</option>
+            <option value="east_asian" id="opt-eastasian">شرق آسيوي</option>
+            <option value="southeast_asian" id="opt-seasian">جنوب شرق آسيا (إندونيسيا والمنطقة)</option>
+            <option value="south_asian" id="opt-southasian">جنوب آسيا (الهند، باكستان، بنغلاديش)</option>
+            <option value="african" id="opt-african">إفريقيا جنوب الصحراء</option>
+            <option value="latin_american" id="opt-latin">أمريكا اللاتينية</option>
+            <option value="arab_world" id="opt-arab">عربي / إسلامي</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <p id="privacy-note" class="query-hint" style="padding:12px 20px;"></p>
+
+    <!-- Textarea -->
+    <textarea
+      id="q"
+      rows="3"
+      maxlength="5000"
+      placeholder="اكتب سؤالك هنا..."
+      onkeydown="handleKey(event)"
+    ></textarea>
+
+    <!-- Footer -->
+    <div class="query-footer">
+      <span class="query-hint" id="lbl-hint">Enter للإرسال · Shift+Enter لسطر جديد</span>
+      <button class="btn-send" id="btn-send" onclick="doSubmit()">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 7h12M7.5 2.5L13 7l-5.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="lbl-send">إرسال</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Example chips -->
+  <div class="examples" id="examples">
+    <button class="chip" onclick="fill(this)">ما معنى التوحيد؟</button>
+    <button class="chip" onclick="fill(this)">لماذا يتوجه المسلمون نحو الكعبة؟</button>
+    <button class="chip" onclick="fill(this)">Did Islam spread by the sword?</button>
+    <button class="chip" onclick="fill(this)">What is Tawheed?</button>
+    <button class="chip" onclick="fill(this)">Qu'est-ce que la Dawah?</button>
+  </div>
+
+  <!-- Loading -->
+  <div class="loading-bar" id="loading"></div>
+  <div class="loading-step" id="loading-step"></div>
+  <div class="loading-dhikr" id="loading-dhikr" dir="auto"></div>
+  <p id="question-progress" class="query-hint" role="status" aria-live="polite" style="margin-top:8px;"></p>
+
+  <!-- Result -->
+  <div id="result">
+
+    <div class="res-header">
+      <div class="lvl-pill lvl-b" id="lvl-pill">
+        <span class="lvl-pill-code" id="lvl-pill-code">المستوى B</span>
+        <span class="lvl-pill-sep">·</span>
+        <span class="lvl-pill-name" id="lvl-name">محتوى دعوي معتمد</span>
+      </div>
+      <span class="status-pill" id="answer-status"></span>
+      <span class="res-time" id="res-time"></span>
+    </div>
+
+    <!-- Referral (Level D) -->
+    <div id="referral" style="display:none;">
+      <div class="referral-card">
+        <div class="referral-tag" id="lbl-referral">إحالة شرعية</div>
+        <div class="referral-body" id="referral-body"></div>
+      </div>
+    </div>
+
+    <!-- Answer -->
+    <div class="answer-card" id="answer" style="display:none;"></div>
+
+    <!-- Citations -->
+    <div id="cit-section" style="display:none;">
+      <div class="sec-label" id="lbl-sources">المصادر المعتمدة</div>
+      <div class="cit-list" id="cit-list"></div>
+    </div>
+
+    <!-- Additional published language versions are rendered at the bottom. -->
+
+    <!-- Provenance / Response ID -->
+    <div class="prov-bar" id="prov-bar" style="display:none;">
+      <div class="prov-icon">✓</div>
+      <div style="flex:1;min-width:0;">
+        <div class="prov-id-label" id="lbl-verified">رقم التحقق</div>
+        <span class="prov-hash" id="prov-hash" style="font-family:monospace;font-weight:700;letter-spacing:1px;font-size:13px;"></span>
+      </div>
+      <button class="btn-copy-id" onclick="copyResponseId()" title="نسخ رقم التحقق">نسخ الرقم</button>
+      <button class="btn-verify" onclick="openVerify()">تحقق</button>
+    </div>
+
+    <div id="answer-versions"></div>
+
+    <!-- Pipeline -->
+    <div class="pipeline-wrap" id="pipe-wrap" style="display:none;">
+      <button class="pipeline-toggle" id="pipe-toggle" onclick="togglePipe()" aria-expanded="false" aria-controls="pipe-body">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span id="lbl-pipe">مراحل المعالجة</span>
+      </button>
+      <div class="pipeline-body" id="pipe-body"></div>
+    </div>
+
+    <!-- Error -->
+    <div class="err-card" id="err-card" style="display:none;"></div>
+
+  </div>
+  </section>
+  <section id="history-panel" role="tabpanel" aria-labelledby="history-tab" hidden>
+    <div class="history-heading"><div><h2 id="history-title"></h2><p id="history-subtitle"></p></div><button id="history-clear" class="history-text-button"></button></div>
+    <div class="history-tools">
+      <input id="history-search" type="search" dir="rtl" autocomplete="off" />
+      <select id="history-sort"><option value="newest"></option><option value="oldest"></option></select>
+    </div>
+    <div id="history-list"></div>
+  </section>
+</main>
+<dialog id="history-dialog" class="history-dialog" aria-labelledby="history-dialog-question">
+  <div class="history-dialog-header">
+    <div><p id="history-dialog-date" class="history-dialog-date"></p><h2 id="history-dialog-question" dir="auto"></h2></div>
+    <button id="history-dialog-close" class="history-dialog-close" type="button"></button>
+  </div>
+  <div id="history-dialog-answer" class="history-dialog-answer"></div>
+  <div class="history-dialog-footer"><button id="history-dialog-to-search" class="history-open" type="button"></button></div>
+</dialog>
+
+<script>
+/* ── i18n ───────────────────────────────────────────────────── */
+const T = {
+  ar: {
+    badge: 'مصادر معتمدة · استرجاع موثق · تحقق من المصدر',
+    title: 'محتوى إسلامي موثوق<br/><span>بأي لغة، بتوثيق علمي محكم</span>',
+    desc:  'استرجاع موثق من المصادر المعتمدة دولياً، توطين ثقافي دقيق، والامتناع عندما لا تتوفر أدلة كافية — للتعلم والعمل الدعوي.',
+    placeholder: 'اكتب سؤالك هنا...',
+    hint:    'Enter للإرسال · Shift+Enter لسطر جديد',
+    send:    'إرسال',
+    sending: 'جارٍ المعالجة...',
+    status:  'نظام نشط',
+    outlang: 'لغة الإخراج',
+    audience:'الجمهور المستهدف',
+    sources: 'المصادر المعتمدة',
+    referral:'إحالة شرعية',
+    verified:'موثق',
+    pipe:    'مراحل المعالجة',
+    error:   'حدث خطأ',
+    opts: ['عام (عالمي)','غربي (بيئة علمانية)','أوروبي','شرق آسيوي','جنوب شرق آسيا (إندونيسيا والمنطقة)','جنوب آسيا (الهند، باكستان، بنغلاديش)','إفريقيا جنوب الصحراء','أمريكا اللاتينية','عربي / إسلامي'],
+  },
+  en: {
+    badge: 'Verified Sources · Source Retrieval · Traceable Passages',
+    title: 'Authenticated Islamic Content<br/><span>In any language, with verified scholarly rigor</span>',
+    desc:  'Documented retrieval from accredited sources, cultural localization, and abstention when evidence is insufficient — for learners and Islamic educators.',
+    placeholder: 'Type your question here...',
+    hint:    'Enter to submit · Shift+Enter for new line',
+    send:    'Submit',
+    sending: 'Processing...',
+    status:  'System Active',
+    outlang: 'Output Language',
+    audience:'Target Audience',
+    sources: 'Accredited Sources',
+    referral:'Scholar Referral',
+    verified:'Verified',
+    pipe:    'Pipeline Steps',
+    error:   'Error',
+    opts: ['General (Global)','Western (Secular)','European','East Asian','Southeast Asian (Nusantara)','South Asian','Sub-Saharan African','Latin American','Arab / Islamic World'],
+  },
+};
+
+const OUTPUT_MESSAGES = {{ messages | tojson }};
+const PRESENTATION = {{ presentation | tojson }};
+const QUERY_EXECUTION = {{ execution | tojson }};
+let lang = 'ar';
+function outputPreference() {
+  const l = document.getElementById('target-lang').value;
+  document.getElementById('privacy-note').textContent = (QUERY_EXECUTION.messages[l] || QUERY_EXECUTION.messages.en).privacy;
+}
+document.getElementById('target-lang').addEventListener('change', outputPreference);
+outputPreference();
+let pipeOpen = false;
+
+/* ── Level name map ─────────────────────────────────────────── */
+const LEVEL_NAMES = {
+  ar: { LEVEL_A:'مصدر نصي قطعي', LEVEL_B:'محتوى دعوي معتمد', LEVEL_C:'مسألة خلافية', LEVEL_D:'إحالة شرعية' },
+  en: { LEVEL_A:'Definitive Textual Source', LEVEL_B:'Verified Dawah Content', LEVEL_C:'Contested Scholarly Matter', LEVEL_D:'Personal Fatwa — Referred' },
+};
+
+/* ── Repository Arabic names ────────────────────────────────── */
+const REPO_NAMES_AR = {
+  "QuranEnc (King Fahd Complex)": "مجمع الملك فهد لطباعة المصحف الشريف",
+  "Quranpedia": "موسوعة القرآن الكريم",
+  "HadeethEnc (Verified Hadith)": "موسوعة الأحاديث النبوية",
+  "Dorar.net (Hadith Verification)": "الدرر السنية — الموسوعة الحديثية",
+  "Dorar.net (Classical Exegesis)": "الدرر السنية — موسوعة التفسير",
+  "Dorar.net (Islamic Creed)": "الدرر السنية — الموسوعة العقدية",
+  "Dorar.net (Jurisprudence — Informational Only)": "الدرر السنية — الموسوعة الفقهية",
+  "Dorar.net (History & Seerah)": "الدرر السنية — السيرة النبوية",
+  "Dawa.center (Islamic Digital Repository)": "مركز رواد الدعوة — المستودع الرقمي",
+  "Bayyanat — Q&A on Islam (dawa.center)": "منصة بيّنات الدعوية",
+  "Al-Jamharah (Islamic Content Dictionary)": "معجم الجمهرة — مصطلحات المحتوى الإسلامي",
+  "Al-Maktaba Al-Shamela": "المكتبة الشاملة",
+  "Offline Verified Cache": "المستودع الرقمي المعتمد",
+};
+
+/* ── Linkify: turn plain URLs in text into <a> links ─────────── */
+function linkify(text) {
+  const urlRe = /(https?:\/\/[^\s،,;)\]"]+)/g;
+  return text.replace(urlRe, url => {
+    const label = url.replace(/https?:\/\//, '').split('/')[0];
+    return `<a href="${url}" target="_blank" rel="noopener" style="color:var(--purple);text-decoration:underline;">${label}</a>`;
+  });
+}
+
+function setLang(l) {
+  lang = l;
+  const t = T[l];
+  document.documentElement.setAttribute('lang', l);
+  document.documentElement.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('data-lang', l);
+
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+
+  document.getElementById('lbl-badge').textContent    = t.badge;
+  document.getElementById('lbl-title').innerHTML      = t.title;
+  document.getElementById('lbl-desc').textContent     = t.desc;
+  document.getElementById('q').placeholder            = t.placeholder;
+  document.getElementById('lbl-hint').textContent     = t.hint;
+  if (systemHealth) {
+    applyHealthToUI(systemHealth);
+  } else {
+    document.getElementById('lbl-status').textContent = t.status;
+  }
+  if (document.getElementById('health-modal-overlay') && document.getElementById('health-modal-overlay').classList.contains('open')) {
+    updateHealthModalUI(systemHealth || {});
+  }
+  document.getElementById('lbl-outlang').textContent  = t.outlang;
+  document.getElementById('lbl-audience').textContent = t.audience;
+  document.getElementById('lbl-sources').textContent  = t.sources;
+  document.getElementById('lbl-referral').textContent = t.referral;
+  document.getElementById('lbl-verified').textContent = t.verified;
+  document.getElementById('lbl-pipe').textContent     = t.pipe;
+
+  window.bayanHistory?.refresh();
+
+  // Persona option labels
+  const ids = ['opt-general','opt-western','opt-european','opt-eastasian','opt-seasian','opt-southasian','opt-african','opt-latin','opt-arab'];
+  ids.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = t.opts[i];
+  });
+}
+
+/* ── Helpers ────────────────────────────────────────────────── */
+function fill(el) {
+  document.getElementById('q').value = el.textContent.trim();
+  document.getElementById('q').focus();
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doSubmit(); }
+}
+
+function togglePipe() {
+  pipeOpen = !pipeOpen;
+  document.getElementById('pipe-body').classList.toggle('open', pipeOpen);
+  document.getElementById('pipe-toggle').classList.toggle('open', pipeOpen);
+  document.getElementById('pipe-toggle').setAttribute('aria-expanded',String(pipeOpen));
+}
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function lvlClass(lvl) {
+  const l = (lvl||'').toUpperCase();
+  if (l.includes('_A')) return 'lvl-a';
+  if (l.includes('_C')) return 'lvl-c';
+  if (l.includes('_D')) return 'lvl-d';
+  return 'lvl-b';
+}
+
+function lvlLabel(lvl) {
+  const m = { LEVEL_A:'A', LEVEL_B:'B', LEVEL_C:'C', LEVEL_D:'D' };
+  return m[lvl] || (lvl||'B').replace('LEVEL_','');
+}
+
+function dotClass(status) {
+  if (!status || status === 'completed' || status === 'bypassed') return 'dot-ok';
+  if (status === 'blocked') return 'dot-fail';
+  return 'dot-warn';
+}
+
+/* ── Submit ─────────────────────────────────────────────────── */
+async function doSubmit() {
+  return window.bayanQuestions.submit();
+}
+
+function sourceLink(url, label) {
+  const link = document.createElement('a');
+  link.href = url; link.textContent = label || url;
+  link.target = '_blank'; link.rel = 'noopener noreferrer';
+  link.className = 'cit-url'; link.dir = 'ltr';
+  return link;
+}
+
+function showPublishedPassages(container, version, citations = [], cards = [], sourcePrefix = 'source-') {
+  container.replaceChildren();
+  if (!version) return;
+  const labels = OUTPUT_MESSAGES[version.language];
+  const heading = (text, cls) => {
+    const h = document.createElement('div');
+    h.className = cls || 'sec-label';
+    h.textContent = text;
+    container.append(h);
+  };
+
+  // ── 1. Custom explanation (شرح مخصص مبني على المصادر) ──────────
+  if (version.scope_notice) {
+    const notice = document.createElement('div');
+    notice.className = 'answer-scope-notice';
+    notice.textContent = version.scope_notice;
+    container.append(notice);
+  }
+  if ((version.explanation_segments || []).length) {
+    heading(labels.explanation);
+    version.explanation_segments.forEach(segment => {
+      if (segment.kind === 'quote') return; // quotes are shown in source cards below
+      const paragraph = document.createElement('p');
+      paragraph.className = 'explanation-paragraph';
+      paragraph.append(document.createTextNode(segment.text));
+      segment.citation_ids.forEach(id => {
+        const card = cards.find(c => c.citation_id === id);
+        if (!card) return;
+        const marker = document.createElement('a');
+        marker.href = '#' + sourcePrefix + version.language + '-' + card.number;
+        marker.textContent = '[' + card.number + ']';
+        marker.className = 'inline-reference';
+        paragraph.append(marker);
+      });
+      container.append(paragraph);
+    });
+  } else if (!citations.length) {
+    // Fallback: no segments, no citations — show raw text
+    const words = document.createElement('div');
+    words.className = 'source-words';
+    words.textContent = version.text;
+    container.append(words);
+    return;
+  }
+
+  // ── 2. Source texts (نصوص المصدر) ─────────────────────────────
+  if (cards.length) {
+    heading(labels.passages);
+    cards.forEach(card => {
+      const box = document.createElement('section');
+      box.className = 'source-box';
+      box.id = sourcePrefix + version.language + '-' + card.number;
+      const originalLanguage = card.language;
+      box.lang = originalLanguage;
+      box.dir = ['ar','ur'].includes(originalLanguage) ? 'rtl' : 'ltr';
+
+      // Title row
+      const title = document.createElement('div');
+      title.className = 'source-title';
+      title.textContent = '[' + card.number + '] ' + card.title;
+      box.append(title);
+
+      // Best excerpt — just show the first (best-ranked) part's text directly, no labels, no collapse
+      const bestPart = card.parts && card.parts[0];
+      if (bestPart) {
+        const words = document.createElement('div');
+        words.className = 'source-words';
+        words.textContent = bestPart.text;
+        box.append(words);
+      }
+
+      // Single "View Source" link button
+      const linkBtn = document.createElement('a');
+      linkBtn.href = card.source_url;
+      linkBtn.target = '_blank';
+      linkBtn.rel = 'noopener noreferrer';
+      linkBtn.className = 'source-link-btn';
+      linkBtn.dir = 'ltr';
+      linkBtn.textContent = labels.view_source || 'View Source ↗';
+      box.append(linkBtn);
+
+      // Badge: show "Translated from Arabic" when the passage was LLM-translated
+      if (card.is_translated) {
+        const badge = document.createElement('span');
+        badge.className = 'translation-badge';
+        badge.textContent = labels.translated_from_arabic || 'Translated from Arabic';
+        box.append(badge);
+      }
+
+      container.append(box);
+    });
+  }
+}
+
+
+function render(data) {
+  const outputLang = data.target_language;
+  const labels = data.labels || OUTPUT_MESSAGES[outputLang];
+  const result = document.getElementById('result');
+  result.style.display = 'block';
+  result.classList.add('on');
+  result.lang = outputLang;
+  result.dir = ['ar','ur'].includes(outputLang) ? 'rtl' : 'ltr';
+  ['answer-versions','answer-status','res-time'].forEach(id => document.getElementById(id).style.display = '');
+  const lvl = data.response_level;
+  const levelPill = document.getElementById('lvl-pill');
+  levelPill.style.display = lvl ? 'inline-flex' : 'none';
+  levelPill.className = 'lvl-pill ' + lvlClass(lvl);
+  levelPill.dir = result.dir;
+  document.getElementById('lvl-pill-code').textContent = labels.level_prefix + ' ' + lvlLabel(lvl);
+  document.getElementById('lvl-name').textContent = (labels.levels || {})[lvl] || '';
+  document.getElementById('answer-status').textContent = data.answer_status === 'ANSWERED' ? labels.retrieved :
+      data.answer_status === 'PARTIAL' ? labels.partial :
+      data.answer_status === 'REFERRED' ? labels.referred : labels.unavailable;
+  const ui = PRESENTATION.languages[outputLang];
+  document.getElementById('res-time').textContent = ui.time + ': ' + ((data.elapsed_ms || 0)/1000).toFixed(1) + ' ' + ui.seconds;
+  document.getElementById('referral').style.display = 'none';
+  const answer = document.getElementById('answer');
+  answer.style.display = 'block';
+  showPublishedPassages(answer,(data.versions || [])[0],data.citations || [],(data.source_cards || {})[outputLang] || []);
+  answer.lang = outputLang;
+  answer.dir = result.dir;
+  document.getElementById('cit-section').style.display = 'none';
+  const versions = document.getElementById('answer-versions');
+  versions.replaceChildren();
+  (data.versions || []).slice(1).forEach(v => {
+    const title = document.createElement('div');
+    title.className = 'sec-label';
+    title.textContent = OUTPUT_MESSAGES[v.language].name;
+    title.lang = v.language;
+    const passage = document.createElement('div');
+    passage.className = 'answer-card';
+    passage.lang = v.language;
+    passage.dir = ['ar','ur'].includes(v.language) ? 'rtl' : 'ltr';
+    showPublishedPassages(passage,v,data.citations || [],(data.source_cards || {})[v.language] || []);
+    versions.append(title,passage);
+
+  });
+  window._currentResponseId = data.response_id || null;
+  document.getElementById('prov-bar').style.display = data.response_id ? 'flex' : 'none';
+  document.getElementById('prov-hash').textContent = data.response_id || '';
+  document.getElementById('lbl-verified').textContent = labels.sources;
+  document.getElementById('pipe-wrap').style.display = (data.telemetry || []).length ? 'block' : 'none';
+  document.getElementById('lbl-pipe').textContent = ui.pipeline;
+  const pipeline = document.getElementById('pipe-body'); pipeline.replaceChildren();
+  (data.telemetry || []).forEach(step => {
+    const row = document.createElement('div'); row.className = 'pipe-row';
+    const dot = document.createElement('span'); dot.className = 'pipe-dot ' + dotClass(step.status);
+    const main = document.createElement('div'); main.className = 'pipe-main';
+    const name = document.createElement('div'); name.className = 'pipe-name'; name.textContent = ui.stages[step.agent_id] || ui.pipeline;
+    const state = document.createElement('span'); state.className = 'pipe-state ' + step.status; state.textContent = ui[step.status] || ui.not_run;
+    const header = document.createElement('div'); header.className = 'pipe-header'; header.append(name,state);
+    const description = document.createElement('div'); description.className = 'pipe-summary';
+    description.textContent = step.status === 'completed' ?
+      (step.summary.startsWith('Authenticated prior explanation') ? (ui.reused || ui.stage_descriptions[step.agent_id]) : ui.stage_descriptions[step.agent_id]) : (ui.stopped_description || ui[step.status] || ui.not_run);
+    const duration = document.createElement('span'); duration.className = 'pipe-ms'; duration.textContent = (step.duration_ms/1000).toFixed(2) + ' ' + ui.seconds;
+    main.append(header,description); row.append(dot,main,duration); pipeline.append(row);
+  });
+  document.getElementById('err-card').style.display = 'none';
+  result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function clearAnswer() {
+  ['answer','answer-versions','pipe-body'].forEach(id => document.getElementById(id).replaceChildren());
+  ['answer','answer-versions','pipe-wrap','prov-bar','cit-section','referral','lvl-pill','answer-status','res-time'].forEach(id => document.getElementById(id).style.display = 'none');
+  window._currentResponseId = null;
+}
+
+function showErr(msg) {
+  clearAnswer();
+  const result = document.getElementById('result');
+  result.style.display = 'block';
+  const err = document.getElementById('err-card');
+  err.style.display = 'block';
+  err.textContent = T[lang].error + ': ' + msg;
+}
+</script><!-- Verify Modal -->
+<div class="modal-overlay" id="verify-modal" onclick="closeVerifyOutside(event)">
+  <div class="modal" dir="rtl">
+    <div class="modal-title" id="modal-title">التحقق من أصالة الإجابة</div>
+    <div class="modal-verdict" id="modal-verdict"></div>
+    <p style="font-size:13px;color:var(--text-2);margin-bottom:12px;" id="modal-desc">
+      أدخل رقم التحقق كما نُسخ من الإجابة: BYN- يتبعه 32 حرفًا ورقمًا، للتحقق من سجل الإجابة وسلامة محتواها.
+      يمكنك نشر هذا الرقم مع الإجابة ليتمكن أي شخص من التحقق منها.
+    </p>
+    <input id="verify-id-input" type="text"
+      placeholder="{{ presentation.verification_placeholder }}"
+      maxlength="36" spellcheck="false" autocapitalize="characters"
+      style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:8px;
+             font-size:14px;font-family:monospace;letter-spacing:1px;direction:ltr;
+             background:var(--bg);color:var(--text-1);outline:none;margin-bottom:12px;"
+    />
+    <div id="verify-result-box" style="display:none;border-radius:8px;padding:14px;font-size:13px;line-height:1.6;"></div>
+    <div class="modal-footer">
+      <button class="btn-modal-close" onclick="closeVerify()">إغلاق</button>
+      <button class="btn-modal-verify" onclick="doVerify()">تحقق الآن</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyResponseId() {
+  const id = window._currentResponseId;
+  if (!id) return;
+  navigator.clipboard.writeText(id).then(() => {
+    const btn = document.querySelector('.btn-copy-id');
+    if (btn) { btn.textContent = 'تم النسخ'; setTimeout(() => btn.textContent = 'نسخ الرقم', 2000); }
+  });
+}
+
+function openVerify() {
+  const id = window._currentResponseId || '';
+  document.getElementById('verify-id-input').value = id;
+  document.getElementById('modal-verdict').className = 'modal-verdict';
+  document.getElementById('modal-verdict').textContent = '';
+  document.getElementById('verify-result-box').style.display = 'none';
+  document.getElementById('verify-modal').classList.add('open');
+}
+
+function closeVerify() {
+  document.getElementById('verify-modal').classList.remove('open');
+}
+
+function closeVerifyOutside(e) {
+  if (e.target === document.getElementById('verify-modal')) closeVerify();
+}
+
+async function doVerify() {
+  const id = document.getElementById('verify-id-input').value.trim().toUpperCase();
+  if (!id) return;
+  const resultBox = document.getElementById('verify-result-box');
+  resultBox.style.display = 'none';
+  const verdict = document.getElementById('modal-verdict');
+  verdict.className = 'modal-verdict';
+  verdict.textContent = 'جارٍ البحث...';
+  try {
+    const res = await fetch(`/api/response/${encodeURIComponent(id)}`);
+    const data = await res.json();
+    if (data.found && data.verified) {
+      verdict.className = 'modal-verdict ok';
+      verdict.textContent = 'إجابة موثقة — لم يُجرَ عليها أي تعديل';
+      const lvlNames = { LEVEL_A:'مصدر نصي قطعي', LEVEL_B:'محتوى دعوي معتمد', LEVEL_C:'مسألة خلافية', LEVEL_D:'إحالة شرعية' };
+      resultBox.style.display = 'block';
+      resultBox.style.background = 'var(--bg)';
+      resultBox.style.border = '1px solid var(--border)';
+      const ts = new Date(data.generated_at).toLocaleString('ar-SA-u-ca-gregory-nu-latn');
+      resultBox.innerHTML = `
+        <div style="font-size:11px;color:var(--text-2);margin-bottom:8px;">صدرت في: ${ts}</div>
+        <div style="font-size:11px;color:var(--text-2);margin-bottom:8px;">المستوى: ${lvlNames[data.response_level] || data.response_level}</div>
+        <div style="font-size:11px;color:var(--text-2);margin-bottom:6px;">السؤال الأصلي:</div>
+        <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:10px;">${esc(data.query || "")}</div>
+        <div style="font-size:11px;color:var(--text-2);margin-bottom:6px;">الإجابة الأصلية:</div>
+        <div style="font-size:12px;color:var(--text-1);max-height:120px;overflow-y:auto;line-height:1.6;">${(data.localized_text||'').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+      `;
+    } else {
+      verdict.className = 'modal-verdict fail';
+      verdict.textContent = `الرقم "${id}" غير موجود في سجل بيان.`;
+    }
+  } catch(e) {
+    verdict.className = 'modal-verdict fail';
+    verdict.textContent = 'خطأ في الاتصال';
+  }
+}
+</script>
+
+<!-- ── API Connection Status ─────────────────────────────────── -->
+<dialog id="health-modal-overlay" class="api-status-dialog" aria-labelledby="hm-title" aria-describedby="hm-desc" onclick="closeHealthOutside(event)">
+  <div id="health-modal-box" dir="rtl">
+    <div class="api-status-heading">
+      <span class="api-status-icon"><span id="hm-dot" class="status-dot checking"></span></span>
+      <h2 id="hm-title">حالة اتصال API</h2>
+    </div>
+    <p id="hm-desc">جارٍ فحص الاتصال بخدمة Google Gemini…</p>
+    <p id="hm-guidance" hidden></p>
+    <div class="api-status-actions">
+      <button type="button" onclick="fetchSystemHealth(true)" id="hm-btn-refresh">إعادة الفحص الآن</button>
+      <button type="button" onclick="closeHealthModal()" id="hm-btn-close" autofocus>إغلاق</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- ── Terms Suggestion Modal ─────────────────────────────────── -->
+<div class="smodal-overlay" id="smodal-overlay" onclick="if(event.target===this)closeSuggestModal()">
+  <div class="smodal" dir="rtl">
+    <button class="smodal-close" onclick="closeSuggestModal()">✕</button>
+    <div class="smodal-title">اقتراح مصطلح شرعي</div>
+    <p class="smodal-sub">اكتشفت ترجمة خاطئة أو مصطلحاً لم يُعالَج بشكل صحيح؟ اقترحه هنا وسيراجعه فريق بيان.</p>
+
+    <!-- Access gate -->
+    <div class="sgate" id="sgate">
+      <div class="sgate-label">رمز عمال الدعوة</div>
+      <div class="sgate-row">
+        <input type="password" class="sgate-input" id="sgate-input" placeholder="أدخل رمز الوصول..." onkeydown="if(event.key==='Enter')sUnlock()"/>
+        <button class="sgate-btn" onclick="sUnlock()">دخول</button>
+      </div>
+      <div class="sgate-err" id="sgate-err">رمز الوصول غير صحيح. تواصل مع فريق بيان.</div>
+    </div>
+
+    <!-- Form -->
+    <div class="sform" id="sform">
+      <div class="sfield">
+        <label class="sfield-label"><span class="req">* </span>المصطلح بالعربية</label>
+        <input type="text" id="sf-arabic" placeholder="مثال: الفطرة، الإحسان، الصبر..."/>
+      </div>
+      <div class="sfield">
+        <label class="sfield-label"><span class="req">* </span>الترجمات المحظورة</label>
+        <div class="sfield-hint">كل ترجمة خاطئة في سطر مستقل</div>
+        <textarea id="sf-forbidden" placeholder="Holy War&#10;Tax&#10;Fear of God alone"></textarea>
+      </div>
+      <div class="sfield">
+        <label class="sfield-label"><span class="req">* </span>الصيغة الرسمية المعتمدة</label>
+        <textarea id="sf-canonical" placeholder="الترجمة الصحيحة الكاملة مع السياق..."></textarea>
+      </div>
+      <div class="sfield">
+        <label class="sfield-label">المرجع العلمي</label>
+        <input type="text" id="sf-reference" placeholder="مثال: قاموس الجمهرة ص.45 — أو: فتوى الأزهر رقم..."/>
+      </div>
+      <div class="sfield">
+        <label class="sfield-label">اسمك وصفتك (اختياري)</label>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="sf-name" placeholder="الاسم أو اللقب" style="flex:1"/>
+          <select id="sf-role" style="flex:1">
+            <option value="">— الصفة —</option>
+            <option value="داعية">داعية</option>
+            <option value="عالم شرعي">عالم شرعي</option>
+            <option value="أكاديمي">أكاديمي</option>
+            <option value="مترجم إسلامي">مترجم إسلامي</option>
+            <option value="طالب علم شرعي">طالب علم شرعي</option>
+          </select>
+        </div>
+      </div>
+      <button class="ssubmit-btn" id="ssubmit-btn" onclick="sSubmit()">إرسال للمراجعة</button>
+    </div>
+
+    <!-- Success -->
+    <div class="ssuccess" id="ssuccess">
+      <div class="ssuccess-icon">✓</div>
+      <div class="ssuccess-title">تم إرسال اقتراحك</div>
+      <div class="ssuccess-sub">سيراجع فريق بيان المصطلح ويُعد قاعدة لغوية موثقة قبل تفعيلها. شكراً.</div>
+      <div class="ssuccess-again" onclick="sReset()">اقتراح مصطلح آخر</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── Suggest modal ──────────────────────────────────────────── */
+function openSuggestModal() {
+  document.getElementById('smodal-overlay').classList.add('open');
+  if (sessionStorage.getItem('bayan_worker')) showSForm();
+}
+function closeSuggestModal() {
+  document.getElementById('smodal-overlay').classList.remove('open');
+}
+function sUnlock() {
+  const code = document.getElementById('sgate-input').value.trim();
+  fetch('/api/terms/check-access', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({code})
+  })
+  .then(r=>r.json())
+  .then(d => {
+    if (d.valid) { sessionStorage.setItem('bayan_worker',d.token); showSForm(); }
+    else { document.getElementById('sgate-err').style.display = 'block'; }
+  });
+}
+function showSForm() {
+  document.getElementById('sgate').style.display = 'none';
+  document.getElementById('sform').classList.add('visible');
+}
+function sSubmit() {
+  const arabic    = document.getElementById('sf-arabic').value.trim();
+  const forbidden = document.getElementById('sf-forbidden').value.trim();
+  const canonical = document.getElementById('sf-canonical').value.trim();
+  if (!arabic || !forbidden || !canonical) { alert('يرجى ملء الحقول الإلزامية الثلاثة'); return; }
+  const btn = document.getElementById('ssubmit-btn');
+  btn.disabled = true; btn.textContent = 'جارٍ الإرسال...';
+  fetch('/api/terms/submit', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      worker_token: sessionStorage.getItem('bayan_worker') || '',
+      arabic_term: arabic,
+      forbidden_translations: forbidden,
+      canonical_form: canonical,
+      scholarly_reference: document.getElementById('sf-reference').value.trim(),
+      submitter_name: document.getElementById('sf-name').value.trim(),
+      submitter_role: document.getElementById('sf-role').value,
+    })
+  })
+  .then(r=>r.json())
+  .then(d => {
+    if (d.success) {
+      document.getElementById('sform').classList.remove('visible');
+      document.getElementById('ssuccess').classList.add('visible');
+    } else { alert('حدث خطأ. حاول مجدداً.'); btn.disabled=false; btn.textContent='إرسال للمراجعة'; }
+  });
+}
+function sReset() {
+  document.getElementById('ssuccess').classList.remove('visible');
+  document.getElementById('sform').classList.add('visible');
+  ['sf-arabic','sf-forbidden','sf-canonical','sf-reference','sf-name'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('sf-role').value='';
+  document.getElementById('sf-role').dispatchEvent(new Event('change'));
+  const btn = document.getElementById('ssubmit-btn');
+  btn.disabled=false; btn.textContent='إرسال للمراجعة';
+}
+
+/* ── System Health & API Indicator ──────────────────────────── */
+let systemHealth = null;
+
+function applyHealthToUI(data) {
+  if (!data) return;
+  const dot = document.getElementById('top-status-dot');
+  const lbl = document.getElementById('lbl-status');
+  const pill = document.getElementById('top-status-pill');
+  if (!dot || !lbl) return;
+
+  const dotClass = data.dot || (data.connected ? 'active' : 'error');
+  dot.className = 'status-dot ' + dotClass;
+
+  const text = (lang === 'ar' ? (data.message_ar || 'نظام نشط') : (data.message_en || 'System Active'));
+  lbl.textContent = text;
+
+  if (pill) {
+    pill.title = (lang === 'ar' ? (data.tooltip_ar || data.message_ar) : (data.tooltip_en || data.message_en));
+  }
+}
+
+async function fetchSystemHealth(forceRefresh = false) {
+  const dot = document.getElementById('top-status-dot');
+  const hmDot = document.getElementById('hm-dot');
+  if (forceRefresh) {
+    if (dot) dot.className = 'status-dot checking';
+    if (hmDot) hmDot.className = 'status-dot checking';
+  }
+  try {
+    const res = await fetch('/api/health' + (forceRefresh ? '?refresh=true' : ''));
+    if (!res.ok) throw new Error('Health probe returned ' + res.status);
+    const data = await res.json();
+    systemHealth = data;
+    applyHealthToUI(data);
+    updateHealthModalUI(data);
+  } catch (err) {
+    const fallback = {
+      status: 'error',
+      connected: false,
+      dot: 'error',
+      message_en: 'Service Offline',
+      message_ar: 'الخدمة غير متصلة',
+      tooltip_en: 'Could not connect to backend server',
+      tooltip_ar: 'تعذر الاتصال بخادم النظام',
+      help_en: 'Check if the backend web server is running.',
+      help_ar: 'تأكد من تشغيل خادم الويب الخلفي.'
+    };
+    systemHealth = fallback;
+    applyHealthToUI(fallback);
+    updateHealthModalUI(fallback);
+  }
+}
+
+function openHealthModal() {
+  const modal = document.getElementById('health-modal-overlay');
+  if (!modal.open) modal.showModal();
+  modal.classList.add('open');
+  if (!systemHealth) fetchSystemHealth();
+  else updateHealthModalUI(systemHealth);
+}
+
+function closeHealthModal() {
+  document.getElementById('health-modal-overlay').close();
+}
+function closeHealthOutside(event) {
+  const modal = document.getElementById('health-modal-overlay');
+  if (event.target !== modal) return;
+  const rect = modal.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeHealthModal();
+}
+document.getElementById('health-modal-overlay').addEventListener('close', function () {
+  this.classList.remove('open');
+});
+
+function updateHealthModalUI(data) {
+  const isAr = lang === 'ar';
+  document.getElementById('health-modal-box').dir = isAr ? 'rtl' : 'ltr';
+  document.getElementById('hm-btn-close').textContent = isAr ? 'إغلاق' : 'Close';
+  document.getElementById('hm-btn-refresh').textContent = isAr ? 'إعادة الفحص الآن' : 'Recheck connection';
+  const dotClass = data.dot || (data.connected ? 'active' : 'error');
+  document.getElementById('hm-dot').className = 'status-dot ' + dotClass;
+  const title = document.getElementById('hm-title');
+  const description = document.getElementById('hm-desc');
+  const guidance = document.getElementById('hm-guidance');
+  guidance.textContent = '';
+  if (data.connected) {
+    title.textContent = isAr ? 'اتصال API نشط' : 'API connected';
+    description.textContent = isAr ? 'تم الاتصال بخدمة Google Gemini بنجاح.' : 'Successfully connected to Google Gemini.';
+  } else if (data.status === 'missing_key') {
+    title.textContent = isAr ? 'مفتاح API غير متوفر' : 'API key missing';
+    description.textContent = isAr ? 'أضف مفتاح Google Gemini إلى GEMINI_API_KEY في ملف .env، ثم أعد فحص الاتصال.' : 'Add your Google Gemini key to GEMINI_API_KEY in .env, then recheck the connection.';
+  } else if (data.status === 'invalid_key') {
+    title.textContent = isAr ? 'مفتاح API غير صالح' : 'Invalid API key';
+    description.textContent = isAr ? 'رفضت خدمة Google Gemini المفتاح. تحقق من المفتاح في ملف .env، ثم أعد المحاولة.' : 'Google Gemini rejected the key. Check the key in .env, then try again.';
+  } else {
+    title.textContent = isAr ? (data.message_ar || 'تعذر اتصال API') : (data.message_en || 'API connection unavailable');
+    description.textContent = isAr ? (data.tooltip_ar || 'تعذر الاتصال بخدمة API.') : (data.tooltip_en || 'Could not connect to the API service.');
+    guidance.textContent = isAr ? (data.help_ar || '') : (data.help_en || '');
+  }
+  guidance.hidden = !guidance.textContent || guidance.textContent === description.textContent;
+}
+
+// Initial health check on page load and 45s periodic polling
+document.addEventListener('DOMContentLoaded', () => {
+  fetchSystemHealth();
+});
+fetchSystemHealth();
+setInterval(() => fetchSystemHealth(false), 45000);
+</script>
+
+<script src="{{ url_for('static', path='js/history.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/questions.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/cursor.js') }}" defer></script>
+<script src="{{ url_for('static', path='js/dropdowns.js') }}" defer></script>
+</body>
+</html>

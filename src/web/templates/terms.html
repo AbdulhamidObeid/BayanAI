@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>بَيان — إضافة مصطلح شرعي</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:   #12183F;
+    --purple: #6150EA;
+    --teal:   #2EF2C2;
+    --bg:     #F5F6FA;
+    --bg2:    #FFFFFF;
+    --text-1: #12183F;
+    --text-2: #5A6080;
+    --border: #E2E4F0;
+    --success:#0C9D74;
+    --success-bg: #E8FBF5;
+    --error:  #D63F3F;
+    --error-bg: #FEF0F0;
+    --radius: 12px;
+  }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text-1);
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: var(--navy);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .header-logo span { color: var(--teal); }
+  .header-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-right: auto;
+  }
+  .header-back {
+    font-size: 12px;
+    color: var(--teal);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid rgba(46,242,194,0.3);
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .header-back:hover { background: rgba(46,242,194,0.08); }
+
+  /* Main layout */
+  .wrap {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 16px 60px;
+  }
+
+  .page-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .page-desc {
+    font-size: 14px;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  /* Access gate */
+  .gate-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .gate-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+    margin-bottom: 8px;
+  }
+  .gate-row {
+    display: flex;
+    gap: 10px;
+  }
+  .gate-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    direction: ltr;
+  }
+  .gate-input:focus { border-color: var(--purple); }
+  .gate-btn {
+    padding: 10px 22px;
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .gate-btn:hover { opacity: 0.88; }
+  .gate-err {
+    font-size: 12px;
+    color: var(--error);
+    margin-top: 8px;
+    display: none;
+  }
+
+  /* Form card */
+  .form-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: none;
+  }
+  .form-card.visible { display: block; }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field-group {
+    margin-bottom: 18px;
+  }
+  .field-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-2);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .field-label .req { color: var(--purple); margin-right: 3px; }
+  .field-hint {
+    font-size: 11px;
+    color: var(--text-2);
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+  input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    color: var(--text-1);
+    background: var(--bg);
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+  input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: var(--purple);
+    background: #fff;
+  }
+  textarea { min-height: 90px; }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%235A6080' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 14px center;
+    padding-left: 36px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  .submit-btn:hover { opacity: 0.9; }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Success */
+  .success-card {
+    background: var(--success-bg);
+    border: 1px solid #A8EDDA;
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    display: none;
+    text-align: center;
+  }
+  .success-card.visible { display: block; }
+  .success-icon { font-size: 36px; margin-bottom: 10px; }
+  .success-title { font-size: 18px; font-weight: 700; color: var(--success); margin-bottom: 6px; }
+  .success-sub { font-size: 14px; color: var(--text-2); }
+  .success-again {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--purple);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  /* Approved terms list */
+  .terms-list-section {
+    margin-top: 36px;
+  }
+  .terms-list-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  .terms-count {
+    font-size: 12px;
+    color: var(--text-2);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 10px;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .term-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: var(--navy);
+    margin: 4px;
+  }
+  .term-chip-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">بَ<span>يان</span></div>
+  <div class="header-sub">منصة بيان للمحتوى الإسلامي الموثق</div>
+  <a class="header-back" href="/">العودة للرئيسية</a>
+</header>
+
+<div class="wrap">
+  <div class="page-title">إضافة مصطلح شرعي</div>
+  <p class="page-desc">
+    هذه الصفحة مخصصة لعمال الدعوة والمختصين فقط. يمكنك اقتراح مصطلح جديد أو ترجمة خاطئة اكتشفتها،
+    وسيراجعها فريق بيان ويعد قواعد لغوية موثقة قبل تفعيلها.
+  </p>
+
+  <!-- Access Gate -->
+  <div class="gate-card" id="gate-card">
+    <div class="gate-label">رمز الوصول الخاص بعمال الدعوة</div>
+    <div class="gate-row">
+      <input type="password" class="gate-input" id="gate-input" placeholder="أدخل رمز الوصول..." onkeydown="if(event.key==='Enter') unlock()"/>
+      <button class="gate-btn" onclick="unlock()">دخول</button>
+    </div>
+    <div class="gate-err" id="gate-err">رمز الوصول غير صحيح. تواصل مع فريق بيان للحصول على الرمز.</div>
+  </div>
+
+  <!-- Submission Form (hidden until unlocked) -->
+  <div class="form-card" id="form-card">
+    <div class="section-title">بيانات المصطلح المقترح</div>
+
+    <div class="field-group">
+      <label class="field-label"><span class="req">*</span> المصطلح بالعربية</label>
+      <div class="field-hint">مثال: التوحيد، الفطرة، الإحسان</div>
+      <input type="text" id="f-arabic" placeholder="اكتب المصطلح العربي..."/>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label"><span class="req">*</span> الترجمات المحظورة</label>
+      <div class="field-hint">الترجمات الخاطئة أو المُضلِّلة التي يجب تجنبها — كل ترجمة في سطر مستقل</div>
+      <textarea id="f-forbidden" placeholder="مثال:&#10;Holy War&#10;Tax&#10;Fear of God alone"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label"><span class="req">*</span> الصيغة الرسمية المعتمدة</label>
+      <div class="field-hint">الترجمة الصحيحة الكاملة مع السياق إن لزم</div>
+      <textarea id="f-canonical" placeholder="مثال: Tawheed (the exclusive Oneness of Allah — no partner, no equal)"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">المرجع العلمي</label>
+      <div class="field-hint">المصدر الذي يؤكد هذه الترجمة (اختياري)</div>
+      <input type="text" id="f-reference" placeholder="مثال: قاموس الجمهرة، ص. 45 — أو: فتوى الأزهر رقم..."/>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">اسمك (اختياري)</label>
+      <input type="text" id="f-name" placeholder="اسمك أو لقبك"/>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">صفتك</label>
+      <select id="f-role">
+        <option value="">— اختر صفتك —</option>
+        <option value="داعية">داعية</option>
+        <option value="عالم شرعي">عالم شرعي</option>
+        <option value="أكاديمي">أكاديمي</option>
+        <option value="متخصص في اللغة العربية">متخصص في اللغة العربية</option>
+        <option value="مترجم إسلامي">مترجم إسلامي</option>
+        <option value="طالب علم شرعي">طالب علم شرعي</option>
+      </select>
+    </div>
+
+    <button class="submit-btn" id="submit-btn" onclick="submitTerm()">إرسال للمراجعة</button>
+  </div>
+
+  <!-- Success -->
+  <div class="success-card" id="success-card">
+    <div class="success-icon">✓</div>
+    <div class="success-title">تم إرسال المصطلح للمراجعة</div>
+    <div class="success-sub">سيراجع فريق بيان المصطلح المقترح وسيتطلب تفعيله قاعدة لغوية موثقة بعد الموافقة عليه. شكراً لمساهمتك.</div>
+    <div class="success-again" onclick="resetForm()">إضافة مصطلح آخر</div>
+  </div>
+
+  <!-- Approved terms list -->
+  <div class="terms-list-section" id="terms-list-section" style="display:none;">
+    <div class="terms-list-title">
+      المصطلحات المعتمدة حالياً
+      <span class="terms-count" id="terms-count">...</span>
+    </div>
+    <div id="terms-chips"></div>
+  </div>
+</div>
+
+<script>
+// Access code is hashed on the backend — we just call the API
+const WORKER_KEY = 'bayan_worker_unlocked';
+
+function unlock() {
+  const code = document.getElementById('gate-input').value.trim();
+  if (!code) return;
+
+  fetch('/api/terms/check-access', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({code})
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.valid) {
+      sessionStorage.setItem(WORKER_KEY, data.token);
+      showForm();
+    } else {
+      document.getElementById('gate-err').style.display = 'block';
+    }
+  })
+  .catch(() => {
+    document.getElementById('gate-err').style.display = 'block';
+  });
+}
+
+function showForm() {
+  document.getElementById('gate-card').style.display = 'none';
+  document.getElementById('form-card').classList.add('visible');
+  document.getElementById('terms-list-section').style.display = 'block';
+  loadApprovedTerms();
+}
+
+function loadApprovedTerms() {
+  fetch('/api/terms/list')
+  .then(r => r.json())
+  .then(data => {
+    const chips = document.getElementById('terms-chips');
+    const count = document.getElementById('terms-count');
+    const terms = data.terms || [];
+    count.textContent = terms.length + ' مصطلح';
+    chips.innerHTML = terms.map(t =>
+      `<span class="term-chip"><span class="term-chip-dot"></span>${String(t.arabic).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>`
+    ).join('');
+  });
+}
+
+function submitTerm() {
+  const arabic    = document.getElementById('f-arabic').value.trim();
+  const forbidden = document.getElementById('f-forbidden').value.trim();
+  const canonical = document.getElementById('f-canonical').value.trim();
+  const reference = document.getElementById('f-reference').value.trim();
+  const name      = document.getElementById('f-name').value.trim();
+  const role      = document.getElementById('f-role').value;
+
+  if (!arabic || !forbidden || !canonical) {
+    alert('يرجى ملء الحقول الإلزامية: المصطلح، الترجمات المحظورة، الصيغة الرسمية');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'جارٍ الإرسال...';
+
+  fetch('/api/terms/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      worker_token: sessionStorage.getItem(WORKER_KEY) || '',
+      arabic_term: arabic,
+      forbidden_translations: forbidden,
+      canonical_form: canonical,
+      scholarly_reference: reference,
+      submitter_name: name,
+      submitter_role: role
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('form-card').classList.remove('visible');
+      document.getElementById('success-card').classList.add('visible');
+    } else {
+      alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
+      btn.disabled = false;
+      btn.textContent = 'إرسال للمراجعة';
+    }
+  })
+  .catch(() => {
+    alert('تعذر الاتصال بالخادم.');
+    btn.disabled = false;
+    btn.textContent = 'إرسال للمراجعة';
+  });
+}
+
+function resetForm() {
+  document.getElementById('success-card').classList.remove('visible');
+  document.getElementById('form-card').classList.add('visible');
+  document.getElementById('f-arabic').value = '';
+  document.getElementById('f-forbidden').value = '';
+  document.getElementById('f-canonical').value = '';
+  document.getElementById('f-reference').value = '';
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-role').value = '';
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('submit-btn').textContent = 'إرسال للمراجعة';
+  loadApprovedTerms();
+}
+
+// Auto-unlock if already authenticated this session
+if (sessionStorage.getItem(WORKER_KEY)) {
+  showForm();
+}
+</script>
+</body>
+</html>

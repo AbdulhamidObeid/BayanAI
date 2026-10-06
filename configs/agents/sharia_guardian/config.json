@@ -1,0 +1,9 @@
+{
+  "agent_id": "sharia_guardian",
+  "name": "Sharia Guardian & Retrieval Agent",
+  "primary_source": "QuranEnc",
+  "secondary_source": "HadeethEnc",
+  "offline_cache_enabled": true,
+  "max_retries": 3,
+  "zero_translation_policy": true
+}

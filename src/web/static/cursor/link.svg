@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- The same hotspot and silhouette keep hover targeting stable. -->
+  <path d="M4 3L24 17L15 19L11 28Z" fill="#2EF2C2" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M4 3L24 17L15 19L11 28Z" fill="#2EF2C2" stroke="#12183F" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M10 11L18 16L13 17Z" fill="#6150EA"/>
+  <path d="M25 3L26 6L29 7L26 8L25 11L24 8L21 7L24 6Z" fill="#6150EA"/>
+</svg>

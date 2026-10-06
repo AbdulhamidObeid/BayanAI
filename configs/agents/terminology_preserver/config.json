@@ -1,0 +1,7 @@
+{
+  "agent_id": "terminology_preserver",
+  "name": "Theological Terminology Preserver & Linter",
+  "lexicon_config_path": "configs/sharia_lexicon.json",
+  "strict_enforcement": true,
+  "inject_glosses": true
+}

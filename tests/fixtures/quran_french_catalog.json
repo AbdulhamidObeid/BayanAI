@@ -1,0 +1,16 @@
+{
+  "translations": [
+    {
+      "key": "french_rashid",
+      "language_iso_code": "fr",
+      "version": "1.0.3",
+      "last_update": 1782043143
+    },
+    {
+      "key": "french_montada",
+      "language_iso_code": "fr",
+      "version": "1.0.0",
+      "last_update": 1750745766
+    }
+  ]
+}

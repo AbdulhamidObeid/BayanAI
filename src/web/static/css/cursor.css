@@ -1,0 +1,20 @@
+/* Native browser cursor: black arrow, white outline, Bayan purple (#6150EA) glow.
+   The 13px 10px hotspot places clicks at the tip; no DOM overlay or tracking. */
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  html, body {
+    cursor: url("../cursor/pointer-purple.png") 13 10, auto;
+  }
+  a, button, select, summary, label, [role="button"], [role="option"],
+  [onclick], input[type="button"], input[type="submit"], input[type="reset"],
+  input[type="checkbox"], input[type="radio"],
+  .status-pill, .pipeline-toggle, .ssuccess-again, .bayan-select-trigger, .bayan-select-option {
+    cursor: url("../cursor/pointer-purple.png") 13 10, pointer !important;
+  }
+  input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+  textarea, [contenteditable="true"] {
+    cursor: text;
+  }
+  :disabled, [aria-disabled="true"] {
+    cursor: not-allowed !important;
+  }
+}

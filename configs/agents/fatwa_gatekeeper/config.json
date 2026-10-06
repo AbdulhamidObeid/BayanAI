@@ -1,0 +1,19 @@
+{
+  "agent_id": "fatwa_gatekeeper",
+  "name": "Fatwa Gatekeeper & Circuit Breaker",
+  "strict_mode": true,
+  "confidence_threshold": 0.85,
+  "official_referral_portal": "https://www.aliftaa.jo",
+  "keywords": [
+    "هل يجوز لي في زواجي",
+    "حكم طلاقي",
+    "كم نصيبي من الميراث",
+    "فتوى",
+    "عقد بيع شخصي",
+    "نزاع أسري",
+    "personal fatwa",
+    "is it halal for me to divorce",
+    "my inheritance share",
+    "ruling on my specific transaction"
+  ]
+}

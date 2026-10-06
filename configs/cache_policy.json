@@ -1,0 +1,5 @@
+{
+  "decision_reuse_enabled": true,
+  "decision_ttl_seconds": 86400,
+  "contract_version": 15
+}
