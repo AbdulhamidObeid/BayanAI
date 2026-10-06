@@ -1,9 +1,0 @@
-{
-  "agent_id": "orchestrator",
-  "name": "Master Orchestrator Router",
-  "version": "1.0.0",
-  "execution_mode": "sequential_pipeline",
-  "timeout_seconds": 30,
-  "enforce_response_levels": true,
-  "default_language": "en"
-}

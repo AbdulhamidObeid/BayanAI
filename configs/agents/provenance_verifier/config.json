@@ -1,6 +1,0 @@
-{
-  "agent_id": "provenance_verifier",
-  "name": "Provenance & Cryptographic Audit Agent",
-  "hash_algorithm": "SHA-256",
-  "verification_base_url": "https://bayan-ai.org/verify"
-}
