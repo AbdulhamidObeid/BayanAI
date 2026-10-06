@@ -6,6 +6,8 @@
 
 Bayan is a Python web application that retrieves accredited Islamic sources, understands the question, and creates a reviewed explanation suited to the reader’s knowledge, language and selected regional context. Published source passages remain separate from AI commentary, with direct citations.
 
+**[Open Bayan · افتح بَيان](https://bayanai.onrender.com/)**
+
 [العربية](#العربية) · [English setup](#english-setup) · [Free hosting](docs/DEPLOYMENT.md) · [Sources and credits](docs/SOURCES_AND_LICENSES.md)
 
 ![Bayan website — a real source-grounded answer](docs/evidence/knowledge-beginner-website.jpg)

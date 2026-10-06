@@ -2,6 +2,12 @@
 
 Bayan requires a Python backend. GitHub Pages serves static files and cannot run this FastAPI application. The provided `render.yaml` selects a **Free** Render web service, connected to `main`.
 
+## Live website
+
+**https://bayanai.onrender.com/**
+
+Verified on 6 October 2026: homepage HTTP 200, Gemini connected, a real beginner Arabic question answered with two HadeethEnc citations (133.9 seconds), and an exact Quran reference returned a verified answer. Both hadith publisher links returned HTTP 200. These are deployment smoke checks, not a full live benchmark.
+
 ## Deploy
 
 1. Push this clean project to the public [BayanAI repository](https://github.com/AbdulhamidObeid/BayanAI).
